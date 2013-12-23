@@ -8,12 +8,15 @@
             this.stepAnimation = 0;
             this.keys = 0;
             this.ammo = 0;
-            this.noMove = true;
+            this.inited = true;
+            game.addActionObject(this);
+            //this.noMove = true;
             this.scrolled = false;
             game.delayedFn(function(){
                 this.game.set('screw', this.game.screw);
             }.bind(this),6);
-            game.once('scrolled',function(){
+            this.ammo = 9;
+            /*game.once('scrolled',function(){
                 this.inited = true;
                 debugger;
                 game.setCell( x, y, 'Explosion', {after: {type: this}, single: true, build: true, callback: function(  ){
@@ -24,7 +27,7 @@
                     this.game.setCell( this, this ); // redraw manually
                     this.game.set('screw', this.game.screw);
                 }.bind(this) });
-            }, this);
+            }, this);*/
 
 
         },
@@ -38,14 +41,15 @@
         explode: function(  ){
             this.demolish();
         },
-        fire: function( ){
+        fireAction: function( ){
+            this.fire = false;
             if( this.fireDelay || this.noMove || !this.ammo )
                 return;
 
             this.set( 'ammo', this.ammo - 1 );
             var cell = this.game.getCell( R.addDirection( this.x, this.y, this.direction ) );
             if( cell.is( 'Empty' ) ){
-                this.game.setCell( cell, 'Bullet', { direction: this.direction, bulletType: 'gun', skipStep: true } );
+                this.game.setCell( cell, 'Bullet', { direction: this.direction, bulletType: 'gun' } );
             }else if( cell.demolishable ){
                 R.behaviors.demolish( cell );
             }else
@@ -56,11 +60,14 @@
         },
         step: function(  ){
             this.fireDelay = this.fireDelay > 0 ? this.fireDelay - 1 : 0;
+            this.move && this.moveAction();
+            this.fire && this.fireAction();
         },
         teleport: function( obj ){
             obj.transfer( this );
         },
-        move: function(  ){
+        moveAction: function(  ){
+            this.move = false;
             if( this.noMove )
                 return;
             var newPos, nextCell, noStep = false;

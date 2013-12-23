@@ -201,9 +201,9 @@
                         robbo.direction = i;
                         view.redraw( robbo );
                         if( R.keyboard.get( 'shift' ) )
-                            fire = true;
+                            robbo.fire = true;
                         else
-                            move = true;
+                            robbo.move = true;
                     }
                 } );
 
@@ -213,14 +213,6 @@
 
             R.keyboard.get( '8'.charCodeAt(0) ) && this.restart();
             R.keyboard.get( '9'.charCodeAt(0) ) && this.finishLevel();
-
-            robbo.step();
-
-            if( move ){
-                robbo.move();
-            }else if( fire ){
-                robbo.fire();
-            }
         },
 
         moveWorld: function( type, check ){
@@ -231,8 +223,32 @@
             if( !this.scrolled )
                 return;
 
+            var objectList = [],
+                order, lastOrder = -1,
+                needSort = false,
+                deadList = [];
             for( i = 0, _i = actionObjects.length; i < _i; i++ ){
                 obj = actionObjects[i];
+                order = (256 - obj.y) * 256 + ( obj.x );
+                objectList.push({
+                    itterateOrder: order,
+                    obj: obj,
+                    id: i
+                });
+                if( lastOrder > order )
+                    needSort = true;
+            }
+            if( needSort ){
+                objectList.sort( function( a, b ){ return b.itterateOrder - a.itterateOrder });
+                actionObjects = this.actionObjects = [];
+                for( i = 0, _i = objectList.length; i < _i; i++ ){
+                    actionObjects.push( objectList[ i ].obj );
+                }
+            }
+            console.clear();
+            console.log(objectList.map(function(e){var el = e.obj;return [el.type,el.x,el.y,el.oldX,el.oldY].join(',')}).join('\n'));
+            for( i = 0, _i = objectList.length; i < _i; i++ ){
+                obj = objectList[i].obj;
                 if(!obj){
                     dead = true;
                 }else{
@@ -241,16 +257,19 @@
                     dead = obj.dead;
                     if( !obj.skipStep ){
                         dead = dead || (obj.step && obj.step() === false);
-                        _i = actionObjects.length; // it can change in this fn
+                        //_i = actionObjects.length; // it can change in this fn
                     }else
                         obj.skipStep--;
                 }
                 if( dead ){
-                    actionObjects.splice( i, 1 );
-                    i--;
-                    _i--;
+                    obj.dead = true;
+                    deadList.push( i );
                 }
+            }
 
+            for( i = actionObjects.length - 1; i > -1; i-- ){
+                obj = actionObjects[i];
+                obj.dead && actionObjects.splice( i, 1 );
             }
             //console.log('action objects count', _i);
 

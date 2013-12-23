@@ -27,7 +27,7 @@
                     cell = this.game.getCell( R.addDirection( this, this.direction ) );
                     if( cell.is( 'Empty' ) ){
                         this.wait = true;
-                        this.game.setCell( cell, 'Bullet', { direction: this.direction, previous: this, bulletType: this.bulletType, skipStep: true } );
+                        this.game.setCell( cell, 'Bullet', { direction: this.direction, previous: this, bulletType: this.bulletType} );
                         return true;
                     }/*else if( cell.getNextCell ){
                         var tmp = {direction: this.direction, x: this.x, y: this.y};
@@ -57,7 +57,7 @@
                 }
                     //this.game.setCell( this, 'Empty' );
                 this.game.removeActiveObject( this );
-                this.game.setCell( this, 'Explosion', { after: { type: 'Empty' }, fromBullet: true, skipStep: true } );
+                this.game.setCell( this, 'Explosion', { after: { type: 'Empty' }, fromBullet: true } );
 
                 /*}else{
                     this.game.setCell( this, 'Explosion', { after: { type: 'Empty' }, single: true, fromBullet: true, animation: 4} );
@@ -82,7 +82,7 @@
                             cell = this.game.getCell( R.addDirection( this, this.direction ) );
                             this.game.removeActiveObject( cell );
                         }
-                        this.game.setCell( cell, 'Bullet', { bulletType: 'antimatter', direction: this.direction, skipStep: true } );
+                        this.game.setCell( cell, 'Bullet', { bulletType: 'antimatter', direction: this.direction } );
                         return true;
                     }
                 }

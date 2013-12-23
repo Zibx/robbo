@@ -31,7 +31,7 @@
                 cell = this.game.getCell( R.addDirection( this, this.direction ) );
 
                 if( cell.is('Empty')/* || this.bulletType === 'antimatter' && cell.is('Bullet') */){
-                    this.game.setCell( cell, 'Bullet', { direction: this.direction, bulletType: this.bulletType, skipStep: true } );
+                    this.game.setCell( cell, 'Bullet', { direction: this.direction, bulletType: this.bulletType } );
                     this.game.playSound('gun_default');
                 }else
                     R.behaviors.demolish( cell );

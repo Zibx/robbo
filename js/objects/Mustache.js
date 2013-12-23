@@ -29,7 +29,7 @@
                 cell = this.game.getCell( R.addDirection( this, 1 ) );
 
                 if( cell.is('Empty') )
-                    this.game.setCell( cell, 'Bullet', { direction: 1, bulletType: 'gun', skipStep: true } );
+                    this.game.setCell( cell, 'Bullet', { direction: 1, bulletType: 'gun' } );
                 else
                     R.behaviors.demolish( cell );
             }
