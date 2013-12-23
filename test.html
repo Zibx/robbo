@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/base.js" type="text/javascript"></script>
+
+    <script src="js/common.js" type="text/javascript"></script>
+    <!--<script src="js/asciiRender.js" type="text/javascript"></script>-->
+    <!--<script src="js/sprites.js" type="text/javascript"></script>-->
+    <script src="js/objects.js" type="text/javascript"></script>
+    <script src="js/keyboard.js" type="text/javascript"></script>
+    <script src="js/ascii.js" type="text/javascript"></script>
+    <!--<script src="js/view.js" type="text/javascript"></script>-->
+    <script src="js/controller.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if( 'ascii' in R.getLocationHash() ){
+            R.include(['js/asciiRender.js']);
+        }else{
+            R.include(['js/sprites.js']);
+        }
+    </script>
+
+
+    <title></title>
+</head>
+<body>
+
+<script src="js/log.js" type="text/javascript"></script>
+<div style="widht:1000px; height: 1000px" id="game"></div>
+
+<div id='log' style='position:fixed;bottom:0; background:#a00;color:#000;opacity:0.8;width:100%;left:0'></div>
+<script type="text/javascript">
+    window.Ro = new Robbo({
+        renderTo: document.getElementById('game'),
+        maps: [
+            {
+                map: '.......\n' +
+                     'R..#.#.\n' +
+                     '....#@.\n' +
+                     '.......\n'+
+                     '.@.....\n',
+                data: [],
+                test: function(){
+
+                }
+            },
+            {
+                map: '...\nR#.\n...',
+                data: [],
+                test: function(){
+                    R.keyboard.emulateStack('right')('up')('right')('down', function(){
+                        if( Ro.getCell(2,2).is('Stone') ){
+                            Ro.finishLevel();
+                        }else{
+                            throw 'not stone';
+                        }
+                    });
+                }
+            },
+            {
+                map:
+                        '................\n'+
+                                'Q#.b#Q...#.Q\n'+
+                                'Q#.##..##..Q\n'+
+                                'Q###.R..##QQ\n'+
+                                'Q%#.##.#\'.Q',
+                data: [],
+                test: function(){
+                    R.keyboard.emulateStack('right')('right')('up')('right')('right')('down')('left')('down', function(){
+                        if( Ro.robbo.ammo === 9 ){
+                            Ro.finishLevel();
+                        }else{
+                            throw 'ammo';
+                        }
+                    });
+                }
+            },{
+                map: '..........~R~..........',
+                data: [],
+                test: function(){
+                    R.keyboard.emulateStack
+                        ('right')('right')('right')('right')('right')('right')('right')('right')('right')
+                        ('right', function(){
+                            if( Ro.getCell( 21,0 ).is('Robbo') && Ro.getCell( 22,0 ).is('PushableStone') ){
+
+                            }else{
+                                throw 'bug';
+                            }
+                        })
+                        ('left')('left')('left')('left')('left')('left')('left')('left')('left')('left')
+
+                        ('left')('left')('left')('left')('left')('left')('left')('left')('left')
+                        ('left', function(){
+                            if( Ro.getCell( 1,0 ).is('Robbo') && Ro.getCell( 0,0 ).is('PushableStone') ){
+                                Ro.finishLevel();
+                            }else{
+                                throw 'bug';
+                            }
+                        });
+                }
+            },{
+                map:
+                        '\'R......bbb.\n'+
+                                '........b...\n'+
+                                '........b...\n'+
+                                '.......b....\n'+
+                                'bbbbbbbbbbbb',
+                data: [],
+                test: function(){
+                    var f = function(){console.log(Ro.getAsciiMap());}
+                    console.clear();
+                    R.keyboard.emulateStack('left')('shift+down')
+                            ('right')('left')('right')('left',f)
+
+
+                            ('right',f)('left', f)
+                            ('right',f)('left', f)
+                            ('right',f)('left', f)
+                            ('right',f)('left', f)
+                            ('right',f)('left', f)
+                            ('right',f)('left', f)
+                            ('right',f)('left', function(){
+
+                        if( Ro.robbo.ammo === 9 ){
+                            Ro.finishLevel();
+                        }else{
+                            //throw 'ammo';
+                        }
+                    });
+                }
+            },{
+
+                map:
+                        '.....\n'+
+                                'R\'.b.\n'+
+                                '.....',
+                data: [],
+                test: function(){
+                    var f = function(){}
+                    console.clear();
+                    var map;
+                    R.keyboard.emulateStack('left')('left')('right',f)
+                    ('shift+right',function(){
+                        //window.ha = true;
+                        if( Ro.getAsciiMap() !== '. . . . . \n'+
+                                '. R | b . \n'+
+                                '. . . . . ' )
+                            throw 'Incorrect timing';
+                    })
+                    ('left', function(){
+                        if( (map=Ro.getAsciiMap()) !== '. . . . . \n'+
+                                'R . e1b1e2\n'+
+                                '. . e1e2e1' )
+                            throw 'Incorrect timing';
+                    })
+                    ('right', function(){
+
+                        if( (map=Ro.getAsciiMap()) !== '. . e1e2e1\n'+
+                                '. R e2e3e3\n'+
+                                '. . e2e3e2' )
+                            throw 'Incorrect timing';
+                    })('left',function(){
+                        if( (map =Ro.getAsciiMap()) !== '. . e2e3e2\n'+
+                                'R . e3e2e2\n'+
+                                '. . e3e2e3' )
+                            throw 'Incorrect timing';
+                        else{
+                            Ro.finishLevel();
+                            console.log('test passed single bomb')
+                        }
+                    });
+                }
+            },{
+
+                map:
+                        '..R\'..\n'+
+                        'YYY.YY\n'+
+                        'Y#..#Y\n'+
+                        'YbbbbY\n'+
+                        'YbbbbY\n'+
+                        '.bbbbY\n'+
+                        'YbbbbY\n'+
+                        'YYYYYY',
+                data: [],
+                test: function(){
+                    var f = function(){},
+                        d = function(){debugger;},
+                        check = function( data ){
+                            data = typeof data === 'string' ? data : data.join('\n');
+                            data = data.split('\n');
+                            return function(){
+                                if( Ro.getAsciiMap() !== data ){
+                                    var d = Ro.getAsciiMap().split('\n');
+                                    for( var i = 0; i < data.length; i++ ){
+                                        var line = data[i];
+                                        var ling = d[i];
+
+                                        for( var j = 0; j < line.length; j++ ){
+                                            var char = line[j];
+                                            if( char !== d[i][j] && char !== ' ' ){
+                                                var linh = Ro.map[i].map(function(item){ return (item.animation || ' ')+' ';}).join('')
+                                                throw 'Incorrect timing';
+                                            }
+                                        }
+                                    }
+
+                                }
+                                console.info('step passed');
+                                console.log(Ro.getAsciiMap());
+                            }
+                        };
+
+                    R.keyboard.emulateStack('right',f)
+                            ('shift+down',check([
+'. . . R . . ',
+'Y Y Y | Y Y ',
+'Y # . . # Y ',
+'Y b b b b Y ',
+'Y b b b b Y ',
+'. b b b b Y ',
+'Y b b b b Y ',
+'Y Y Y Y Y Y '
+                    ]))
+                            ('right',check([
+'. . . . R . ',
+'Y Y Y . Y Y ',
+'Y # . | # Y ',
+'Y b b b b Y ',
+'Y b b b b Y ',
+'. b b b b Y ',
+'Y b b b b Y ',
+'Y Y Y Y Y Y '
+                            ]))
+                            ('left',check([
+                                '. . . R . . ',
+                                'Y Y Y . Y Y ',
+                                'Y # . e1# Y ',
+                                'Y b b b b Y ',
+                                'Y b b b b Y ',
+                                '. b b b b Y ',
+                                'Y b b b b Y ',
+                                'Y Y Y Y Y Y '
+                            ]))
+                            ('right',check([
+                                '',
+                                '',
+                                'Y # e1e2e1Y ',
+                                'Y b b e3b Y ',
+                                'Y b b b b Y ',
+                                '. b b b b Y ',
+                                'Y b b b b Y ',
+                                'Y Y Y Y Y Y '
+                            ]))
+                            ('left',check([
+                                '',
+                                '',
+                                'Y # e2e1e2Y ',
+                                'Y b b e2e2Y ',
+                                'Y b e2e1e3Y ',
+                                '. b b b b Y ',
+                                'Y b b b b Y ',
+                                'Y Y Y Y Y Y '
+                            ]))
+                            ('right',function(){
+                                var map = Ro.getAsciiMap().split('\n');
+                                debugger;
+                                if( map[2] !== 'Y # e2e1e2Y ' || map[3].substr(6,2) !== 'e2'|| map[3].substr(8,2) !== 'e2')
+                                    throw 'Incorrect timing';
+                            })
+                            ('left')('right')('left',f)
+                            ('right',f)('left', f)
+                            ('right',f)('left', f)
+                            ('right',f);
+
+                }
+            },
+            {map: 'R', data:[], test: function(){alert('test ok');}}
+        ],
+        afterLoad: function(){
+
+            this.maps[this._currentLevel].test && this.maps[this._currentLevel].test();
+        },
+        load: 0
+    });
+
+</script>
+</body>
+</html>

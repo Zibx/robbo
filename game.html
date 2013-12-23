@@ -1,0 +1,3321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/shim.js" type="text/javascript"></script>
+    <script src="js/base.js" type="text/javascript"></script>
+
+    <script src="js/common.js" type="text/javascript"></script>
+    <!--<script src="js/asciiRender.js" type="text/javascript"></script>-->
+    <!--<script src="js/sprites.js" type="text/javascript"></script>-->
+    <script src="js/objects.js" type="text/javascript"></script>
+    <script src="js/keyboard.js" type="text/javascript"></script>
+    <script src="js/ascii.js" type="text/javascript"></script>
+    <!--<script src="js/view.js" type="text/javascript"></script>-->
+    <script src="js/controller.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if( 'ascii' in R.getLocationHash() ){
+            R.include(['js/asciiRender.js']);
+        }else{
+            R.include(['js/sprites.js']);
+        }
+    </script>
+
+    <style>
+        canvas {
+            image-rendering: optimizeSpeed;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+
+        image-rendering: -o-crisp-edges;
+        image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+            }
+    </style>
+    <title></title>
+</head>
+<body>
+
+    <script src="js/log.js" type="text/javascript"></script>
+    <div id="game"></div>
+    
+<div id='log' style='position:fixed;bottom:0; background:#a00;color:#000;opacity:0.8;width:100%;left:0'></div>
+    <div style="display:none" id="maps">
+    [name]
+    Original
+
+    [last_level]
+    58
+
+    [default_level_colour]
+    608050
+
+    [notes]
+    Added 4 levels missing from RobboVI.
+    Level 35: Added additional data for 2 BEAR_B and 1 BEAR so that they start in their intended directions.
+    Level 57: I had to modify the gun at 1.15 as it was a blaster in the original Atari Robbo. In GNU Robbo the blaster consumes things and didn't explode the bomb leaving Robbo 1 bullet short.
+    Level 57: Both birds in the final tunnel cannot be killed with just one remaining bullet so I added a bomb at 15.15.
+    *THIS SET IS COMPLETE NOW*
+    back,light,shadow,blick,black
+
+    [level]
+    1
+    [colour]
+    21670E,989898,A27240,1C2783,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    level_notes relating to this level can go here.
+    [data]
+    QQQQQQQQQQQQQQQQ
+    Q....Q...QTQ...Q
+    Q.R.'Q.&.Q.Q.&.Q
+    Q....Q...Q.Q...Q
+    QQTQQQ.#...Q.Q.Q
+    Q....Q.QQQQQ.Q.Q
+    Q...#Q..Q..H.Q.Q
+    Q#QQQQT#Q..H.Q.Q
+    Q...#QQ.Q..H.Q.Q
+    Q....Q..Q..QQQ.Q
+    QQQQ.QT.Q...Q}.Q
+    Q....QQQQQQ.Q..Q
+    Q.b..Q....D.Q..Q
+    Q....Q.#..QQQ..Q
+    Q....QQ.QQQ'...Q
+    Q....Q....QQQ.QQ
+    Q#.b#Q...#.Q#.#Q
+    Q#.##..##..Q...Q
+    Q###....##QQ...Q
+    Q%#.##.#T.Q....Q
+    QQQQQQQQQQQ#QQ.Q
+    Q...Q.....Q.%QDQ
+    }.....T...Q.QQ.Q
+    Q...Q...#......Q
+    Q.?.Q#QQQQQ.Q.QQ
+    Q.....QT...#...Q
+    QQQQQ.QQQQQ.Q.QQ
+    Q...Q.Q...Q.QQQQ
+    Q.!.....T.Q....Q
+    Q...Q.Q...Q...TQ
+    QQQQQQQQQQQQQQQQ
+    [additional]
+    4
+    13.2.&.1.0
+    7.2.&.1.1
+    13.10.}.1.1.1.0.0.0
+    0.22.}.0.0.1.0.0.0
+    [end]
+
+
+    [level]
+    2
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    QQQQQQQQQQQQQQQQ
+    Q%..#...Q.TQ...Q
+    Q..#..R.Q..Q.?.Q
+    }.....#.HH#H...Q
+    Q.#.....QQ.Q...Q
+    QQQQQQQQQQQQQDQQ
+    Q...#.#........Q
+    Q.#..T.#..#..T.Q
+    Q..#.....#.....Q
+    QHHH#...QQQQQQQQ
+    Q.#..####...#..Q
+    Q..T.......#.#.Q
+    QQQQQQQQQQQQQ..Q
+    QT.@...Q...Q...Q
+    Q..QQQ...Q...QQQ
+    Q.QQ.QQQQQQQ...Q
+    Q..Q...Q...QQQ.Q
+    Q#...Q...Q.Q...Q
+    QQQQ.QQQQQ...QQQ
+    Q..Q.Q...Q.Q...Q
+    Q#.Q^Q.T.Q.Q..#Q
+    Q.#QQQ....#.#.TQ
+    Q.QQ....#.QQ...Q
+    Q.....Q...QT.#.Q
+    QQ.QQQQQQQQ#...Q
+    Q.......}.QQQQ.Q
+    QQ.Q.Q.QQ......Q
+    Q#.Q.Q.#QQQ.!..Q
+    Q#.QTQ..Q.QQQHQQ
+    Q....Q#..'QT...Q
+    QQQQQQQQQQQQQQQQ
+    [additional]
+    4
+    0.3.}.0.0.0.0.0.0
+    8.25.}.2.2.1.0.0.0
+    3.13.@.2
+    5.20.^.0.0.0
+    [end]
+
+
+    [level]
+    3
+    [colour]
+    484848,87C8D7,515CB8,074D00,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    QQQQQQQQQQQQQQQQ
+    Q....Q....Q....Q
+    Q.R..D....Q#.T.Q
+    Q....Q.T..##...Q
+    Q....Q....Q#...Q
+    QQQ.QQQQQQQQQQQQ
+    Q....Q....Q....Q
+    Q.b..Q....Q..?.Q
+    Q....#..&.Q....Q
+    Q#...Q....Q....Q
+    QQQQQQQQQQQQ.QQQ
+    Q....Q----Q...#Q
+    Q..T.Q----Q.&..Q
+    Q....Q----Q....Q
+    Q&..%Q----Q....Q
+    QQQQQQ----QQQ.QQ
+    ----------Q.##.Q
+    ----------Q.T..Q
+    ----------Q#.#.Q
+    ----------Q..#.Q
+    QQQQQQQQQQQ.QQQQ
+    QT........Q.@..Q
+    QQQ.QQQ.....QQ.Q
+    Q.......!.Q.Q..Q
+    Q.Q.Q.....Q.QQ.Q
+    Q.Q...^...Q..Q.Q
+    Q.Q^QQQQQQQ.QQ.Q
+    Q.Q.......Q....Q
+    Q.Q.QQQ.'.QQQQ.Q
+    Q.........Q&...Q
+    QQQQQQQQQQQQQQQQ
+    [additional]
+    7
+    8.8.&.1.0
+    12.12.&.1.1
+    3.26.^.1.0.0
+    6.25.^.0.0.0
+    12.21.@.2
+    11.29.&.2.0
+    1.14.&.2.1
+    [end]
+
+
+    [level]
+    4
+    [colour]
+    194900,B6B6B6,3C8329,36419D,000864
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 1.13
+    [data]
+    QQQQQQQQQQQQQQQQ
+    Q..#^.......#..Q
+    Q&............TQ
+    QQQ..........QQQ
+    Q...--.--.--...Q
+    Q...--.--.--...Q
+    Q...--.--@--...Q
+    Q.T.--.--.--.T.Q
+    Q..---.--.---..Q
+    Q.---..--..---.Q
+    Q---...--...---Q
+    Q..............Q
+    QQQ}........&QQQ
+    Q..............Q
+    QQQQQQQQQQQQQQQQ
+    Q.......Q.....&Q
+    Q.QQQQQ.Q......Q
+    Q.Q...Q.Q......Q
+    Q.Q.R.Q.Q.....}Q
+    Q.}...Q.Q......Q
+    Q.....Q.QQQQQQDQ
+    Q....TQ........Q
+    Q..QQQQQQQQQQQQQ
+    Q..TQ&Q....*...Q
+    QQ.QQ.Q.QQ.QQQ.Q
+    Q..%Q.Q..Q.TQ..Q
+    QQQQQ.Q..QQQQ.QQ
+    Q...Q.Q..&QT...Q
+    Q.!.Q.Q.QQQQQQ.Q
+    Q&..Q..........Q
+    QQQQQQQQQQQQQQQQ
+    [additional]
+    9
+    5.23.&.1.0
+    12.12.&.1.1
+    1.2.&.2.0
+    14.15.&.2.1
+    9.27.&.3.0
+    9.6.@.2
+    1.29.&.3.1
+    3.12.}.0.0.1.0.0
+    2.19.}.1.1.1.0.0
+    14.18.}.2.2.1.0.0
+    [end]
+
+
+    [level]
+    5
+    [colour]
+    484848,A4AFFF,549A40,601721,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    OOOOOOOOOOOOOOOO
+    O.............RO
+    O....TOOOOT....O
+    O..OOOO..OOOO..O
+    O..O.....@.....O
+    O..O...........O
+    O..OO...T......O
+    O...........O..O
+    O........*..O..O
+    O..OOOOT.OOOO..O
+    O....TOOOOT....O
+    O..............O
+    OOOOOOOO.OOOOOOO
+    OT.OOT.....OOT!O
+    O..OO......OO..O
+    O..##..OO.#OO#.O
+    O..##..OO..OO..O
+    O..OO..........O
+    O}TOO}....#...}O
+    OOOOOOO..OO..OOO
+    OOOOOOO..OO..OOO
+    O.b....#.OO....O
+    O........OO....O
+    OOOOOOOOOOOOO#.O
+    OOOOOOOOOOOOO..O
+    OT.O}O}O}O}O...O
+    O..............O
+    O....O.T.....#.O
+    O....O.O.O...T.O
+    O..............O
+    OOOOOOOOOOOOOOOO
+    [additional]
+    7
+    1.18.}.3.3.1.0.0
+    5.18.}.3.3.1.0.0
+    14.18.}.3.3.1.0.0
+    4.25.}.1.1.0.0.0
+    6.25.}.1.1.1.0.0
+    8.25.}.1.1.1.0.0
+    10.25.}.1.1.0.0.0
+    [end]
+
+
+    [level]
+    6
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    OOOOOO&OOO&OO---
+    O...O...O...O---
+    O.R.&.#.O.?.&---
+    O...O...O...O---
+    OO&OOO&OOO&OOOOO
+    ---O...O...O...O
+    ---&.%.&.H.&.%.&
+    ---O...O...O...O
+    ---OOOO&OOO&O&OO
+    -----O...O...O--
+    OOOOOO.b.&.H.&--
+    O&...O...O...O--
+    O....OOOOOOOOOOO
+    O..?.O...D.....O
+    O....D..}O.OOO.O
+    OOOOOOOOOO.OOO.O
+    O........#.....O
+    O..!...^..#....O
+    O........#.....O
+    OOOOOOOOOOOOOOOO
+    ----------------
+    ----------------
+    ----------------
+    ----------------
+    ----------------
+    ----------------
+    ----------------
+    ----------------
+    yyyyyyyyyyyyyyyy
+    y&............Ty
+    yyyyHHyyyy#yyyyy
+    [additional]
+    20
+    2.4.&.1.0
+    11.6.&.1.1
+    12.2.&.1.2
+    10.0.&.2.0
+    13.8.&.2.1
+    13.10.&.8.2
+    4.2.&.3.0
+    7.6.&.3.1
+    10.13.&.3.2
+    6.4.&.4.0
+    11.8.&.4.1
+    9.10.&.5.0
+    1.29.&.5.1
+    15.6.&.6.0
+    7.8.&.6.1
+    6.0.&.7.0
+    1.11.&.7.1
+    10.4.&.8.0
+    3.6.&.8.1
+    8.14.}.2.2.1.0.0
+    [end]
+
+
+    [level]
+    7
+    [colour]
+    484848,B6B6B6,5681B9,601721,241500
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    OOOOOOOOOOOOOOOO
+    OOOOO&..OOOO...O
+    OOOOOOO....D.T.O
+    O...OOO.OOOO...O
+    O.T.D...OOOOOOOO
+    O...OOO.OOOO...O
+    OOOOOOO....D.T.O
+    OOOOOOOOO.OO...O
+    OOOOOO....OOOOOO
+    OOOOOO..OOOOOOOO
+    OOOOOO..OOOOOOOO
+    OOOOO.*..OOOOOOO
+    OOOO..OO..OOOOOO
+    OOO..OOOO..OOOOO
+    OO..OOOOOO..OOOO
+    O%............OO
+    OOOOOOOOOOOOO..O
+    OTO...........OO
+    O.}O...^.....O.O
+    O...O.......O.%O
+    O...}O.....O#..O
+    O.....OO#OOO.##O
+    O#....O...O.#..O
+    O#....#.R.#..#.O
+    O#....O...O.#.#O
+    O.....OO#OO..##O
+    O....O#....O..#O
+    O..}O##b....Ob.O
+    O..OHbbHHHH#...}
+    OTO!#H#b%.#..bbO
+    OOOOOOOOOOOOOOOO
+    [additional]
+    5
+    2.18.}.1.1.1.0.0.0
+    4.20.}.1.1.1.0.0.0
+    3.27.}.3.3.1.0.0.0
+    15.28.}.2.2.0.0.0.0
+    5.1.&.1.0
+    [end]
+
+
+    [level]
+    8
+    [colour]
+    636363,D7D7D7,CB818B,074D00,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 13.30
+    [data]
+    OOOOOO----------
+    O#.R.O----------
+    O%...D...--T----
+    O##..O--.--.----
+    OOOOOO-.....----
+    -----}-.O.------
+    -----.-...------
+    ---.....--------
+    ---.---------T--
+    ---.---------.--
+    ---&----'...D.--
+    ----------.-----
+    ----------...---
+    ------------.---
+    -T---&.......---
+    -*--------.-----
+    -#--------}-----
+    -b-&------.-----
+    -b-..........&--
+    -b----.---------
+    -bbb--.---------
+    -b-^b-.......---
+    -b--b-------...-
+    -bbbbbbbbbb..-.-
+    --------------.-
+    -...!------&--.-
+    -.-.----&--.--..
+    -&-T-&--.--.---.
+    -----.--.--..&-.
+    --}.......%.---.
+    -------------..T
+    [additional]
+    12
+    3.10.&.1.0
+    3.17.&.1.1
+    13.18.&.2.0
+    1.27.&.2.1
+    13.28.&.2.2
+    11.25.&.3.0
+    5.27.&.3.1
+    8.26.&.4.0
+    5.14.&.4.1
+    2.29.}.0.0.1.0.0.0
+    10.16.}.0.0.0.0.1.1
+    5.5.}.1.1.0.0.0.0
+    [end]
+
+
+    [level]
+    9
+    [colour]
+    101010,D7D7D7,69AAB9,336300,074D00
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    oooooooooooooooo
+    o.!............o
+    o.Ro......^o.'.o
+    o..o.....^.o.!.o
+    o..o....^..o...o
+    o..o...^...ooooo
+    o..o..^....o...o
+    o..o.^.......T.o
+    o...^......o...o
+    oHoooooooooooooo
+    o.............To
+    o..............o
+    o..............o
+    o.......^.....^o
+    o....^.........o
+    o..............o
+    o......^.......o
+    o.............To
+    oHoooooooooooooo
+    o.o..To......oVo
+    o.o.ooo.....oo.o
+    o.....oo..o..o.o
+    ooo....o.TooDo.o
+    o%..oo.oooo..o.o
+    ooo..o......oo.o
+    o....oo.....oT.o
+    o.o.....oo..oo.o
+    o.oooo.........o
+    o.......ooo.oo.o
+    o.oTo...o}.....o
+    oooooooooooooooo
+    [additional]
+    12
+    4.8.^.1.1.0
+    5.7.^.1.1.0
+    6.6.^.1.1.0
+    7.5.^.1.1.0
+    8.4.^.1.1.0
+    9.3.^.1.1.0
+    10.2.^.1.1.0
+    5.14.^.3.3.0
+    7.16.^.3.3.0
+    7.13.^.2.2.0
+    14.13.^.1.1.0
+    9.29.}.0.0.1.0.0.0
+    [end]
+
+
+    [level]
+    10
+    [colour]
+    484848,739FD6,515CB8,194900,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    oooooooooooooooo
+    oRoTo.......o..o
+    o.....oo...oo..o
+    oooo.ooT.#....Mo
+    o.o.#.ooooo....o
+    o........Mo.o..o
+    oTooTo.o....o..o
+    o.o..#.o%ooooo.o
+    o.....MoooM....o
+    ooo...........oo
+    oTooo.ooooooo..o
+    o.oTo......Moo.o
+    o.o...oo.ooo...o
+    o.oo.........M.o
+    o.D..oTo.oo.oo.o
+    oooo?o.o#oT..#.o
+    oT.ooo.o.ooooo.o
+    o......o.......o
+    o.oo.ooooo.ooo.o
+    o..M...#...o...o
+    oo.o......#o.o.o
+    M............T.o
+    oo.o.o.oooo.oo.o
+    o..o#....oT....o
+    o.oo.ooo.ooooo.o
+    o......M.#..o..o
+    oo.ooo.oo.oooo.o
+    oT.#.......oT..o
+    o....M....Mooo.o
+    oT..........!..o
+    oooooooooooooooo
+    [additional]
+    11
+    14.3.M.2
+    9.5.M.2
+    6.8.M.2
+    10.8.M.0
+    11.11.M.2
+    13.13.M.2
+    3.19.M.0
+    0.21.M.0
+    7.25.M.2
+    5.28.M.2
+    10.28.M.2
+    [end]
+
+
+    [level]
+    11
+    [colour]
+    15643B,DDAE7C,3E6AA2,601721,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    oooooooooooooooo
+    o...#ooo.......o
+    o..R.ooo....oo#o
+    o%.......}..o..o
+    o#...o.o#..#o..o
+    ooo.oo.oo.ooo.oo
+    ooo....ToDoT..oo
+    oooooo.oo.oooooo
+    oo...oooo.o....o
+    }...........T?.o
+    oo..#oooo.o....o
+    -o#..o--o.oooooo
+    -o..#o--o.o-----
+    -o.#.oooo#ooooo-
+    -o..###..##..#o-
+    -o..##........M-
+    -o#....###..#.o-
+    -oooo.#.oooo.oo-
+    ----o..To--o.o--
+    ----ooooo--o.o--
+    -----------o.o--
+    oooooooooooo.ooo
+    o.o.To...oTo.T.o
+    o...oooo...o.o.o
+    o.o.D..o.ooo...o
+    o.oooo*.......oo
+    o.!..ooo.oooo..o
+    ooo#.o....o....o
+    o...oo.oooo.oooo
+    oTo.o%.oT......o
+    oooooooooooooooo
+    [additional]
+    3
+    9.3.}.0.0.0.0.1.1
+    0.9.}.0.0.1.0.0.0
+    14.15.M.2
+    [end]
+
+
+    [level]
+    12
+    [colour]
+    101010,D7D7D7,739FD6,7B7B7B,336300
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 12.27
+    [data]
+    oooooooooooooooo
+    oR#.....#...#..o
+    o#...###..#..#.o
+    o.#...#..#.#...o
+    ooo.ooooooo.oooo
+    o..#.##.#...#.'o
+    o#..T..##.#..#.o
+    oooooo#ooooooooo
+    o.#.#...#..#..%o
+    o..###...#...#.o
+    oT#..T.........M
+    o.H..#..#.#..#.o
+    o..#..##...#..To
+    ooooooooHooooooo
+    o.#.b........##o
+    o...#.###..###.o
+    ooooooooooooooDo
+    }HHbHHHHHHHHbHHo
+    }HHHHHHHbHHHHHHo
+    ooooooo.oooooooo
+    o&............&o
+    oooooooooooooooo
+    o&.....o......&o
+    oooooo.o.ooooooo
+    o...#..#.#.....o
+    oT#...##.#..b.#o
+    oooooooooooooo.o
+    oV..#bb##bb##H.o
+    o.!.b?b&b??bbb.o
+    o...#bbbb#@*##.o
+    oooooooooooooooo
+    [additional]
+    7
+    0.17.}.0.0.1.0.0.0
+    0.18.}.0.0.1.0.0.0
+    1.20.&.1.0
+    14.20.&.2.0
+    1.22.&.2.1
+    14.22.&.1.1
+    15.10.M.2
+    [end]
+
+
+    [level]
+    13
+    [colour]
+    484848,B6B6B6,549A40,601721,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc?
+    [level_notes]
+    Removed a life from 11.13
+    [data]
+    yyyyyyyyyyyyyyyy
+    y......y...y.y#y
+    y.HTHH.y.y..#..y
+    y..#...&..#..y.y
+    y#.H.HHy.yy##..y
+    y.HH...M.y#..#yy
+    y....HHy.y.#.T#y
+    y#.#...y.y#yy#&y
+    yHHTH..y.....#.y
+    y.#.#.Hyyyyyyyyy
+    y!.#.##H...H.HTy
+    y.#T#....H.....y
+    y#.#.#y&yyyyyyyy
+    y.#.#.y.y%....&y
+    yyyyyyy.yyyyyyyy
+    y#......y......y
+    y....#?.y.##.y.y
+    y.y}....y.##.y.y
+    y.y.......@..y.y
+    y...yyyyyyyyyy.y
+    y.y.yTHHH.Hy.y.y
+    y...y#H#H#.y.y.y
+    y.y.y#HH#THy^y.y
+    y...yH.HHHHy.y.y
+    yyy.y#H#HH#y.y.y
+    yT..yHHH.HHH...y
+    y.y.yyyyyyyyyyyy
+    y......y..#y...y
+    yyy..#...R.D.'.y
+    yT.^...y#..y...y
+    yyyyyyyyyyyyyyyy
+    [additional]
+    8
+    3.29.^.1.1.0
+    12.22.^.1.1.0
+    3.17.}.0.0.0.0.0.0
+    7.12.&.1.0
+    14.13.&.2.0
+    7.3.&.3.0
+    14.7.&.2.1
+    7.5.M.2
+    [end]
+
+
+    [level]
+    14
+    [colour]
+    185A69,A5F4CA,964C56,2E2E2E,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc?
+    [data]
+    yyyyyyyyyyyyyyyy
+    y.............%y
+    y........yyy...y
+    }...!....#Ry...y
+    y........yyy...y
+    y........@.....y
+    y^.............y
+    yyyy.yyyyyy.yyyy
+    ---y.y----y.y---
+    ---y.y----yDy---
+    ---y.y-yyyy.yyyy
+    ---yDy-y..T.T..y
+    ---y.y-y.yyyyy.y
+    ---y.y-y.@.@.@.y
+    ---y.y-y.yyyyy.y
+    ---y.y-y..T.T..y
+    ---y.y-yyyyyyyyy
+    ---y.y----------
+    yyyy.yyyyyyyyyyy
+    y........y.....y
+    y.yyyyyy.y.yy..y
+    y.y..T....#..*.y
+    y...y.yyyy.yyy.y
+    yyy.y.y...#.y..y
+    y..#y.yy.yy.yT.y
+    y.y....y#.?...#y
+    yHyyy....y.yyyyy
+    y...yyyyyy.y%..y
+    y.&.y'..Ty.y.&.y
+    y...y......y...y
+    yyyyyyyyyyyyyyyy
+    [additional]
+    4
+    0.3.}.0.0.1.0.0.0
+    1.6.^.0.0.0
+    2.28.&.1.0
+    13.28.&.1.1
+    [end]
+
+
+    [level]
+    15
+    [colour]
+    101010,D7D7D7,739FD6,964C56,21670E
+    [size]
+    16.31
+    [author]
+    Janusz Pelc?
+    [level_notes]
+    Removed a life from 5.22
+    [data]
+    yyyyyyyyyyyyyyyy
+    yR.T.H.........y
+    y#HH.H.HHHHHH.Hy
+    y.H..H...HT@H..y
+    y.HH...H.HH.HH.y
+    y..H#HHH..H.HH.y
+    y.THHH...HH....y
+    y.HH.H.H....HH.y
+    y#.....H..H.HHTy
+    yy#yyyyyyyyyyyyy
+    y#..y%.'y?..y.yy
+    yT.Ty...D...D..y
+    y.#.y&..y..&y.yy
+    yy#yyyyyyyyyy.yy
+    y..............y
+    y#........#.y.yy
+    yT.##.y.b......y
+    y.#.##y..b..y.yy
+    y.##..y........y
+    yyy.yyyyyyyyy}yy
+    --y...D....Tyyyy
+    yyy.yyyyyyy...#y
+    y..&......y.}..y
+    y.yyyyyyy.yy.y.y
+    y.y....Ty.Ty..Ty
+    y.y.....yyyy.yyy
+    y.y........y..?y
+    y.yy.*.....y.yyy
+    y.}yyyyyyy.y...y
+    y.......!y&..yTy
+    yyyy}y}yyyyyyyyy
+    [additional]
+    9
+    3.22.&.1.0
+    10.29.&.2.0
+    4.30.}.3.3.0.0.0.0
+    6.30.}.3.3.0.0.0.0
+    2.28.}.2.2.0.0.0.0
+    12.22.}.0.0.0.0.1.1
+    5.12.&.3.0
+    11.12.&.3.1
+    13.19.}.3.3.1.0.0.0
+    [end]
+
+
+    [level]
+    16
+    [colour]
+    21670E,989898,4E7E11,601721,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc?
+    [level_notes]
+    Removed a life from 7.23
+    [data]
+    yyyyyyyyyyyyyyyy
+    yy..TyyyTV..bR.y
+    yy...yyy...b...y
+    yy&..yyy.y.....y
+    yyyyyyyy....y..y
+    yyyyyyyy..by..by
+    yT..bb........Ty
+    y.y...b.b.yyy.yy
+    y...b...b.yy...y
+    y.b.###.T.yy.y.y
+    yb..#!#by.yy.y.y
+    y..b###........y
+    yb.......byyyyyy
+    y....byTb.y..y&y
+    y'.bb..bT.y..y.y
+    yyyyyyyyy.y.Vy.y
+    y.V..yyyy.y..y.y
+    y....&..y.y..y.y
+    y....yy.y&y..y.y
+    y....yy.yyyyyy.y
+    y....yy........y
+    y....yyyyyyyyyyy
+    y&yyyyT...#.#..y
+    y.y&y#.x#T.Ty.#y
+    y.y.y.##T#Ty%..y
+    y.y...T.#.#.yy.y
+    y.yDy.##.#T#T..y
+    y.y.yyyTyyy.yy.y
+    y.y......y....^y
+    y.............}y
+    yyyyyyyyyyyyyyyy
+    [additional]
+    8
+    9.18.&.1.0
+    14.13.&.1.1
+    5.17.&.2.0
+    1.22.&.2.1
+    3.23.&.3.0
+    2.3.&.3.1
+    14.28.^.3.3.0
+    14.29.}.2.2.1.0.0.0
+    [end]
+
+
+    [level]
+    17
+    [colour]
+    2E2E2E,B2DEFF,964C56,336300,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    SSSSSSSSSSSSSSSS
+    S.#..S#.#.S.#'.S
+    S...#S...#S..#.S
+    S.##..T##..#...S
+    ST#.#S###.S...#S
+    S#...S.T..S.#.TS
+    SS.SSSSSS.SS.SSS
+    S#.#.S#..#S.#..S
+    S.##TS.b..S#.#.S
+    S##.#S#.R.S....S
+    ST.S.S...#.#.##S
+    S..T.S!##.S....S
+    SS#SSSS.SSSS.SSS
+    S...#S.#..S...#S
+    S.#..S..##S##..S
+    Sb#.#..##TS...#S
+    S##%#ST...S..#.S
+    S.T#.S.#.###..#S
+    SSSSSSSSSS#SSSSS
+    SbbT&S..#.....#S
+    Sbb..S.#....##TS
+    Sbb..S.##.S...#S
+    S##bbS.#.#Sb#..S
+    ST#bbS#...ST...S
+    SSSSSSSS.SSSSDSS
+    S...&S....S&...S
+    S.SSSS.##.S##H#S
+    S.D..S#...S.#H.S
+    SSSS.S#.#.##..#S
+    S&...ST...S.T#.S
+    SSSSSSSSSSSSSSSS
+    [additional]
+    4
+    4.25.&.1.0
+    11.25.&.1.1
+    1.29.&.2.0
+    4.19.&.2.1
+    [end]
+
+
+    [level]
+    18
+    [colour]
+    2E2E2E,B2DEFF,964C56,336300,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    SSSSSSSSSSSSSSSS
+    S.}..S.T.}S.}.TS
+    S....S....S....S
+    S}............}S
+    S....S....S....S
+    S...TS....S....S
+    SSDSSSSSS.SS.SSS
+    SbbbbS....S....S
+    SbbbbS.T..S....S
+    SbbHHS....S..T.S
+    SbbSTS}........S
+    SbbH!SR...S....S
+    SS#SSSS.SSSS.SSS
+    S%..TS...TS....S
+    S....S....S....S
+    S........}S..T.S
+    S....S....S....S
+    S.}.%S.}....}..S
+    SSSSSSSSSS.SSSSS
+    S....S..}......S
+    S.&..S........}S
+    S....S.T..S....S
+    S..T.S....S.T..S
+    S....S....S....S
+    SSSSSSSS.SSSS.SS
+    S...&S....S&...S
+    S.SSSS.T..S....S
+    S.D..S....S...TS
+    SSSS.S}........S
+    S&..TS....S..}.S
+    SSSSSSSSSSSSSSSS
+    [additional]
+    18
+    2.1.}.1.1.1.0.0.0
+    9.1.}.1.1.1.0.0.0
+    12.1.}.1.1.1.0.0.0
+    14.3.}.2.2.1.0.0.0
+    1.3.}.0.0.1.0.0.0
+    6.10.}.0.0.1.0.0.0
+    9.15.}.2.2.1.0.0.0
+    2.17.}.3.3.1.0.0.0
+    7.17.}.3.3.1.0.0.0
+    12.17.}.3.3.1.0.0.0
+    8.19.}.1.1.1.0.0.0
+    14.20.}.2.2.1.0.0.0
+    6.28.}.0.0.1.0.0.0
+    13.29.}.3.3.1.0.0.0
+    11.25.&.1.0
+    1.29.&.1.1
+    4.25.&.2.0
+    2.20.&.2.1
+    [end]
+
+
+    [level]
+    19
+    [colour]
+    2E2E2E,DDAE7C,3E6AA2,7A313B,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    SSSSSSSSSSSSSSSS
+    S....ST...S....S
+    S....S....S....S
+    S.T.......^.T..S
+    S....S....S....S
+    S....S....S....S
+    SS^SSSSSS.SS.SSS
+    S....S....S....S
+    S..T.S....S....S
+    S....S.T..S..T.S
+    S...RS.........S
+    S....S....S....S
+    SS.SSSS^SSSS^SSS
+    S....S....S....S
+    S....S....S....S
+    S.T.......S.T..S
+    S....S..T.S....S
+    S....S.........S
+    SSSSSSSSSS.SSSSS
+    S...!S....^....S
+    S.&..S.T.......S
+    S....S....S..T.S
+    S..T.S....S....S
+    S....S....S....S
+    SSSSSSSS^SSSS.SS
+    S...&S....S&...S
+    S.SSSS....S....S
+    S.T..S.T..S....S
+    SSSS.S....S..T.S
+    S&...S....S....S
+    SSSSSSSSSSSSSSSS
+    [additional]
+    10
+    8.24.^.1.1.0
+    11.25.&.1.0
+    4.25.&.2.0
+    1.29.&.1.1
+    10.19.^.0.0.0
+    2.20.&.2.1
+    7.12.^.1.1.0
+    12.12.^.1.1.0
+    2.6.^.1.1.0
+    10.3.^.0.0.0
+    [end]
+
+
+    [level]
+    20
+    [colour]
+    336300,AE7DEA,347584,601721,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 2.2
+    [data]
+    SSS'SSSSSSSSSSS
+    S&.R..bbbSbbbbS
+    SbbbbS..bSb..bS
+    SbbbbS..bbb..bS
+    #bbbbS...S...bS
+    SbbbbSbbbS..b.S.
+    SSSSSS..........
+    SSbSSSSSSbSSbSSS
+    SbbbbSbbbbSbbbbS
+    SbbbbSb...Sb..bS
+    Sb...Sb...Sb..bS
+    Sb...Sb....b..bS
+    Sbb..S.b..SbbbbS
+    SSbSSSSbSSSSbSSS
+    Sbb..S..bbS.bbbS
+    Sb...S...bS...bS
+    Sb.bbbb..TS...bS
+    Sb.b.Sb###S...bS
+    Sbbb.Sb#!#..bbbS
+    SSSSSSSSSS.SSSSS
+    S..b....b..##..S
+    S.&..S#bb###.b.S
+    S....S.bb.S.bb.S
+    S..'...bb.S.bb#S
+    S....S##b.S##..S
+    SSSSSSSSbSSSS'SS
+    S...&S#.b.S&...S
+    S.SSSS.bb#SbbbbS
+    S...bS.bb.SbbbbS
+    SSSS.S.bb.#bbbbS
+    S&...S....SbbbbS
+    SSSSSSSSSSSSSSSS
+    [additional]
+    4
+    1.29.&.2.0
+    4.25.&.1.1
+    2.20.&.1.0
+    11.25.&.2.1
+    [end]
+
+
+    [level]
+    21
+    [colour]
+    101010,B6B6B6,739FD6,5E1C0E,336300
+    [size]
+    16.31
+    [author]
+    Janusz Pelc TODO texture
+    [data]
+    yyyyyyyyyyyyyyyy
+    yR.........D...y
+    y...TT.....y.&.y
+    y'.yyyy@...y...y
+    y........?.yyyyy
+    yyyyyy........%y
+    y....yT...}....y
+    y.!..yyy....}..y
+    y.....&y......Ty
+    yyyyyyyyyyyyyyyy
+    ................
+    ................
+    ......????......
+    .....??..??.....
+    .........??.....
+    ........??......
+    .......??.......
+    ................
+    .......??.......
+    ................
+    ................
+    yyyyyyyyyyyyyyyy
+    y....&y.......Ty
+    y.&.yyy.....}..y
+    y...yT....}....y
+    yyyyy.........%y
+    y........?.yyyyy
+    y'.yyyy*...y...y
+    y...TT.....y.&.y
+    &..........D...y
+    yyyyyyyyyyyyyyyy
+    [additional]
+    10
+    7.3.@.2
+    7.27.@.2
+    13.2.&.1.0
+    6.8.&.3.1
+    0.29.&.1.1
+    12.7.}.0.0.0.0.1.1
+    10.6.}.0.0.0.0.1.1
+    12.23.}.0.0.0.0.1.1
+    10.24.}.0.0.0.0.1.1
+    13.28.&.2.0
+    5.22.&.2.1
+    2.23.&.3.0
+    [end]
+
+
+    [level]
+    22
+    [colour]
+    002131,A5F4CA,66B58B,194900,185A69
+    [size]
+    16.31
+    [data]
+    yyyyyyyyyyyyyyyy
+    yyy}.y#........y
+    yyy..y..yTyyyy.y
+    yR...y.....@...y
+    yyy..y........#y
+    yyy..yyyy.yyyy.y
+    y}...HHHHHHHHHTy
+    y}...HHHHHHHHyTy
+    y}...HHHHHHHHHTy
+    yyy..yyyy.yyyy.y
+    yyy..y..#.....#y
+    y....y.y.yyy.y.y
+    y....y.#.....##y
+    y}...y.yy.y#.y.y
+    y....y#.y.yy...y
+    y....y.yy....y#y
+    y....y.........y
+    y....yyyyM...Myy
+    y}.....y......Ty
+    y......y.......y
+    y..T...y.......y
+    y.yyy..y^......y
+    y......yT.....#y
+    y......yyyy.yyyy
+    y.#.#...#.y...%y
+    yH.b.#.#..yyyyyy
+    y..##...#HyHHHHy
+    y##..H#...yHH!Hy
+    y}......#.DHHHHy
+    y.H.##.HH.yHHHHy
+    yyyyyyyyyyyyyyyy
+    [additional]
+    10
+    3.1.}.1.1.1.0.0.0
+    1.6.}.0.0.2.0.0.0
+    1.7.}.0.0.2.0.0.0
+    1.8.}.0.0.2.0.0.0
+    1.13.}.0.0.1.0.0.0
+    1.18.}.0.0.1.0.0.0
+    9.17.M.0
+    13.17.M.2
+    8.21.^.0.0.0
+    1.28.}.0.0.0.0.0.0
+    [end]
+
+
+    [level]
+    23
+    [colour]
+    101010,B6B6B6,347584,00404F,484848
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    yyyyyyyyyyyyyyyy
+    y......}......!y
+    y.yyyy#.#yyyyyyy
+    y..............y
+    yyyyy.y.yyyy.y.y
+    y..............y
+    y.y.yyy.yy.y.yyy
+    y..............y
+    yyyy.yy.yy.yyy.y
+    y..............y
+    y.yy.yy.yyy.y.yy
+    y..............y
+    yyy.y#y.yyy.yy.y
+    y..............y
+    y.y.M......M.y.y
+    y..............y
+    yyy.yyy.yyy.yyyy
+    y..............y
+    y..yyy....yyy..y
+    y..............y
+    y..............y
+    y...?.......?..y
+    y..............y
+    y.?........?...y
+    y.....y.y......y
+    yyyyyyy.yyyyyyyy
+    y.....y.y......y
+    y..............y
+    y.b..........R.y
+    y..............y
+    yyyyyyyyyyyyyyyy
+    [additional]
+    3
+    7.1.}.1.1.1.0.0.0
+    4.14.M.0
+    11.14.M.2
+    [end]
+
+
+    [level]
+    24
+    [colour]
+    002A00,AE7DEA,4B8C9C,484848,004A21
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 4.24
+    [data]
+yyyyyyyyyyyyyyyy
+yRy.yT.y.y.....y
+y.y.yy.y...yyy.y
+y..#.....y.y.y*y
+yyyy.yy.yyyy...y
+y..y..y....yyy.y
+yy...yy.yy...y.y
+yT.y@...y..y.y.y
+yyyyy.yyy.yyyy.y
+y...........yT.y
+y.yy.y.yyyy.yyyy
+y..yyy.Ty.y....y
+yy...y.yy.yyyy.y
+y..y.y..y..Ty..y
+yyyy.yy.y.yyy.yy
+y.......y......y
+y.yyyyyyyyyyyy.y
+y.y.y...y..y...y
+y..@..!.yy...yTy
+y.yTy...y..yyyyy
+yyyyyyy.yy.y.y'y
+y....y...T...y.y
+y.yy...y.yyy.y.y
+y..yyyyy..y..y.y
+yy...y...yyy.y.y
+y..yyy.y.Ty..y.y
+y.yyTy.yyyy.yy.y
+y..y........y..y
+y.yyyy.yyy.yyy.y
+y...........*..y
+yyyyyyyyyyyyyyyy
+    [additional]
+    0
+    4.7.@.2
+    14.3.*.1
+    [end]
+
+
+    [level]
+    25
+    [colour]
+    484848,B6B6B6,739FD6,601721,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 1.19
+    [data]
+    ..yyyyy&yyyyy...
+    ..yy#.....#yy...
+    ..y&....R..&y...
+    ..yy.##....yy...
+    ..yyyyyyyyyyy...
+    ................
+    ..YYYYY..YYYYYYY
+    ....YYY..YYY..YY
+    YY..YYY..YYYYYYY
+    YYYYYYY..YYY....
+    ................
+    yyyyyyyyyyyyyyyy
+    y...y......y...y
+    y.&.y...?..y.&.y
+    y...y....T.y...y
+    y...y......y...y
+    yyDyyyy.yyyy...y
+    y%...Ty.y'.D...y
+    yyyyyyy.yyyy...y
+    y..T^.........Ty
+    yyyyyyyyyyy.yyyy
+    y.........y.y.!y
+    y..T....}.y.y..y
+    y..}....T.y.yy.y
+    y....y....y.y..y
+    y..yyy#yyyy.y.yy
+    y..yM...%...y..y
+    y..yyyyyyyyyyyHy
+    y..y...y...y...y
+    y&...y...y...yTy
+    yyyyyyyyyyyyyyyy
+    [additional]
+    10
+    7.0.&.1.0
+    3.2.&.2.0
+    11.2.&.3.0
+    2.13.&.2.1
+    13.13.&.3.1
+    4.19.^.0.0.0
+    8.22.}.2.2.2.0.0.0
+    3.23.}.0.0.2.0.0.0
+    4.26.M.0
+    1.29.&.1.1
+    [end]
+
+
+    [level]
+    26
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    yyyyyyyyyyyyyyyy
+    yTTTT..y....y.&y
+    y....y.........y
+    y....yy..Y#Y..yy
+    y....y..YY.YY..y
+    y....y.YY...YY.y
+    y....y.#..!..#@y
+    y....y.YY...YY.y
+    y....y..YY.YY..y
+    y....yy..Y#Y..yy
+    y....y....@....y
+    y....y..y....y.y
+    y.......y....y.y
+    y....yyyyyyy.yyy
+    y....y'..y&..y^y
+    y....y.......y.y
+    y....y..y.y..y.y
+    y....yyyy.yyyy.y
+    y......&y.y&..&y
+    y^^^^yyyy.yyyy.y
+    y^^^^y.......y.y
+    y....y.bbbbb.y.y
+    y....y.......y^y
+    y....yyyy.yyyyyy
+    y....y..y.y...Ty
+    y....y...&.....y
+    y....y.yyyyyyyyy
+    y....y.........y
+    y....yyyyyyyyy.y
+    y.........R....y
+    yyyyyyyyyyyyyyyy
+    [additional]
+    16
+    10.10.@.3
+    14.6.@.3
+    14.1.&.1.0
+    10.14.&.1.1
+    7.18.&.2.0
+    11.18.&.2.1
+    14.18.&.3.0
+    9.25.&.4.0
+    14.22.^.0.0.0
+    14.14.^.0.0.0
+    1.19.^.3.3.0
+    2.19.^.3.3.0
+    3.19.^.3.3.0
+    4.19.^.3.3.0
+    1.20.^.1.1.0
+    2.20.^.1.1.0
+    3.20.^.1.1.0
+    4.20.^.1.1.0
+    [end]
+
+
+    [level]
+    27
+    [colour]
+    484848,989898,4B8C9C,194900,241500
+    [size]
+    16.31
+    [author]
+    Janusz Pelc //big changes, investigate
+    [data]
+    yyyyyy..........
+    y'...yy.........
+    y.....yyyyyy....
+    yy......^..yyyyy
+    .yy.T...^......y
+    ..y.....^..T...y
+    .yy.....^.....yy
+    yy......yyyyyyy.
+    y.....yyy.......
+    yDDDDDy.........
+    y.....yyyyyy....
+    yy.........yyy..
+    .yy..........yyy
+    ..yyy..yyy.....y
+    ....y#.y.yy..R.y
+    ...yy.#y..y....y
+    ...y...yy.y..yyy
+    .yyy##..y.y.yy..
+    yy.....yy.yTy...
+    y.....yy..yyy...
+    y.....y.........
+    y.....yyy.yyyy..
+    yy.}....yyy..yyy
+    .y...}.......#.y
+    .yy....}.....#.y
+    ..y}..!....yyy&y
+    ..yy.}..}..y.y.y
+    ...y...}..yy.y.y
+    ...y......y..y.y
+    ...yy&...yy..y%y
+    ....yyyyyy...yyy
+    [additional]
+    13
+    8.3.^.1.1.0
+    8.4.^.3.3.0
+    8.5.^.1.1.0
+    8.6.^.3.3.0
+    5.29.&.1.0
+    14.25.&.1.1
+    5.26.}.0.0.0.0.1.1
+    8.26.}.0.0.0.0.1.1
+    7.27.}.0.0.0.0.1.1
+    3.25.}.0.0.0.0.1.1
+    7.24.}.0.0.0.0.1.1
+    5.23.}.0.0.0.0.1.1
+    3.22.}.0.0.0.0.1.1
+    [end]
+
+
+    [level]
+    28
+    [colour]
+    002A00,AE7DEA,4B8C9C,484848,004A21
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 14.26
+    [data]
+    ......yyyy......
+    .yyyyyy^^yyyyyy.
+    .y............y.
+    .y.&........&.y.
+    .y............y.
+    .yyyyyy..yyyyyy.
+    ......y..y......
+    ...YYYy..yYYY...
+    YYYY..y..y..YYYY
+    Y.....y..y.....Y
+    Y.....y..y.....Y
+    Y.yyyyy..yyyyy.Y
+    Y.y..........y.Y
+    YYy.T......%.yYY
+    ..y..........y..
+    yyyyyyyyyyyyyyyy
+    y&...&..#..&.R.y
+    yyyyyyyyyyyyyyyy
+    ................
+    .yyyyy..........
+    .y...y..........
+    .y.&.y...yyyyyyy
+    .y...y...y.....y
+    .yyy.y...y^yyy.y
+    ...y.yy}yy.yyy.y
+    yyyy.y...y...y.y
+    }....y...y.y&..y
+    }....y...y.y.yyy
+    yyyy.y...y.y.!.y
+    ...y.....D.y...y
+    ...yyyyyyyyyyyyy
+    [additional]
+    13
+    0.27.}.0.0.2.0.0.0
+    0.26.}.0.0.2.0.0.0
+    7.24.}.1.1.2.0.0.0
+    3.21.&.1.0
+    1.16.&.1.1
+    5.16.&.2.1
+    3.3.&.2.0
+    12.3.&.3.0
+    11.16.&.3.1
+    12.26.&.4.0
+    10.23.^.1.1.0
+    7.1.^.1.1.0
+    8.1.^.1.1.0
+    [end]
+
+
+    [level]
+    29
+    [colour]
+    336300,B6B6B6,739FD6,5E1C0E,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 1.11
+    [data]
+    ssssssssssssssss
+    s##....s#.#s...s
+    s^.........~.R.s
+    s#.....s.#.s...s
+    sss.ssssssss.sss
+    }......s%...&..s
+    ssss.sss.#.s.s.s
+    sT.....s...s.s.s
+    sss.ss.s#T..&..s
+    }....s.sssssssss
+    ssss.s.s...s...s
+    sx...s...s...s.s
+    ssssssssssss.s.s
+    s.....ss.....s.s
+    s.....ss.*...s.s
+    s..Ts....sT..s.s
+    s..ss.HH.ss..s.s
+    s..@..HH.....s.s
+    sss.HHHHHH.sss.s
+    sss.HHHHHH.sssDs
+    s.....HH.*...s.s
+    s..ss.HH.ss..s.s
+    s..Ts....sT..s.s
+    s..@..ss.....s.s
+    sT....ss....Ts.s
+    ssssssssssssss.s
+    s...bbbbbbbbbb.s
+    s.!.bbbb.....~.s
+    s.T.bbbb.TT..#.s
+    s...bbbbbbbbbb.s
+    ssssssssssssssss
+    [additional]
+    5
+    12.5.&.1.0
+    12.8.&.2.0
+    0.5.}.0.0.0.0.0.0
+    0.9.}.0.0.0.0.0.0
+    1.2.^.1.1.0
+    [end]
+
+
+    [level]
+    30
+    [colour]
+    00404F,A5F4CA,66B58B,7A313B,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    ssssssssssssssss
+    s...#..~.......s
+    s.R..#.s...T.s.s
+    s...###s.~#..s.s
+    s......s...#.s.s
+    sT.....~.......s
+    ssssssss..~..s.s
+    s..#b..#.....s.s
+    s..#b......~.s.s
+    s..#b........s.s
+    s..#bT....#.Ts.s
+    s..sssssssssss.s
+    s..s.*.......s.s
+    s..s.ss.s.'T.s.s
+    s..s.ss.ssssss.s
+    s.......s}s}s..s
+    s...sssss.s.s..s
+    s...s...s.s.s..s
+    s#~#s.%.s.s.s..s
+    s...s..........s
+    ss.sssssssssssss
+    s...s.}}}..s...s
+    s...s......s.T.s
+    s...s.....!s.T.s
+    s...s.ssssss.T.s
+    s...s......s...s
+    ss.ss...bs.ssDss
+    s....~.........s
+    s.sss..T.s.sss.s
+    s....~.....@...s
+    ssssssssssssssss
+    [additional]
+    5
+    9.15.}.1.1.2.0.0.0
+    11.15.}.1.1.2.0.0.0
+    6.21.}.1.1.1.0.0.0
+    7.21.}.1.1.1.0.0.0
+    8.21.}.1.1.1.0.0.0
+    [end]
+
+
+    [level]
+    31
+    [colour]
+    484848,B6B6B6,347584,194900,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    sssssssssssss---
+    s...s...s%..s---
+    s.R.s.&.s...s---
+    s...s...s...s---
+    s#..s..Ts^..s---
+    s#.#s..Ts...s---
+    s#.#sT'#s...s---
+    s.#.s##.s...s---
+    sT..s...s...s---
+    s#.#s#.#D...s---
+    s.#.s#..s...s---
+    s#..s.##sss.s---
+    s#..s.#.s-sTs---
+    s.T#sT.#s-sTs---
+    s.#.s.#.s-sTs---
+    s#.#s#.Ts-sDs---
+    s.#.s.#.s-s.ssss
+    s%.#s#.#s-s....s
+    s##.s#T.s-ss.~.s
+    s.#.s.#.s--s.#.s
+    s#......s--s...s
+    sssssssss--ss.ss
+    ------------s.s-
+    sssssssssssss.ss
+    s...H.#..#.....s
+    s.!.H.b##...#..s
+    s...H..#T.##.#Ts
+    sHHHH.#.#..HH#Hs
+    s..#.#...#.H...s
+    sT#..T##..TH.&.s
+    ssssssssssssssss
+    [additional]
+    3
+    6.2.&.1.0
+    13.29.&.1.1
+    9.4.^.1.1.0
+    [end]
+
+
+    [level]
+    32
+    [colour]
+    194900,AE7DEA,4B8C9C,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 9.13
+    [data]
+    ssssssssssssssss
+    sT...ssssss....s
+    s.ss#..T....ss.s
+    s....ssssss.ssTs
+    ssss.ssssss.ss.s
+    s...&..#.ss.ss.s
+    s.ssssss.ss.ss.s
+    s.ssssss.R.&ss.s
+    s....sss.ss.ss.s
+    ssss.sss.ss.ss.s
+    ssss&....ss....s
+    ssssTss.ssss.sss
+    s....ss.ssss.sss
+    s.sssss&...T&sss
+    s.sssss.ssss.sss
+    s.sssss.ssss.sss
+    s..............s
+    s.ss.ss.ss.sss.s
+    s.ss.ss.ss.sss.s
+    s.ssT.....T..#.s
+    s.ssssssss.sss.s
+    s.ssssssss.sss.s
+    sTss.......s...s
+    s.ss.sssssss.sss
+    s.ssTsssssss.sss
+    s&....*......sss
+    ssTss.ss.sssssss
+    sT&.s....s.....s
+    s.s.ssssss.T.!.s
+    s..............s
+    ssssssssssssssss
+    [additional]
+    7
+    11.7.&.1.0
+    12.13.&.2.0
+    7.13.&.3.0
+    2.27.&.4.0
+    1.25.&.5.0
+    4.10.&.6.0
+    4.5.&.7.0
+    [end]
+
+
+    [level]
+    33
+    [colour]
+    484848,B6B6B6,739FD6,5E1C0E,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    zzzzzzzzzzzzzzzz
+    z&.....#....R.&z
+    zzzz.zzzzz.zzzzz
+    z^.............z
+    z........HHH...z
+    zHHH.....HTH...z
+    zHTH.HHH.HHH...z
+    zHHH.HTH.......z
+    z....HHH.H.HHH.z
+    z........b.HTH.z
+    z..........HHH.z
+    z#zzzzzzzzzzzzzz
+    z#....z%.z...~.z
+    z..!..z..z.z.z.z
+    z.M#M....z.~.~.z
+    z.....z......z.z
+    zzzzzzz..z.~~..z
+    ------z&...z.z.z
+    zzz---zzzzzzzzzz
+    z&z-------------
+    z.z--zzzzzzzzzz-
+    z.z--zT.D.DT.%z-
+    z.z--zzzz.zzzzz-
+    z.z-----z.z-----
+    z.z-zzzzz.zzzzz-
+    z.z-z}........z-
+    z.z-z.........z-
+    z.z-z}........z-
+    z.z-zzzzzz.zzzz-
+    z&z------z&z----
+    zzz------zzz----
+    [additional]
+    11
+    1.1.&.1.0
+    14.1.&.2.0
+    1.19.&.2.1
+    7.17.&.1.1
+    1.29.&.3.0
+    10.29.&.3.1
+    5.27.}.0.0.1.0.0.0
+    5.25.}.0.0.1.0.0.0
+    2.14.M.2
+    4.14.M.0
+    1.3.^.0.1.1
+    [end]
+
+
+    [level]
+    34
+    [colour]
+    185A69,D7D7D7,66B58B,636363,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    zzzzzzzzzzzzzzzz
+    z^....##.......z
+    z............R.z
+    z..............z
+    z.........#....z
+    z............#.z
+    z........#.....z
+    z.T...}........z
+    z.....zHHHHHHHHz
+    z.....z...zz...z
+    z.....z.T.zz.T.z
+    z...T.z...zz...z
+    z.....zzzzzzzzzz
+    z..............z
+    z.....zzzzz#zz.z
+    z.....z...z....z
+    z.....&.b.D.zz.z
+    z..T..z...z....z
+    z.....zzzzz#zz.z
+    z..............z
+    z.....zzzzz.zzzz
+    z..T..z........z
+    z.....z......T.z
+    z.#...z.^^.....z
+    z.....z..^^....z
+    zT....z...^^...z
+    z...T.z....^^..z
+    z.....z.....^^.z
+    z.#...z.%......z
+    z....Tz.......!z
+    zz}zzzzzzzzzzzzz
+    [additional]
+    14
+    6.16.&.1.0
+    1.1.^.0.1.1
+    6.7.}.3.3.0.0.0.0
+    2.30.}.3.3.0.0.0.0
+    8.23.^.2.0.0
+    9.24.^.2.0.0
+    10.25.^.2.0.0
+    11.26.^.2.0.0
+    12.27.^.2.0.0
+    9.23.^.0.0.0
+    10.24.^.0.0.0
+    11.25.^.0.0.0
+    12.26.^.0.0.0
+    13.27.^.0.0.0
+    [end]
+
+
+    [level]
+    35
+    [colour]
+    636363,B6B6B6,185A69,074D00,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    zzzzzzzzzzzzzzzz
+    z....z^z.......z
+    z....z.z..z.z..z
+    z.R..z.z..z.z..z
+    z.........z^z..z
+    zzzzzzzzzzzzz..z
+    z^.............z
+    z..............z
+    z....###.......z
+    z.....b.......!z
+    zDDDDzzzzzzzzzzz
+    z.....#bbb#.z.Vz
+    z......TTb#.z..z
+    z...#..TTb#.z..z
+    zbbbbbbbbb#.z..z
+    zzzzzzzzzzz&zzzz
+    z.............@z
+    z..............z
+    z..............z
+    z...z.z.z.z*...z
+    z....z...z.....z
+    z......@.......z
+    z......z.......z
+    z.....z....z*..z
+    z...Tz....z....z
+    z...z....z.....z
+    z.......zT.....z
+    zz@...........Tz
+    zTz..T.........z
+    z..............z
+    zzzzzzzzzzzzzzzz
+    [additional]
+    7
+    11.15.&.1.0
+    6.1.^.1.1.0
+    11.4.^.3.3.0
+    1.6.^.0.1.1
+    11.19.*.1
+    12.23.*.1
+    7.21.@.3
+    [end]
+
+
+    [level]
+    36
+    [colour]
+    194900,AE7DEA,4B8C9C,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 13.29
+    [data]
+    ---------------&
+    -...---...---...
+    -.-.....-.---.--
+    -@---T---@....--
+    -.-.....-.---.--
+    -...---...---.--
+    --.----------.--
+    --.----------.--
+    --.----------.--
+    zz.zzzzzzzzzz.zz
+    z..............z
+    z.R............z
+    z..............z
+    z.............!z
+    z}HHHHbHHHHbHHMz
+    zzzz.zzzzzzzzzzz
+    ----.-----------
+    ----.-----------
+    -^.............-
+    ------.---------
+    ------.---------
+    zzzzzz.zzzzzzzzz
+    z......#T..z...z
+    z.zzzzz..z...z.z
+    z.z...z.zzzzzz.z
+    z.z.z.zTz......z
+    z.z.z.zzz.zzzzzz
+    z...z.....z...&z
+    zzzzzzzzzzz.zzzz
+    }HHHHHHHHHHHHHTz
+    zzzzzzzzzzzzzzzz
+    [additional]
+    8
+    14.14.M.2
+    15.0.&.1.0
+    14.27.&.1.1
+    1.14.}.0.0.1.0.0.0
+    0.29.}.0.0.1.0.0.0
+    1.18.^.0.0.0
+    1.3.@.1
+    9.3.@.3
+    [end]
+
+
+    [level]
+    37
+    [colour]
+    101010,989898,3E6AA2,5E1C0E,336300
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    JJJJJJJJJJJJJJJJ
+    J...J.....TJ...J
+    J.R.JJ.JJJJJ.&.J
+    J....J..JJ.D...J
+    J.JJ.JJ....J.%.J
+    J.TJ.JJJJJ.J...J
+    J.JJ..TJT..JJJJJ
+    J..JJ.JJJJ....TJ
+    JJ.........JJJJJ
+    JJ.JJ.J!JT...JVJ
+    J..JJ.JJJJ.J.JVJ
+    JJ......J..J.JVJ
+    JT.JJJJ.J.JJ.JVJ
+    JJ...TJ......JVJ
+    J..JJ.J.JJJJ.JVJ
+    JJ.TJ.....JJ.JVJ
+    J......JJ....J.J
+    JJJ.JJ.JT.JJ...J
+    J......JJ.JJJ.TJ
+    J.JJJJ......J.JJ
+    J.JTJJ.JJJJ.J.JJ
+    J........J..J..J
+    JJJ.JJJJ.J.JJJ.J
+    JTJ.J.%J.......J
+    J...J.JJ.JJJJJJJ
+    JJJ......D.....J
+    J...jjjjjjj..&.J
+    JTJ.j.....j....J
+    JJJJj.&.'.jJJJJJ
+    JJJJj.....jJJJJJ
+    JJJJjjjjjjjJJJJJ
+    [additional]
+    3
+    13.26.&.1.0
+    6.28.&.1.1
+    13.2.&.1.2
+    [end]
+
+
+    [level]
+    38
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    JJJJJJJJJJJJJJJJ
+    J!.............J
+    J#HHHHHHHHHHHH#J
+    J.HHHHHHHHHHHH.}
+    J.HHHHHTHHHHHH.J
+    }.HHHHHHHHHHHH.J
+    J.HHHTHHHHHTHH.J
+    J.HHHHHHHHHHHH.}
+    J.HHHHHHTHHHHH.J
+    }.HHHHHHHHHHHH.J
+    J.HHHTH#HHHHHH.J
+    J.HHH...HHHHHH.J
+    J.HHHHHHHH#HHH.J
+    J.#THTHHHHHHH#.}
+    J.HHHHHHHHHHb#.}
+    J.#HTHHHHHHbH#.}
+    J.HHHHTHHHHHH#.J
+    J.HTHHHHHHHHH#.J
+    J.HHHTHH...HH#.J
+    J.HHHHHHHH.HH#.J
+    J.HT#HHHHH.HHH.J
+    J.HHHHHHHH.HHH.J
+    J.H'HHHH.....H.J
+    J.HHHHHHHH.##H.}
+    J.HH#HHHHH...H.J
+    J.HHHHHHHHHHHH.J
+    J.HHHHHHHHHHHH.J
+    J.HHHHHHHHH#HH.J
+    J..............J
+    J.R....#.......J
+    JJJJJJJ}JJJJJJJJ
+    [additional]
+    9
+    0.5.}.0.0.2.0.0.0
+    0.9.}.0.0.2.0.0.0
+    15.3.}.2.2.2.0.0.0
+    15.7.}.2.2.2.0.0.0
+    15.13.}.2.2.2.0.0.0
+    15.14.}.2.2.2.0.0.0
+    15.15.}.2.2.2.0.0.0
+    15.23.}.2.2.2.0.0.0
+    7.30.}.3.3.2.0.0.0
+    [end]
+
+
+    [level]
+    39
+    [colour]
+    101010,B6B6B6,4B8C9C,185A69,433300
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    JJJJJJJJJJJJJJJJ
+    J..............J
+    J.R#...~.....T.J
+    J..........~...J
+    J~...........#.J
+    J...T...~......J
+    J..............J
+    J.~...........?J
+    JJJJJHJJJJHJJJJJ
+    J......JJ......J
+    J.JJJJJJJJJJJJ.J
+    J......JJ.#....J
+    J......JJ!..J}.J
+    J......JJJJ....J
+    M....^....J.J..J
+    M.^.......J.JT.J
+    J......JJJJ.J..J
+    J......J...#...J
+    JJJJJ..J.JJ.J}.J
+    J...J..J.JT....J
+    J.&.H..J.JJJJJJJ
+    J...J..J.......J
+    JJJJJ..J.JJJJJ.J
+    JT.....J.JJJJJ.J
+    J......J.@..@..J
+    J..JJJJJJJJJJ..J
+    J.TJ....#T.#J.JJ
+    J..J.&.#T#T.J..J
+    J..J...##T.#JJ.J
+    J..J.?.#...#J'.J
+    J}}JJJJJJJJJJJJJ
+    [additional]
+    13
+    5.8.^.0.0.0
+    10.8.^.0.0.0
+    13.12.&.1.0
+    0.14.M.0
+    0.15.M.0
+    5.14.^.0.0.0
+    2.15.^.0.0.0
+    2.20.&.1.0
+    13.12.}.1.1.0.0.0.0
+    13.18.}.3.3.0.0.0.0
+    1.30.}.3.3.1.0.0.0
+    2.30.}.3.3.1.0.0.0
+    5.27.&.1.1
+    [end]
+
+
+    [level]
+    40
+    [colour]
+    101010,AE7DEA,4B8C9C,5E1C0E,15643B
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 13.3
+    [data]
+    JJJJJJJ..JJJJJJJ
+    J.....J..J.....J
+    J.-T-.JJJJ.-.-.J
+    J..-@...D..T-..J
+    J.-T-.JJJJ.-.-.J
+    J.....J..J.....J
+    JJJ.JJJ..JJJJJJJ
+    ..J.J...........
+    JJJ.JJJ.........
+    J.....J.........
+    J.-.-.J.JJJJJJJ.
+    J.%-T.J.J.....J.
+    J.-.-.JJJ.-T#.J.
+    J..........M@.J.
+    JJJJJJJJJ.#T-.J.
+    ........J.....J.
+    JJJJJJJ.JJJ.JJJ.
+    J.....J...J.J...
+    J.-T-.J.JJJ.JJJ.
+    J..-T.J.J.....J.
+    J.-@-.J.J.-.-.J.
+    J.....J.J.@-@.J.
+    JJJ.JJJ.J.-.-.J.
+    ..J.J...J.....J.
+    ..J.J...JJ.JJJJ.
+    ..J.J....J.J....
+    JJJ.JJ}JJJ.JJJJJ
+    J....J.J.......J
+    J.!..J.J.J...R.J
+    J........J.....J
+    JJJJJJJJJJJJJJJJ
+    [additional]
+    3
+    11.13.M.2
+    10.21.@.2
+    6.26.}.1.1.0.0.0.0
+    [end]
+
+
+    [level]
+    41
+    [colour]
+    336300,B6B6B6,739FD6,5E1C0E,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    ZZZZZZZZZZZZZZZZ
+    Z..............Z
+    Z&............&Z
+    ZZZZZ.....%ZZZZZ
+    M^.............M
+    Z..............Z
+    Z.#..#...#..#..Z
+    Z.}..}...}..}..Z
+    Z..............Z
+    Z.........T....Z
+    Z..T...........Z
+    Z............T.Z
+    Z.#....T...#...Z
+    Z..........?...Z
+    Z.....#.T......Z
+    Z............#.Z
+    Z........T.....Z
+    Z..............Z
+    Z...T......T...Z
+    Z.............TZ
+    Z..............Z
+    Z....ZZZZZ.....Z
+    ZT...Z...Z...##Z
+    Z....D.b.D..T#!Z
+    ZZZZZZ...ZZZZZZZ
+    -----Z...Z------
+    -----Z.&.ZZZZZ--
+    -----Z...Z...Z--
+    -ZZZZZZZZZ.R.Z--
+    -Z&..........Z--
+    -ZZZZZZZZZZZZZ--
+    [additional]
+    11
+    1.2.&.1.0
+    2.29.&.1.1
+    0.4.M.0
+    15.4.M.2
+    1.4.^.0.1.1
+    2.7.}.1.1.0.0.0.0
+    5.7.}.1.1.0.0.0.0
+    9.7.}.1.1.0.0.0.0
+    12.7.}.1.1.0.0.0.0
+    7.26.&.2.0
+    14.2.&.2.1
+    [end]
+
+
+    [level]
+    42
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    ZZZZZZZZZZZZZZZZ
+    ZR~............Z
+    ZZZZZZZZTZZZZZZZ
+    Z..............}
+    ZZZTZZZZZZTZZZZZ
+    }..............Z
+    ZZZZZZTZZZZZZZZZ
+    Z..............}
+    ZZZZTZZZZTZZTZZZ
+    }..............Z
+    ZZZZZZZZZZTZZZZZ
+    }.............TZ
+    ZZ.ZZZZZZZZZZZZZ
+    Z..#^........Z.Z
+    ZZZZZZ.ZZZZZ...Z
+    }..........Z.Z.Z
+    ZZZZZ.ZZZZZZ.Z.Z
+    }.........TZ.Z.Z
+    ZZZZZZZZ.ZZZ.Z.Z
+    --Z........}.Z&Z
+    --Z.Z.ZZZZZZ.ZZZ
+    --Z.Z.Z----Z.Z--
+    --ZTZ.Z----Z.Z--
+    ZZZZZ.ZZZZ-Z.Z--
+    Z}......}Z-Z.Z--
+    ZZZZZ.ZZZZ-Z.Z--
+    ----Z.Z----Z.Z--
+    ----Z.Z-ZZZZ.ZZZ
+    ----Z.Z-Z}....}Z
+    ----Z.Z-ZZZZ.ZZZ
+    ----Z&Z----Z!Z--
+    [additional]
+    15
+    15.3.}.2.2.0.0.0.0
+    0.5.}.0.0.0.0.0.0
+    15.7.}.2.2.0.0.0.0
+    0.9.}.0.0.0.0.0.0
+    0.11.}.0.0.1.0.0.0
+    4.13.^.0.0.0
+    0.15.}.0.0.1.0.0.0
+    0.17.}.0.0.1.0.0.0
+    11.19.}.2.2.1.0.0.0
+    14.19.&.1.0
+    1.24.}.0.0.1.0.0.0
+    8.24.}.2.2.1.0.0.0
+    5.30.&.1.1
+    9.28.}.0.0.1.0.0.0
+    14.28.}.2.2.1.0.0.0
+    [end]
+
+
+    [level]
+    43
+    [colour]
+    484848,B6B6B6,4B8C9C,194900,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    ZZZZZZZZZZZZZZZZ
+    Z#...#T#..#}#T#Z
+    Z}#...#...##...Z
+    Z#..#.#..#...#.Z
+    Z.##....#......Z
+    Z....ZZZZZZ.##.Z
+    Z.#..Z^...Z.#.#Z
+    Z#..#Z....Z#T..Z
+    Z.#..Z....Z..#.Z
+    Z....Z.!..Z.#T#Z
+    Z....Z.#..Z#.Z.Z
+    Z####Z.T..Z.#T#Z
+    Z####Z...T#....Z
+    Z....Z....Z.##.Z
+    Z...#Z..T.Z...#Z
+    Z.#..Z....Z#...Z
+    Z..#.ZT...Z..#TZ
+    Z....ZZZZZZHHHHZ
+    Z..............Z
+    Z.R.....&..bbb.Z
+    Z..............Z
+    Z##..ZZZZZZHHHHZ
+    Z....Z----Z....Z
+    Z..#.Z----Z.%%.Z
+    Z....Z----Z....Z
+    Z.#..Z----Z####Z
+    ZDDDDZ----Z....Z
+    ZT...Z----Z.T..Z
+    Z....Z----Z..&.Z
+    Z.}}.Z----Z....Z
+    ZZZZZZ----ZZZZZZ
+    [additional]
+    7
+    1.2.}.0.0.0.0.0.0
+    11.1.}.1.1.0.0.0.0
+    6.6.^.0.1.1
+    2.29.}.3.3.0.0.0.0
+    3.29.}.3.3.0.0.0.0
+    8.19.&.1.0
+    13.28.&.1.1
+    [end]
+
+
+    [level]
+    44
+    [colour]
+    194900,AE7DEA,4B8C9C,484848,002C02
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 13.24
+    [data]
+    ZZZZZZZZZZZZZZZZ
+    ZRZ?Z.ZTZ.Z.ZZZZ
+    Z.Z.Z.Z.Z.Z.ZZZZ
+    Z.Z^Z.Z^Z.Z^H..Z
+    Z.Z.Z^Z.Z^Z.ZZ.Z
+    Z.Z.Z.Z.Z.H.ZZ.Z
+    Z.Z.Z.H.Z.Z.ZZ.Z
+    Z...Z.Z.H.Z.ZZ.Z
+    Z'Z.H.Z.Z.Z.Z..Z
+    ZZZZZZZZZZZZZ.ZZ
+    Z..............Z
+    Z..Z@Z@Z@Z@Z@Z.Z
+    Z.Z.Z.Z@Z@Z@Z..Z
+    Z..............Z
+    ZZZ.ZZZ.ZZZ.ZZZZ
+    -Z...Z...Z...Z--
+    -Z.}.Z.&.Z.Z.Z--
+    -Z...Z...Z...Z--
+    -Z...ZZZZZZ.ZZZZ
+    ZZ.....Z.......Z
+    Z....T.Z.b...T.Z
+    Z.#T...Z...}...Z
+    Z.ZZZZZZZZZZZDZZ
+    Z.&....Z...Z...Z
+    Z.Z..T.Z.!.Z...Z
+    Z.Z....Z.......Z
+    Z.ZZZZZZZZZZZZZZ
+    Z.Z....Z...Z...Z
+    Z.Z..%.Z.'.D.&.Z
+    Z.&....Z...Z...Z
+    ZZZZZZZZZZZZZZZZ
+    [additional]
+    19
+    3.3.^.1.1.0
+    5.4.^.1.1.0
+    7.3.^.1.1.0
+    9.4.^.1.1.0
+    11.3.^.1.1.0
+    4.11.@.2
+    6.11.@.2
+    8.11.@.2
+    10.11.@.2
+    12.11.@.2
+    7.12.@.0
+    9.12.@.0
+    11.12.@.0
+    3.16.}.1.1.1.0.0.0
+    7.16.&.1.0
+    13.28.&.1.1
+    2.29.&.2.0
+    2.23.&.2.1
+    11.21.}.3.3.1.0.0.0
+    [end]
+
+
+    [level]
+    45
+    [colour]
+    336300,989898,4B8C9C,601721,101010
+    [size]
+    16.30
+    [author]
+    Janusz Pelc
+    [data]
+    pppppppppppppppp
+    p..............p
+    p.T....T....T..p
+    p....T....T....p
+    p}............}p
+    pppp.ppppp.....p
+    pHHHHHHHHp.....p
+    pHHHHHHHHpppDppp
+    pHHHHHHHHp.....p
+    p........p.?.!.p
+    p.#......pp....p
+    p.......#}pppppp
+    p..%%..p.pp....p
+    p..%%..D....pp.p
+    p......p..p...#p
+    pp....pp.#p#pp.p
+    pM....?p#..#.R.p
+    pM....?p.p.p.p.p
+    ppppp.pppppppppp
+    p..p...p...p...p
+    pT.D.&.D.T.D.%.p
+    p..p...p...p...p
+    pDpppDpppDpppDpp
+    p..p...p...p...p
+    p%...T.D.&...&.p
+    p..p...p...p...p
+    pDppp.pppDpppDpp
+    p..p...p...p...p
+    pT.D.&.D.T...%.p
+    pppppppppppppppp
+    [additional]
+    9
+    1.4.}.3.0.0.1.0.0
+    14.4.}.2.2.0.0.0.0
+    9.11.}.3.0.0.1.0.0
+    1.16.M.0
+    1.17.M.0
+    5.20.&.1.0
+    5.28.&.2.0
+    13.24.&.1.1
+    9.24.&.2.1
+    [end]
+
+
+    [level]
+    46
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    pppppppppppppppp
+    p...p......p...p
+    p.R.p.&..%.p.&.p
+    p.&.p......p...p
+    p...p......p...p
+    ppDppppp}ppppHpp
+    p...p......p...p
+    p.'.p.&..!.p.&.p
+    p###pp#####p###p
+    pppppppppppppppp
+    ----------------
+    ----------------
+    ----------------
+    ----------------
+    ----------------
+    pppppppppppppppp
+    p^##...........p
+    p#.............p
+    p..............p
+    pHHHHHHHHHHHp..p
+    pHHHHHH#HHHHp..p
+    pTpTpTpTpTpTp..p
+    ppppppppppppp..p
+    p..............p
+    p.b.ppppppppp..p
+    p..............p
+    ppppp.p.p.p.p..p
+    p...p.p.p.p.p..p
+    p.&...p.p.p.p..p
+    p...p.@.@.@....p
+    pppppppppppppppp
+    [additional]
+    8
+    2.3.&.1.0
+    6.7.&.1.1
+    13.7.&.2.1
+    6.2.&.2.0
+    13.2.&.3.0
+    2.28.&.3.1
+    1.16.^.0.1.1
+    8.5.}.3.0.0.1.0.0
+    [end]
+
+
+    [level]
+    47
+    [colour]
+    484848,B6B6B6,3E6AA2,601721,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    pppppppppppppppp
+    p..............p
+    p..bbbbbbbbbb..p
+    p..b########b..p
+    p..b#...^..#b..p
+    p..b#^TTTT^#b..p
+    p..b#.^....#b..p
+    p..b########b..p
+    p..bbbbbbbbbb..p
+    p..............p
+    p..............p
+    p..............p
+    p..............p
+    p..............p
+    p..ppp.ppp.pp..p
+    p....p..p...p..p
+    p.b.........p..p
+    ppp.p..ppp.....p
+    p.p.p...@p...p.p
+    p.p.pp......pp.p
+    p......pp....p.p
+    pppp.%.pp.pp...p
+    p..p..*....pp..p
+    p....ppp.......p
+    p.p...p..pp.pppp
+    p.ppp.....p..p.p
+    p.........p....p
+    ppppppppp......p
+    p....D..D....&&p
+    p.!'.p..p....&Rp
+    pppppp}.pppppppp
+    [additional]
+    8
+    8.4.^.0.0.0
+    5.5.^.1.1.0
+    6.6.^.0.0.0
+    10.5.^.3.3.0
+    6.30.}.3.0.0.1.0.0
+    13.29.&.1.0
+    13.28.&.2.0
+    14.28.&.3.0
+    [end]
+
+
+    [level]
+    48
+    [colour]
+    194900,AE7DEA,347584,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 9.2
+    [data]
+    pppppppppppppppp
+    p###p......p###p
+    p.&.p.&....p.&.p
+    p###p......p###p
+    pbbbppppppppbbbp
+    p..............p
+    p..............p
+    p..............p
+    p.ppp.ppp.ppp..p
+    p...pbpb...p...p
+    p.......pp...ppp
+    p.p.ppp..pp.bp.p
+    p.p..p.R.....p.p
+    p.pp.b..pppp...p
+    p........b...p.p
+    ppppp.ppp..ppp.p
+    p.....p........p
+    ppppp...ppp.pp.p
+    p.....p...p..p.p
+    p..pp.ppp..b.p.p
+    p.pp......p....p
+    p....pp.ppp.pppp
+    p.p..pp.......pp
+    p.pp.b..ppp.p..p
+    p..p......p.pp.p
+    p............p.p
+    ppppppp}..pp...p
+    p.....p...p....p
+    p.&.!.p...p..?.p
+    p.....p........p
+    pppppppppppppppp
+    [additional]
+    5
+    2.2.&.1.0
+    2.28.&.1.1
+    6.2.&.2.0
+    13.2.&.2.1
+    7.26.}.3.0.0.1.0.0
+    [end]
+
+
+    [level]
+    49
+    [colour]
+    336300,B6B6B6,739FD6,5E1C0E,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    iiiiiiiiiiiiiiii
+    i....i'........i
+    i.&..i.......R.i
+    i....i.b.......i
+    i....i.........i
+    i....i.........i
+    i==============i
+    i....i....i....i
+    i....iT..TiT..!i
+    i....iiiiiiiiiii
+    i..............i
+    i}.............i
+    i.............}i
+    i.%.......i....i
+    iiiiiiiiiiib...i
+    i.%.i....Ti....i
+    i.i...ii&ii####i
+    i.iiiii...i####i
+    i.......iTi....i
+    iiiiiiiiiii....i
+    i..@i..........i
+    iT..D..........i
+    i...i..........i
+    iiiii.........}i
+    i..*i..........i
+    iT..D...#...#..i
+    i...i..i.i.i.i.i
+    iiiiiiii^iii.iii
+    i...i.......^..i
+    iTi...i...T...Ti
+    iiiiiiiiiiiiiiii
+    [additional]
+    21
+    2.2.&.1.0
+    8.16.&.1.1
+    1.11.}.0.0.2.0.0.0
+    14.12.}.2.2.2.0.0.0
+    14.23.}.2.2.0.0.0.0
+    12.28.^.1.1.0
+    8.27.^.1.1.0
+    1.6.=.2
+    2.6.=.2
+    3.6.=.2
+    4.6.=.2
+    5.6.=.2
+    6.6.=.2
+    7.6.=.2
+    8.6.=.2
+    9.6.=.2
+    10.6.=.2
+    11.6.=.2
+    12.6.=.2
+    13.6.=.2
+    14.6.=.2
+    [end]
+
+
+    [level]
+    50
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [data]
+    iiiiiiiiiiiiiiii
+    i....i...i.....i
+    i.R..i.!......}i
+    i....i...i.....i
+    i....iiiii...&.i
+    i}.........}...i
+    iii.iiiiiiiiiiii
+    ---.------------
+    -}.............-
+    -------------.--
+    -------------T--
+    ------iii-------
+    iiiiiii&iiiiiiii
+    i..............i
+    i....b......#..i
+    i===..======...i
+    ii===..=====...i
+    iii==..=====...i
+    i..........b...i
+    i..............i
+    iiiiiii&iiiiiiii
+    ------iii-------
+    ----------------
+    ----------------
+    iiiiiiiiiiiiiiii
+    i..............i
+    i.&...T.....T..i
+    i........T.....i
+    iiii...........i
+    iT}....}......Ti
+    iiiiiiiiiiiiiiii
+    [additional]
+    34
+    1.5.}.0.0.1.0.0.0
+    11.5.}.3.3.0.0.0.0
+    14.2.}.2.2.0.0.0.0
+    1.8.}.0.0.1.0.0.0
+    13.4.&.1.0
+    7.20.&.1.1
+    7.12.&.2.0
+    2.26.&.2.1
+    2.29.}.3.0.0.1.0.0
+    7.29.}.3.0.0.1.0.0
+    1.15.=.2
+    2.15.=.2
+    3.15.=.2
+    6.15.=.2
+    7.15.=.2
+    8.15.=.2
+    9.15.=.2
+    10.15.=.2
+    11.15.=.2
+    2.16.=.2
+    3.16.=.2
+    4.16.=.2
+    7.16.=.2
+    8.16.=.2
+    9.16.=.2
+    10.16.=.2
+    11.16.=.2
+    3.17.=.2
+    4.17.=.2
+    7.17.=.2
+    8.17.=.2
+    9.17.=.2
+    10.17.=.2
+    11.17.=.2
+    [end]
+
+
+    [level]
+    51
+    [colour]
+    234F86,989898,4B8C9C,194900,241500
+    [size]
+    16.31
+    [author]
+    Janusz Pelc TODO fix owls
+    [data]
+    iiiiiiiiiiiiiiii
+    i....@.@.@i....i
+    i.T.T.T.T.i..R.i
+    i.........i....i
+    i=========i....i
+    i..............i
+    i.............}i
+    i..............i
+    i..............i
+    iiiiiiiiiii....i
+    i........*i....i
+    i..!...?..i....i
+    i.*..*....i....i
+    i=========i....i
+    i.............@i
+    i@............}i
+    i.............@i
+    i..............i
+    iiiiiiiiiii...@i
+    i..@...........i
+    i.^.#.........@i
+    i..............i
+    i@............@i
+    i..@...........i
+    i==============i
+    i..............i
+    iiDii==========i
+    i...i..........i
+    i}..D.%......%.i
+    i...i..........i
+    iiiiiiiiiiiiiiii
+    [additional]
+    46
+    1.4.=.2
+    2.4.=.2
+    3.4.=.2
+    4.4.=.2
+    5.4.=.2
+    6.4.=.2
+    7.4.=.2
+    8.4.=.2
+    9.4.=.2
+    1.13.=.2
+    2.13.=.2
+    3.13.=.2
+    4.13.=.2
+    5.13.=.2
+    6.13.=.2
+    7.13.=.2
+    8.13.=.2
+    9.13.=.2
+    1.24.=.2
+    2.24.=.2
+    3.24.=.2
+    4.24.=.2
+    5.24.=.2
+    6.24.=.2
+    7.24.=.2
+    8.24.=.2
+    9.24.=.2
+    10.24.=.2
+    11.24.=.2
+    12.24.=.2
+    13.24.=.2
+    14.24.=.2
+    5.26.=.2
+    6.26.=.2
+    7.26.=.2
+    8.26.=.2
+    9.26.=.2
+    10.26.=.2
+    11.26.=.2
+    12.26.=.2
+    13.26.=.2
+    14.26.=.2
+    1.28.}.3.0.0.1.0.0
+    2.20.^.0.1.1
+    14.15.}.2.2.0.0.0.0
+    14.6.}.2.2.0.0.0.0
+    [end]
+
+
+    [level]
+    52
+    [colour]
+    2E2E2E,AE7DEA,4B8C9C,336300,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 4.22
+    [data]
+    --iiiiiiiiiiii--
+    --i.....i....i--
+    --i...R.D.'..i--
+    --i.....i.......
+    --i#....i....i-.
+    --i.#.#.iiiiii-.
+    --i.#.#.i%...i-.
+    ...#.#.#i..&.i-.
+    .-i.#.#.i#.#.i-.
+    .-i##.T.i.#.#i-.
+    .-i..#.#i#......
+    .-i.###.i.##.i--
+    .-i..#T#i....i--
+    .-i==========i--
+    .-i.....i....i--
+    ....i*i.i.T..i--
+    .-i.i&i.i....i--
+    .-i.iii.i}...i--
+    .-i.iTi.i...}i--
+    .-i.....i....i--
+    .-iiiiiii..T.i--
+    .-i.....i....i--
+    .-i...T.i.ii.i--
+    .-i.....i.ii@i--
+    .-iHHHHHi.ii....
+    .-i.....i....i-.
+    ........iiiiii-.
+    --i.....i....i-.
+    --i}..T.i.!..D..
+    --i.....i....i--
+    --iiiiiiiiiiii--
+    [additional]
+    16
+    11.7.&.1.0
+    5.16.&.1.1
+    3.28.}.0.0.2.0.0.0
+    12.18.}.2.2.1.0.0.0
+    9.17.}.0.0.1.0.0.0
+    3.13.=.2
+    4.13.=.2
+    5.13.=.2
+    6.13.=.2
+    7.13.=.2
+    8.13.=.2
+    9.13.=.2
+    10.13.=.2
+    11.13.=.2
+    12.13.=.2
+    13.13.=.2
+    [end]
+
+
+    [level]
+    53
+    [colour]
+    336300,B6B6B6,739FD6,5E1C0E,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    A0A3
+    [data]
+    qqqqqqqqqqqqqqqq
+    qT............Tq
+    q...########...q
+    q..###V##V###..q
+    q..#R.####..#..q
+    q..##......##..q
+    q...########...q
+    q&...@.@.@.@..Tq
+    qqqqqqqqqqqqqqqq
+    ----------------
+    ----------------
+    qqqqqqqqqqqqqqqq
+    qT.^HH.........q
+    qqqqqq.........q
+    qT.^HH.........q
+    qqqqqq.....#...q
+    qT.^HH.........q
+    qqqqqq......?..q
+    qT.^HH.........q
+    qqqqqq.........q
+    q..............q
+    q.qqqqqqqqqqqqqq
+    q...##.#.##.#..q
+    q....#.##..#.'.q
+    q.&...##.#.#..#q
+    q...#..#..#.#..q
+    qqqqqqqqqqqqqqqq
+    q...q..!...q...q
+    q.&}........}&.q
+    q.....q..q.....q
+    qqqqqqqqqqqqqqqq
+    [additional]
+    14
+    1.7.&.1.0
+    5.7.@.0
+    7.7.@.0
+    9.7.@.0
+    11.7.@.0
+    3.12.^.0.0.0
+    3.14.^.0.0.0
+    3.16.^.0.0.0
+    3.18.^.0.0.0
+    2.24.&.2.0
+    2.28.&.1.1
+    3.28.}.0.0.1.0.0.0
+    12.28.}.2.0.1.0.0.0
+    13.28.&.2.1
+    [end]
+
+
+    [level]
+    54
+    [colour]
+    00404F,A5F4CA,66B58B,484848,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc TODO check q texture with original
+    [level_notes]
+    [data]
+    qqqqqqqqqqqqqqqq
+    q..........q...q
+    q.R.qqqqqqbq.T.q
+    q.....qqqq.q.T.q
+    qqqqq.qqqq.q.T.q
+    q'}'q.qqqqDq.T.q
+    q..........q...q
+    q..........q.&.q
+    q..........q...q
+    q........#.qqqqq
+    q...q.#........q
+    qM#Mq......#.#.q
+    q..&q...#......q
+    q...q.....#.#..q
+    q...q..#.......q
+    qM..q..........q
+    q...q==========q
+    q..Mq..........q
+    q...q..........q
+    q&#.q..qqqqqq.qq
+    qqqqqq.q----q.q-
+    ----q..q---qq.qq
+    ----q.qq---q...q
+    qqqqq..qqq-q.&.q
+    q........q-q...q
+    q...q....q-qqqqq
+    q........q------
+    q..Mq....q--qqq-
+    q...q..!.q--qqq-
+    q?.%q....q--qqq-
+    qqqqqqqqqq------
+    [additional]
+    10
+    2.5.}.1.0.1.0.0.0
+    13.7.&.2.0
+    1.11.M.0
+    3.11.M.2
+    3.12.&.1.0
+    1.15.M.0
+    3.17.M.2
+    1.19.&.2.1
+    13.23.&.1.1
+    3.27.M.2
+    [end]
+
+
+    [level]
+    55
+    [colour]
+    6F3F0E,B6B6B6,4B8C9C,194900,241500
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    [data]
+    qqqqqqqqqqqqqqqq
+    q...q@.....q...q
+    q.R.q......q.&.q
+    q...q....'.q...q
+    q...&@.....&...q
+    qqqqqqqqqqqqqqqq
+    q...#..#.#T#T##q
+    q.&...#.#THTHT#q
+    q..#.#.#T#T#T#Tq
+    q##.#.#.#T#T#T#q
+    q==============q
+    q...q...q......q
+    q.T.q.T.q.?..%.q
+    q...q...q......q
+    qqqqqqqqqqqqqqqq
+    q..........q...q
+    q.q.^......q.!.q
+    q.q........q.}.q
+    q.q..q..q..q...q
+    q.q........q...q
+    q.q........q...q
+    q.q........qqDqq
+    q.q............q
+    q.qqqqqqqqqq...q
+    q.q........q.b.q
+    q........}.q...q
+    qqqqq.}....qq.qq
+    q...q......q...q
+    q.&.qqqqqq.q.&.q
+    q..........q...q
+    qqqqqqqqqqqqqqqq
+    [additional]
+    12
+    5.1.@.3
+    13.2.&.3.0
+    4.4.&.1.0
+    5.4.@.3
+    11.4.&.2.0
+    2.7.&.4.0
+    4.16.^.0.1.1
+    13.17.}.1.0.1.0.0.0
+    9.25.}.0.0.0.0.1.1
+    6.26.}.0.0.0.0.1.1
+    2.28.&.3.1
+    13.28.&.4.1
+    [end]
+
+
+    [level]
+    56
+    [colour]
+    336300,AE7DEA,4B8C9C,2E2E2E,101010
+    [size]
+    16.31
+    [author]
+    Janusz Pelc
+    [level_notes]
+    Removed a life from 14.7.
+    [data]
+    qqqqqqqqqqqqqqqq
+    qT.............q
+    qq.^.qqqqq...&.q
+    q....q...q@....q
+    qq...q.T.q....Mq
+    qT...q...q.T...q
+    qq...qq^qq.....q
+    q%.............q
+    qqqqqqM.Mqqqqqqq
+    q...q......q#HTq
+    q.&.q.qqqb.qT#.q
+    q.....}q}..q#H#q
+    qqq#q..q...qbHHq
+    q...q....#.q#HHq
+    q.T.q......qqqbq
+    q}#........HHHbq
+    qqqqqqqqqqqqqqqq
+    ----------------
+    !..............&
+    ----------------
+    qqqqqqqqqqqqqqqq
+    q&........^^..&q
+    qqqqqqqqqMbMqqqq
+    q......q&#.#...q
+    q.&..&.qqM.Mqq.q
+    q......q.....q.q
+    q.......#bb.Mq.q
+    qqqq...q.....q.q
+    q..D.R.qqM.Mqq.q
+    q'.q...........q
+    qqqqqqqqqqqqqqqq
+    [additional]
+    26
+    3.2.^.1.0.0
+    13.2.&.2.0
+    10.3.@.3
+    14.4.M.2
+    7.6.^.0.0.0
+    6.8.M.0
+    8.8.M.2
+    2.10.&.3.0
+    6.11.}.1.0.1.0.0.0
+    8.11.}.1.0.1.0.0.0
+    1.15.}.0.0.1.0.0.0
+    15.18.&.4.0
+    1.21.&.1.0
+    10.21.^.0.0.0
+    11.21.^.0.0.0
+    14.21.&.4.1
+    9.22.M.0
+    11.22.M.2
+    8.23.&.1.1
+    2.24.&.2.1
+    5.24.&.3.1
+    9.24.M.0
+    11.24.M.2
+    12.26.M.2
+    9.28.M.0
+    11.28.M.2
+    [end]</div>
+    <script type="text/javascript">
+        window.Ro = new Robbo({
+            renderTo: document.getElementById('game'),
+            maps: (function(  ){
+                var maps = [],
+                    level,
+                    current,
+                    data = [],
+                    mapping = {
+                        data: 'map',
+                        additional: 'data'
+                    },
+                    convertData = function( data ){
+                        return data.slice(1).map(function( str ){
+                            var tokens = str.split('.'),
+                                out = {
+                                    x: tokens[0] |0,
+                                    y: tokens[1] |0,
+                                    data: tokens.slice(3)
+                                },
+                                ids = [],
+                                next;
+                            if( tokens[2] === '&' ){
+
+                                data.slice(1).map(function(el){
+                                        el = el.split('.');
+                                        return el[2] === '&' && ( el[3] ) === tokens[3] ? el :void 0;
+                                    })
+                                    .filter(function( el ){
+                                        return el !== void 0;
+                                    } )
+                                    .forEach(function( el ){
+                                        ids[ el[4] ] = el;
+                                    } );
+                                next = ids[ ( (tokens[4] |0) + 1 ) % ids.length ];
+                                out.data = {
+                                    teleportX: next[0]|0,
+                                    teleportY: next[1]|0
+                                }
+
+                            }else if( tokens[2] === '}' ){
+                                out.data = {
+                                    direction: tokens[3]|0,
+                                    bulletType: ['gun','laser','antimatter'][tokens[5]|0],
+                                    rotatable: tokens[7]|0,
+                                    movable: tokens[6]|0,
+                                    moveDirection: tokens[4]|0
+                                }
+                            }else if( tokens[2] === '^' ){
+                                out.data = {
+                                    direction: tokens[3]|0,
+                                    fire: ( tokens[5]|0 ) ? true: false
+                                }
+                            }else if( tokens[2] === '@' || tokens[2] === '*' ){
+                                out.data = {
+                                    direction: tokens[3]|0,
+                                    clockwise: tokens[2] === '@'
+                                }
+                            }else if( tokens[2] === 'M' ){
+                                out.data = {
+                                    direction: tokens[3]|0
+                                }
+                            }else if( tokens[2] === '=' ){
+                                out.data = {
+                                    direction: tokens[3]|0
+                                }
+                            }
+                            return out;
+                        } );
+                    };
+
+                document.getElementById('maps').innerHTML
+                    .replace(/&amp;/g,'&')
+                    .replace(/\r/g,'')
+                    .split('\n')
+                    .map(function(el){ return el.trim(); })
+                    .forEach(function( el ){
+                        var match = el.match( /\[([a-z_]*)\]/ );
+                        if( match ){
+                            match = match[1];
+                            level &&
+                            ( level[ mapping[current] || current ] =
+                                    current === 'data' ?
+                                            data.join('\n')
+                                        :
+                                            (current === 'additional' ? convertData(data): data ) );
+
+                            current = match;
+                            if( current === 'level' ){
+                                level && maps.push( level );
+                                level = {};
+                            }
+
+                            data = [];
+                        }else{
+                            data.push( el );
+                        }
+                    });
+                level && maps.push( level );
+                console.log(maps)
+                return maps;
+            })(),
+            load: (R.getLocationHash().level || 0)|0
+        });
+    </script>
+</body>
+</html>

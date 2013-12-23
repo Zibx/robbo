@@ -1,0 +1,892 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Robbo</title>
+<script type="text/javascript">
+    window.init = (function( ){
+
+        var image = document.getElementById( 'image' );
+
+        var objects = {
+            'R': {
+                BG: '#cc6',
+                init: function( x, y, game ){
+                    game.robbo = this;
+                    this.type = 'R';
+                    this.direction = 1;
+                    this.step = 0;
+                },
+                demolishable: true,
+                demolish: function(  ){
+                    this.game.restart();
+                },
+                explodable: true,
+                explode: function(  ){
+                    this.game.restart();
+                },
+                getSprite: function(  ){
+                    return [ this.direction * 2 + this.step, 5 ];
+                },
+                fire: function( ){
+                    if( this.noMove )
+                        return;
+
+                    var cell = this.game.getCell( addDirection( this.x, this.y, this.direction ) );
+                    if( cell.type === '.' ){
+                        this.game.setCell( cell.x, cell.y, '|', [this.direction] );
+                    }else if( cell.demolishable ){
+                        demolishBehavior( cell );
+                    }
+
+                },
+                teleport: function( obj ){
+                    obj.transfer( this );
+                },
+                move: function(  ){
+                    if( this.noMove )
+                        return;
+                    var newPos, nextCell, noStep = false;
+
+                    newPos = addDirection( this.x, this.y, this.direction);
+                    nextCell = this.game.getCell( newPos );
+
+                    if( nextCell.type === '.' ){
+                        this.game.swap( nextCell, this );
+                    }else{
+                        if( nextCell.eatable )
+                            if( !(nextCell.eat && nextCell.eat() === false )){
+                                nextCell = this.game.setCell( newPos.x, newPos.y, '.' );
+                                this.game.swap( nextCell, this );
+                            }else
+                                noStep = true;
+
+                        if( nextCell.movable )
+                            if( !(nextCell.move && nextCell.move( this.direction ) === false) ){
+                                nextCell = this.game.setCell( newPos.x, newPos.y, '.' );
+                                this.game.swap( nextCell, this );
+                            }else
+                                noStep = true;
+
+                        if( nextCell.getNextCell ){
+                            this.teleport( nextCell );
+                            noStep = true;
+                            return;
+                        }
+                    }
+                    if( !noStep )
+                        this.step = (this.step + 1) % 2;
+                }
+            },
+            'Q': { spriteX: 3, spriteY: 0, BG: '#fee' }, 'O': { spriteX: 2, spriteY: 0, BG: '#eee' }, // walls
+            'H': { spriteX: 4, spriteY: 2, demolishable: true, explodable: true, BG: '#aaa' },
+            '.': { spriteX: 10, spriteY: 2 },
+            '#': {
+                spriteX: 6, spriteY: 0,
+                movable: true, explodable: true,
+                move: moveBehaviour,
+                BG: '#ccc'
+            },
+            'D': { //door
+                spriteX: 9, spriteY: 0,
+                explodable: true,
+                eatable: true,
+                eat: function(  ){
+                    if( this.game.keys > 0 ){
+                        this.game.set('keys', this.game.keys - 1);
+                        this.game.setCell( this.x, this.y, '.');
+                        return false;
+                    }else{
+                        return false;
+                    }
+                },
+                BG: '#ffd29d'
+            },
+            '!': {
+                init: function( x, y, game ){
+                    game.addActionObject(this);
+                },
+                spriteX: 5, spriteY: 1,
+                movable: true,
+                eatable: true,
+                eat: function(  ){
+                    if( this.game.screw === 0 ){
+                        this.game.finishLevel();
+                    }
+                    return false;
+                },
+                move: moveBehaviour,
+                BG: '#7a7'
+            },
+            '?': {
+                spriteX: 0, spriteY: 1,
+                randomCfg: [
+                    {type: '?'},
+                    {type: '!'},
+                    {type: '#'},
+                    {type: 'H'},
+                    {type: 'T'},
+                    {type: '%'},
+                    {type: '\''},
+                    {type: '}', data: [(Math.random()*4)|0,0,]},
+                    {type: '.'},
+                    {type: 'b'}
+                ],
+                init: function( ){
+                    this.randomObject = this.randomCfg[ (Math.random()*this.randomCfg.length)|0 ];
+
+                },
+                explodable: true,
+                movable: true,
+                demolishable: true,
+                demolish: function(){
+                    this.game.setCell(this.x, this. y, 'e', {type: this.randomObject.type, single: true, fromBullet: true, data: this.randomObject.data });
+                    return false;
+                },
+                move: moveBehaviour
+            },
+            '%': { //key
+                spriteX: 7, spriteY: 0,
+                eatable: true,
+                count: 1,
+                eat: function(  ){
+                    this.game.set('keys', this.game.keys + this.count);
+                },
+                explodable: true
+            },
+            'b': { //bomb
+                spriteX: 8, spriteY: 0,
+                demolishable: true, explodable: true,
+                demolish: function(  ){
+                    this.game.setCell(this.x, this. y, 'e',{type:'.'});
+                    return false;
+                },
+                explode: function( ){
+                    this.game.setCell(this.x, this. y, 'e',{type:'.'});
+                },
+                movable: true,
+                move: moveBehaviour,
+                BG: '#777'
+            },
+            'T': {
+                init: function( x, y, game ){
+                    game.screw++;
+                },
+                spriteX: 4, spriteY: 0,
+                eatable: true,
+                eat: function(  ){
+                    this.game.set('screw', this.game.screw - 1);
+                },
+                explodable: true,
+                BG: '#ddf'
+            },
+            '\'': {
+                spriteX: 5, spriteY: 0,
+                eatable: true,
+                count: 9,
+                eat: function(  ){
+                    this.game.set('weapon', this.game.weapon + this.count);
+                },
+                explodable: true,
+                demolishable: true
+            },
+            '&': { //teleport
+                init: function( x, y, game ){
+                    game.addActionObject(this);
+                    this.teleportX = x;
+                    this.teleportY = y;
+                },
+                explodable: true,
+                explode: dieBehavior,
+                needRedraw: function(  ){
+                    return this.lastSpriteX !== this.game.step % 8 > 3;
+                },
+                getSprite: function(  ){
+                    var spriteX = this.lastSpriteX = this.game.step % 8 > 3;
+                    this.BG = '#fe'+ (spriteX? 'e': 'c');
+                    return [ spriteX, 4 ];
+                },
+                getNextCell: function( obj ){
+
+
+                    var tryCell, i;
+                    for( i = 4; i; ){
+                        --i;
+                        tryCell = this.game.getCell( addDirection( this.teleportX, this.teleportY, obj.direction ) );
+                        if( tryCell.type === '.' )
+                            break;
+                        obj.direction = ( obj.direction + 1 ) % 4;
+                    }
+
+                    if( tryCell.type === '.' ){
+                        return tryCell;
+                    }else{
+                        for( i = 4; i; ){
+                            --i;
+                            tryCell = this.game.getCell( addDirection( this.x, this.y, obj.direction ) );
+                            if( tryCell.type === '.' )
+                                break;
+                            obj.direction = (obj.direction + 1) % 4;
+                        }
+
+                        return tryCell.type === '.' ? tryCell : obj;
+                    }
+
+
+
+                },
+                transfer: function( obj ){
+                    var to = this.getNextCell( obj ),
+                        game = this.game;
+                    
+                    obj.noMove = true;
+                    if( obj !== to ){
+                        game.setCell( obj.x, obj.y, 'e', {type: '.', single: true, fromBullet: true});
+                        game.setCell( to.x, to.y, 'e', {type: obj, single: true, build: true, callback: function(  ){
+                            obj.noMove = false;
+                        } });
+                    }else{
+                        game.setCell( obj.x, obj.y, 'e', {type: '.', single: true, fromBullet: true, callback: function(  ){
+                            game.setCell( to.x, to.y, 'e', {type: obj, single: true, build: true, callback: function(  ){
+                                obj.noMove = false;
+                            } });
+                        }});
+                        
+                    }
+                },
+                setData: function( data, scope ){
+
+                    data = data.map(function( el ){ return el | 0; });
+                    var ids = [],
+                        group = scope.filter(function(el){
+
+                            return el[2] === '&' && ( el[3] | 0) === data[0];
+                        }),
+                        next;
+                    group.forEach(function( el ){
+                        ids[ el[4] ] = el;
+                    } );
+                    next = ids[ ( data[1] + 1 ) % ids.length ];
+                    this.teleportX = next[0]|0;
+                    this.teleportY = next[1]|0;
+
+                }
+            },
+            '|': {
+                init: function( x, y, game ){
+                    game.addActionObject(this);
+                },
+                setData: function( data ){
+                    this.direction = data[0]|0;
+                    this.ascii = {0:'—',2:'—'}[this.direction] || '|';
+                    this.logic = data[1] in this.logics ? data[1] : ['gun','laser','antimatter'][data[1]|0];
+                },
+                getSprite: function(  ){
+                    return [ (this.direction%2)*2+(this.game.step%8>3),3];
+                },
+                logics: {
+                    laser: function(  ){
+                        var cell;
+                        if( this.wait )
+                            return;
+                        if( this.return ){
+
+                            cell = this.game.getCell( addDirection( this.x, this.y, ( this.direction + 2 ) % 4 ) );
+
+                            this.game.setCell( this.x, this.y, '.' );
+                            if( cell.wait ){
+                                cell.skipStep = true;
+                                cell.wait = false;
+                                cell.return = true;
+                            }
+                            return false;
+                        }else{
+                            cell = this.game.getCell( addDirection( this.x, this.y, this.direction ) );
+                            if( cell.type === '.' ){
+                                this.wait = true;
+                                this.game.setCell( cell.x, cell.y, '|', [this.direction, this.logic] );
+                                return true;
+                            }else if( cell.demolishable){
+                                demolishBehavior( cell );
+                                this.return = true;
+                                return true;
+                            }else{
+                                this.return = true;
+                                return true;
+                            }
+                        }
+
+                    },   
+                    gun: function(  ){
+                        var cell = this.game.getCell( addDirection( this.x, this.y, this.direction ) );
+                        if( cell.type === '.' ){
+                            this.game.swap( this, cell );
+                            return true;
+                        }else if( cell.demolishable){
+                            demolishBehavior( cell );
+
+                            this.game.setCell( this.x, this.y, '.');
+                            return false;
+                        }else{
+                            this.game.setCell( this.x, this.y, 'e', {type: '.', single: true, fromBullet: true, animation: 4});
+                            return false;
+                        }
+                    },
+                    antimatter: function(  ){
+                        
+                    }   
+                },   
+                step: function(  ){
+                    return this.logics[ this.logic ].call( this );
+                }
+            },
+            'e': {
+                BG: '#a77',
+                init: function( x, y, game ){
+                    game.addActionObject(this);
+
+                    this.explodeProcess = true;
+                },
+                getSprite: function(  ){
+                    var animation = this.data.animation;
+
+                    return this.data.fromBullet ? [Math.abs(2-animation)+1,2] : [2+this.data.animation,4];
+                },
+                exploding: function(  ){
+                    var x = this.x, y = this.y,
+                        i, _i = x + 1,  j, _j = y + 1,
+                            cell;
+
+                    for( i = x - 1 ; i <= _i; i++ )
+                        for( j = y - 1; j <= _j; j++ ){
+                            if( x !== i || y !== j ){
+                                cell = this.game.getCell( i, j );
+
+                                if( cell && (cell.type === '.' || cell.explodable) && !(cell.type === 'e') ){
+                                    if(!( cell.explode && cell.explode() === false ) )
+                                        this.game.setCell( i, j, 'e', {type: '.', single: true} );
+                                }
+                            }
+                        }
+                },
+                step: function(  ){
+                    this.data.animation--;
+                    if( this.data.animation === 1 )
+                        !this.data.single && this.exploding();
+                    if( this.data.animation === -1 ){
+                        this.game.setCell( this.x, this.y, this.data.type, this.data.data );
+                        this.data.callback && this.data.callback();
+                        return false;
+                    }
+                    return true;
+                },
+                setData: function( data ){
+                    this.data = data;
+                    this.data.animation = this.data.animation || 2;
+                }
+
+            },
+            '}': {
+                init: function( x, y, game ){
+                    game.addActionObject(this);
+                    this.direction = 0;
+                },
+                step: function(  ){
+
+                    if( Math.random() < 1/16 ){
+                        var cell = this.game.getCell( addDirection( this.x, this.y, this.direction ) );
+                        if( cell.type === '.' )
+                            this.game.setCell( cell.x, cell.y, '|', [this.direction, this.bulletType] );
+                        else
+                            demolishBehavior( cell );
+                    }
+                },
+                needRedraw: function(  ){
+                    return false;
+                },
+                getSprite: function(  ){
+                    return [ 5+this.direction,4];
+                },
+                setData: function( data ){
+                    this.direction = data[0]|0;
+                    this.direction2 = data[1]|0;
+                    this.bulletType = data[2]|0;
+                },
+                explode: dieBehavior,
+                explodable: true
+            }
+        };
+
+        R.each( objects, function( k, v ){
+            objects[k] = v.init || function(){ this.type = k; };
+            objects[k].prototype = v;
+            v.type = k;
+        } );
+
+        var Robbo = function( cfg ){
+
+            this.clear();
+            R.apply( this, cfg );
+            this.parseMap();
+            this.ctx = this.canvas.getContext("2d");
+            this.ctx.fillStyle = '#996600';
+            this.loadSprite();
+
+
+
+        };
+        Robbo.prototype = {
+            clear: function(  ){
+                this.screw = 0;
+                this.keys = 0;
+                this.weapon = 0;
+                this.actionObjects = [];
+                this.changes = {};
+                this.additional = [];
+                this.afterMainLoop = [];
+            },
+            finishLevel: function(  ){
+
+            },
+            getCell: function( x ){
+                var y = arguments[1],
+                        out = y === void 0 ? (this.map[x.y] || {})[x.x] : (this.map[y] || {})[x];
+                return out === void 0 ? {type: ' '} : out;
+            },
+            setCell: function( x, y, obj, data ){
+                if( typeof obj === 'string' ){
+                    obj = this.map[y][x] = this.ObjectFactory( obj, x, y );
+                }else{
+                    this.map[y][x] = obj;
+                    obj.x = x;
+                    obj.y = y;
+                }
+                data && obj.setData( data );
+                this.redraw( obj );
+                return obj;
+            },
+            set: function(a,b){
+                this[a]=b;
+                console.log(a,b);
+            },
+            step: 0,
+            loadSprite: function(  ){
+                var sprites = this.sprites = new Image();
+
+                sprites.onload = function(){
+                    //this.drawWorld();
+                    this.mainLoop();
+                }.bind(this);
+
+                sprites.src = "icons32.png";
+            },
+            redraw: function( obj ){
+                var x = obj.x,
+                    y = obj.y,
+                    yHash = this.changes[ y ] || (this.changes[ y ] = {});
+                yHash[x] = true;
+            },
+            addActionObject: function( obj ){
+                this.actionObjects.push( obj );
+            },
+            ObjectFactory: function( ascii, x, y ){
+                if( !objects[ascii] ) throw ascii;
+                var out = new objects[ascii]( x, y, this );
+                out.x = x;
+                out.y = y;
+                out.game = this;
+                return out;
+            },
+            key: {},
+            reload: function(){
+                this.robbo.dead = true;
+                this.controller.reload();
+            },
+            parseMap: function( ){
+                this.originalMap = this.map;
+                var map = this.map
+                    .map(function( el ){
+                        return el.split('');
+                    }),
+                    i, _i, j, _j,
+                    finalMap = [], row;
+
+                this.map = finalMap;
+                for( j = 0, _j = map.length; j < _j; j++ ){
+                    row = map[j];
+                    finalMap[j] = [];
+                    for( i = 0, _i = row.length; i < _i; i++ ){
+                        this.setCell( i, j, row[i] );
+                    }
+                }
+                this.map = finalMap;
+                if( this.additional ){
+                    this.additional.slice(1).map( function( el ){
+                        return el.split('.');
+                    }).forEach(function( el, i, data ){
+                        finalMap[el[1]][el[0]].setData( el.slice(3), data );
+                    } )
+
+                }
+
+            },
+            textMode: true,
+            drawObject: function( obj ){
+                var cellSize = 32,
+                    spriteCellSize = 32,
+                    spriteCellSizeOffset = spriteCellSize+ 2,
+
+                    spriteX = obj.spriteX,
+                    spriteY,
+                    spriteData;
+
+                if( spriteX === void 0 ){
+                    spriteData = obj.getSprite();
+                    spriteX = spriteData[0];
+                    spriteY = spriteData[1];
+                }else
+                    spriteY = obj.spriteY;
+
+
+                if( this.textMode ){
+                    cellSize = 16;
+
+                    var c = ((80+Math.random()*20)|0);
+
+                    this.ctx.fillStyle = obj.BG || '#fff';// + c + c + c;
+
+                    this.ctx.globalAlpha = 1;
+                    this.ctx.fillRect(obj.x * cellSize,obj.y * cellSize,cellSize,cellSize);
+                    this.ctx.globalAlpha = 0.8;
+                    this.ctx.fillStyle = '#aaa';
+                    this.ctx.fillText(
+                            obj.ascii || obj.type,
+                            obj.x * cellSize+cellSize/3.2,
+                            obj.y * cellSize+cellSize/1.5
+                    );
+                }else{
+                    this.ctx.fillRect(obj.x * cellSize,obj.y * cellSize,cellSize,cellSize);
+                    this.ctx.drawImage(
+                            this.sprites,
+                            2 + spriteX * spriteCellSizeOffset,
+                            2 + spriteY * spriteCellSizeOffset,
+                            spriteCellSize,
+                            spriteCellSize,
+                            obj.x * cellSize,
+                            obj.y * cellSize,
+                            cellSize,
+                            cellSize
+                    );
+                }
+            },
+            restart: function(  ){
+                console.log('die');
+                var robbo = this.robbo,
+                    game = this;
+                robbo.noMove = true;
+
+                this.afterMainLoop.push( function(){
+                    this.getCell(robbo.x, robbo.y).data.callback = function(){
+
+                        this.clear();
+                        game.setCell( robbo.x, robbo.y, '.' );
+                        this.map.forEach(function(row,j){
+                            row.forEach(function(obj,i){
+                                if( obj.type !== '.' && obj.type !== 'O' && obj.type !== 'Q' ){
+                                    game.setCell(i,j,'e', {
+                                        animation: ((Math.random()*2)|0)+1,
+                                        single: true,
+                                        type: '.',
+                                        callback: function(){
+
+                                            game && game.reload();
+                                            game = null;
+                                        }
+                                    });
+                                }
+                            });
+                        });
+
+                    }.bind(this)
+                }.bind(this));
+
+
+            },
+            drawChanges: function(  ){
+                this.actionObjects.forEach(function( obj ){
+                    if(!(obj.needRedraw && obj.needRedraw() === false))
+                        this.drawObject( obj );
+
+                }.bind(this) );
+
+                var i, j, yHash, changes = this.changes;
+                for( i in changes )
+                    if( changes.hasOwnProperty(i) )
+                        for( j in (yHash = changes[i]) )
+                            if( yHash.hasOwnProperty(j) )
+                                this.drawObject( this.map[i][j] );
+                this.changes = {};
+            },
+            moveMe: function(  ){
+
+                var move = false,
+                    fire = false,
+                    robbo = this.robbo;
+                [39,40,37,38].forEach(function( which, i ){
+                    if( this.key[which] ){
+                        this.key[which] = 1;
+                        robbo.direction = i;
+                        this.redraw( robbo );
+                        if( this.key.shift )
+                            fire = true;
+                        else
+                            move = true;
+
+                    }
+                }.bind(this) );
+                if( move ){
+                    robbo.move();
+                }else if( fire ){
+                    robbo.fire();
+                }
+
+            },
+            swap: function(a,b){
+                this.redraw( a );
+                this.redraw( b );
+
+                var tmp = [a.x, a.y, b.x, b.y];
+                this.map[a.y][a.x] = b;
+                this.map[b.y][b.x] = a;
+                a.x = tmp[2];
+                a.y = tmp[3];
+                b.x = tmp[0];
+                b.y = tmp[1];
+
+            },
+            moveWorld: function(  ){
+                var actionObjects = this.actionObjects, i, obj, dead;
+
+                for( i = actionObjects.length; i; ){
+                    obj = actionObjects[--i];
+                    dead = obj.dead;
+                    if( !obj.skipStep )
+                        dead = dead || (obj.step && obj.step() === false);
+                    else
+                        obj.skipStep = false;
+                    dead && actionObjects.splice( i, 1 );
+
+                }
+
+            },
+            mainLoop: function(  ){
+                this.moveMe();
+
+                this.moveWorld();
+                if( this.robbo.dead ) return;
+
+                this.step++;
+                //this.drawWorld();
+                this.drawChanges();
+
+                this.afterMainLoop.forEach( function( el ){
+                    el && el();
+                } );
+                if( this.robbo.dead ) return;
+                this.afterMainLoop = [];
+
+                setTimeout( this.mainLoop.bind(this), 100 );
+            }
+        };
+
+        var mapLoader = function( text ){
+            var out = {},
+                current;
+
+            text.split('\n')
+                .map(function( el ){
+                    return el.trim().replace(/\r/g,'').replace(/&amp;/g,'&');
+                } )
+                .filter(function( el ){return el !== '';})
+                .forEach(function(el){
+                    var match = el.match( /\[([a-z_]*)\]/ );
+                    if( match ){
+                        current = match[1];
+                        out[current] = [];
+                    }else{
+                        out[current].push( el );
+                    }
+
+                });
+            out.map = out.data;
+            return out;
+        };
+        var robbo;
+        var controller = {
+            currentLevel:2,
+            loadLevel:function( level ){
+                this.currentLevel = level;
+                robbo = new Robbo( R.apply({
+                    controller: this,
+                    canvas: image
+                }, mapLoader( document.getElementById('map'+level).innerHTML )) );
+            },
+            reload: function(){
+                this.loadLevel(this.currentLevel);
+            }
+        };
+        controller.reload();
+        DOM.addListener( window, 'keydown', function( e ){
+
+            robbo.key.shift = e.shiftKey ? 2 : 0;
+            !robbo.key[ e.which ] && (robbo.key[ e.which ] = 2);
+
+            if(e.which > 8 && e.which < 80){
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        } );
+        DOM.addListener( window, 'keyup', function( e ){
+            var which = e.which,
+                shift = e.shiftKey;
+
+            robbo.key[ which ] === 1 && (robbo.key[ which ] = false);
+            robbo.afterMainLoop.push(function(  ){
+                robbo.key[ which ] = false;
+                robbo.key.shift = shift;
+            } );
+
+
+        } );
+
+    });
+</script>
+</head>
+<body>
+            <div>
+                <canvas height="1024" width="800" id="image" style="border:1px solid #ccc">
+
+                </canvas>
+            </div>
+            <div id="map1" style="display: none">
+                [level]
+                1
+                [colour]
+                996600
+                [size]
+                16.31
+                [author]
+                Janusz Pelc
+                [level_notes]
+                level_notes relating to this level can go here.
+                [data]
+                QQQQQQQQQQQQQQQQ
+                Q....Q...QTQ...Q
+                Q.R.'Q.&.Q.Q.&.Q
+                Q....Q...Q.Q...Q
+                QQTQQQ.#...Q.Q.Q
+                Q....Q.QQQQQ.Q.Q
+                Q...#Q..Q..H.Q.Q
+                Q#QQQQT#Q..H.Q.Q
+                Q...#QQ.Q..H.Q.Q
+                Q....Q..Q..QQQ.Q
+                QQQQ.QT.Q...Q}.Q
+                Q....QQQQQQ.Q..Q
+                Q.b..Q....D.Q..Q
+                Q....Q.#..QQQ..Q
+                Q....QQ.QQQ'...Q
+                Q....Q....QQQ.QQ
+                Q#.b#Q...#.Q#.#Q
+                Q#.##..##..Q...Q
+                Q###....##QQ...Q
+                Q%#.##.#T.Q....Q
+                QQQQQQQQQQQ#QQ.Q
+                Q...Q.....Q.%QDQ
+                }.....T...Q.QQ.Q
+                Q...Q...#......Q
+                Q.?.Q#QQQQQ.Q.QQ
+                Q.....QT...#...Q
+                QQQQQ.QQQQQ.Q.QQ
+                Q...Q.Q...Q.QQQQ
+                Q.!.....T.Q....Q
+                Q...Q.Q...Q...TQ
+                QQQQQQQQQQQQQQQQ
+                [additional]
+                4
+                13.2.&.1.0
+                7.2.&.1.1
+                13.10.}.1.1.1.0.0.0
+                0.22.}.0.0.1.0.0.0
+                [end]
+
+               </div>
+            <div id="map2" style="display: none">
+                [level]
+                18
+                [colour]
+                1F6384
+                [size]
+                16.31
+                [author]
+                Janusz Pelc
+                [data]
+                OOOOOOOOOOOOOOOO
+                O.}..O.T.}O.}.TO
+                O....O....O....O
+                O}............}O
+                O....O....O....O
+                O...TO....O....O
+                OODOOOOOO.OO.OOO
+                ObbbbO....O....O
+                ObbbbO.T..O....O
+                ObbHHO....O..T.O
+                ObbOTO}.??????.O
+                ObbH!OR...O....O
+                OO#OOOO.OOOO.OOO
+                O%..TO...TO....O
+                O....O....O....O
+                O........}O..T.O
+                O....O....O....O
+                O.}.%O.}....}..O
+                OOOOOOOOOO.OOOOO
+                O....O..}......O
+                O.&..O........}O
+                O....O.T..O....O
+                O..T.O....O.T..O
+                O....O....O....O
+                OOOOOOOO.OOOO.OO
+                O...&O....O&...O
+                O.OOOO.T..O....O
+                O.D..O....O...TO
+                OOOO.O}........O
+                O&..TO....O..}.O
+                OOOOOOOOOOOOOOOO
+                [additional]
+                18
+                2.1.}.1.1.1.0.0.0
+                9.1.}.1.1.1.0.0.0
+                12.1.}.1.1.1.0.0.0
+                14.3.}.2.2.1.0.0.0
+                1.3.}.0.0.1.0.0.0
+                6.10.}.0.0.1.0.0.0
+                9.15.}.2.2.1.0.0.0
+                2.17.}.3.3.1.0.0.0
+                7.17.}.3.3.1.0.0.0
+                12.17.}.3.3.1.0.0.0
+                8.19.}.1.1.1.0.0.0
+                14.20.}.2.2.1.0.0.0
+                6.28.}.0.0.1.0.0.0
+                13.29.}.3.3.1.0.0.0
+                11.25.&.1.0
+                1.29.&.1.1
+                4.25.&.2.0
+                2.20.&.2.1
+                [end]
+            </div>
+            <script type="text/javascript">
+                init();
+            </script>
+
+</body>
+</html>
