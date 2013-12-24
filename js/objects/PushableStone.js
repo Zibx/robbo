@@ -9,7 +9,6 @@
                     this.game.addActionObject(this);
                     this.direction = direction;
                 }
-                this.skipStep = true;
                 this.moving = true;
             }else{
                 return false;

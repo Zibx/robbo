@@ -224,19 +224,21 @@
                 return;
 
             var objectList = [],
-                order, lastOrder = -1,
+                order, lastOrder = 256*256,
                 needSort = false,
                 deadList = [];
             for( i = 0, _i = actionObjects.length; i < _i; i++ ){
                 obj = actionObjects[i];
-                order = (256 - obj.y) * 256 + ( obj.x );
+                order = (256 - obj.y) * 256 + ( 256 - obj.x );
                 objectList.push({
                     itterateOrder: order,
                     obj: obj,
                     id: i
                 });
-                if( lastOrder > order )
+                if( lastOrder < order ){
                     needSort = true;
+                }
+                lastOrder = order;
             }
             if( needSort ){
                 objectList.sort( function( a, b ){ return b.itterateOrder - a.itterateOrder });
@@ -245,8 +247,6 @@
                     actionObjects.push( objectList[ i ].obj );
                 }
             }
-            console.clear();
-            console.log(objectList.map(function(e){var el = e.obj;return [el.type,el.x,el.y,el.oldX,el.oldY].join(',')}).join('\n'));
             for( i = 0, _i = objectList.length; i < _i; i++ ){
                 obj = objectList[i].obj;
                 if(!obj){
@@ -254,7 +254,7 @@
                 }else{
                     if( type && obj.is(type) !== check )
                         continue;
-                    dead = obj.dead;
+                    dead = false;
                     if( !obj.skipStep ){
                         dead = dead || (obj.step && obj.step() === false);
                         //_i = actionObjects.length; // it can change in this fn
@@ -262,14 +262,12 @@
                         obj.skipStep--;
                 }
                 if( dead ){
-                    obj.dead = true;
                     deadList.push( i );
                 }
             }
 
-            for( i = actionObjects.length - 1; i > -1; i-- ){
-                obj = actionObjects[i];
-                obj.dead && actionObjects.splice( i, 1 );
+            for( i = deadList.length - 1; i > -1; i-- ){
+                actionObjects.splice( deadList[i], 1 );
             }
             //console.log('action objects count', _i);
 

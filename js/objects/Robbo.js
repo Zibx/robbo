@@ -104,7 +104,6 @@
             }
         },
         animate: function(  ){
-            debugger;
             if( this.animateStep ){
                 this.animateStep = false;
                 this.stepAnimation = (this.stepAnimation + 1) % 2;
