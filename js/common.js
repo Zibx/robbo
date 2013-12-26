@@ -54,6 +54,7 @@
         demolish: function( cell ){
             if( cell.demolishable )
                 if(!( cell.demolish && cell.demolish() === false )){
+                    cell.dead = true;
                     cell.game.setCell( cell, 'Explosion', { after: { type: 'Empty' }, single: true, fromBullet: true } );
                     cell.game.playSound('gun_default');
                 }
@@ -69,6 +70,37 @@
             delta[0] > delta[1] && (delta = [delta[1], delta[0]]);
             if( delta[0] === 0 && delta[1] === 1 && this.game.getCell( robbo ) === robbo /*maybe robbo is teleporting*/ )
                 R.behaviors.demolish( robbo );
+        },
+        fire: function( direction, type ){
+            direction === void 0 && (direction = this.direction);
+            var cell = this.game.getCell( R.addDirection( this.x, this.y, direction ) );
+            if( cell.is( 'Empty' ) ){
+                this.game.setCell( cell, 'Bullet', { direction: direction, bulletType: type || 'gun' } );
+                return true;
+            }else if( cell.demolishable ){
+                R.behaviors.demolish( cell );
+            }else
+                return false;
+        },
+        rightHandMove: function( clockwise ){
+            var cell,
+                add = clockwise ? 1 : -1, testDirection, i,
+                out = [];
+
+            for( i = 2; i; ){
+                --i;
+                testDirection = this.direction;
+                this.direction = ( this.direction + 4 - add ) % 4;
+                cell = this.game.getCell( R.addDirection( this, testDirection ) );
+                if( cell.is( 'Empty' ) ){
+                    this.game.swap( this, cell );
+                    break;
+                }else{
+                    this.direction = ( this.direction + 4 + add * 2 ) % 4;
+                    out.push(cell);
+                }
+            }
+            return out;
         }
     }
 })();

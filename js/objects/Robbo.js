@@ -47,16 +47,11 @@
                 return;
 
             this.set( 'ammo', this.ammo - 1 );
-            var cell = this.game.getCell( R.addDirection( this.x, this.y, this.direction ) );
-            if( cell.is( 'Empty' ) ){
-                this.game.setCell( cell, 'Bullet', { direction: this.direction, bulletType: 'gun' } );
-            }else if( cell.demolishable ){
-                R.behaviors.demolish( cell );
-            }else
-                return;
-            this.game.playSound('shoot_default');
+            if( R.behaviors.fire.call( this ) !== false ){
+                this.game.playSound('shoot_default');
 
-            this.fireDelay = 2;
+                this.fireDelay = 2;
+            }
         },
         step: function(  ){
             this.fireDelay = this.fireDelay > 0 ? this.fireDelay - 1 : 0;

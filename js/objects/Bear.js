@@ -8,21 +8,7 @@
         },
         stepAnimation: 0,
         step: function(  ){
-            var cell,
-                add = this.clockwise ? 1 : -1, testDirection, i;
-
-            for( i = 2; i; ){
-                --i;
-                testDirection = this.direction;
-                this.direction = ( this.direction + 4 - add ) % 4;
-                cell = this.game.getCell( R.addDirection( this, testDirection ) );
-                if( cell.is( 'Empty' ) ){
-                    this.game.swap( this, cell );
-                    break;
-                }else{
-                    this.direction = ( this.direction + 4 + add * 2 ) % 4;
-                }
-            }
+            R.behaviors.rightHandMove.call( this, this.clockwise );
         },
         animate: function(  ){
             this.stepAnimation = (this.stepAnimation + 1) % 4;

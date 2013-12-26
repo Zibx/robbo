@@ -7,7 +7,7 @@
             this.isExploding = true;
             this.game.addActionObject( this );
             this.animation = 2;
-//			this.step();
+			this.step();
 
             return false;
         },
@@ -18,8 +18,7 @@
             this.isExploding = true;
             this.game.addActionObject( this );
             this.animation = 2;
-			this.skipStep = 1;
-			
+            this.skipStep = true;
             return false;
         },
         step: function(  ){
@@ -58,7 +57,7 @@
                         if( cell === this || !cell.explode || cell.explode(animation) !== false ){
                             if( cell === this )
                                 this.game.removeActiveObject( this );
-                            this.game.setCell( x, y, 'Explosion', { after: { type: 'Empty' }, animation: animation, skipStep: true});
+                            this.game.setCell( x, y, 'Explosion', { after: { type: 'Empty' }, animation: animation});
                         }
                     }
                 }

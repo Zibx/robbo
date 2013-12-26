@@ -148,8 +148,13 @@
         },
         getCell: function( x ){
             var y = arguments[1],
-                out = y === void 0 ? (this.map[x.y] || {})[x.x] : (this.map[y] || {})[x];
-            return out === void 0 ? {type: ' ', is: R.falseFn } : out;
+                out;
+            if( y === void 0 ){
+                y = x.y;
+                x = x.x;
+            }
+            out = (this.map[y] || {})[x];
+            return out === void 0 ? this.ObjectFactory( objects.Out, x, y ) : out;
         },
         setCell: function( x, y, obj, data ){
             var letter;
@@ -254,7 +259,7 @@
                 }else{
                     if( type && obj.is(type) !== check )
                         continue;
-                    dead = false;
+                    dead = obj.dead || false;
                     if( !obj.skipStep ){
                         dead = dead || (obj.step && obj.step() === false);
                         //_i = actionObjects.length; // it can change in this fn

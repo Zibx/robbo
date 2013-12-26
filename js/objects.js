@@ -1,6 +1,8 @@
 (function( R ){
     'use strict';
-    R.objects = {};
+    R.objects = {
+        Out: {}
+    };
     R.include([
             'Robbo',
             'Empty',

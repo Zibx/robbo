@@ -24,14 +24,8 @@
                 this.innerSkip = false;
             }
             if( this.fire && Math.random() < 1/8 && !justShootted ){
-
                 this.justShootted = true;
-                cell = this.game.getCell( R.addDirection( this, 1 ) );
-
-                if( cell.is('Empty') )
-                    this.game.setCell( cell, 'Bullet', { direction: 1, bulletType: 'gun' } );
-                else
-                    R.behaviors.demolish( cell );
+                R.behaviors.fire.call( this, 1 );
             }
         },
         animate: function(  ){

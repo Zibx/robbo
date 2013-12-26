@@ -28,14 +28,11 @@
             }else if( Math.random() < 1/12 && !this.justShootted ){
 
                 this.justShootted = true;
-                cell = this.game.getCell( R.addDirection( this, this.direction ) );
-
-                if( cell.is('Empty')/* || this.bulletType === 'antimatter' && cell.is('Bullet') */){
-                    this.game.setCell( cell, 'Bullet', { direction: this.direction, bulletType: this.bulletType } );
+                if( R.behaviors.fire.call( this, this.direction, this.bulletType ) === true )
                     this.game.playSound('gun_default');
-                }else
-                    R.behaviors.demolish( cell );
+
             }
+
         },
         explode: R.behaviors.die,
         explodable: true

@@ -19,8 +19,8 @@
             !blink && ctx.drawImage.apply(
                 ctx,
                 [this.scheme]
-                    .concat( this.getRect( sprite ) )
-                    .concat( rect )
+                    .concat( this.getRect( sprite, rect.slice(4) ) )
+                    .concat( rect.slice(0,4) )
             );
         },
         modifyColors: function( data ){
@@ -94,12 +94,13 @@
             sprite.ascii && ( sprite = sprite.ascii[ obj.ascii ] );
             return typeof sprite === 'function' ? sprite.call( obj, step, step2 ) : sprite;
         },
-        getRect: function( sprite ){
+        getRect: function( sprite, advanced ){
+            advanced = advanced && advanced[0];
             var offset = this.offset, grid = this.gridSize, cell = this.cellSize;
             return [
                 offset + sprite[0] * grid,
                 offset + sprite[1] * grid,
-                cell,
+                advanced || cell,
                 cell
             ];
         },
@@ -233,8 +234,8 @@
         'hud.planet': [ 8, 3 ],
         'hud.lives': [ 5, 3 ]
     };
-
-
+    for( var i = 0; i < 10; i++)
+        R.sprites['hud.digit.'+i] = [1+i*0.5,6];
     R.sprites.img = new Image();
     R.sprites.img.onload = function(){
         R.loaded('sprites');

@@ -72,23 +72,36 @@
 
         },
         redrawHud: function( name, value ){
-            var x = {screw: 1, ammo: 4, keys: 7, lives: 10, planet: 13}[name];
+            var x = {screw: 1, ammo: 4, keys: 7, lives: 10, planet: 13}[name],
+                cellSize = this.cellSize;
             if(!x)return;
             this.legendCtx.fillStyle = this.lastColors[4];
             this.legendCtx.fillRect(
-                x*32,
-                20,
+                x*32+32,
+                16,
                 32,32
             );
             this.legendCtx.fillStyle = '#fff';
-            this.legendCtx.fillText(
+
+            sprites.draw(
+                this.legendCtx,
+                sprites.resolveSprite( {type: 'hud.digit.'+ (((value % 100)/10)|0) } ),
+                [ x*32+36, 16, cellSize/2, cellSize, cellSize/2 ]
+            );
+            sprites.draw(
+                this.legendCtx,
+                sprites.resolveSprite( {type: 'hud.digit.'+ (value % 10) } ),
+                [ x*32+32+21, 16, cellSize/2, cellSize, cellSize/2 ]
+            );
+
+            /*this.legendCtx.fillText(
                 value,
                 x*32+10,
                 40
-            );
+            );*/
         },
         updateHud: function(  ){
-            var c = 2, cellSize = this.cellSize;
+            var c = 1, cellSize = this.cellSize;
 
             'screw,ammo,keys,lives,planet'.split(',').forEach(function( key ){
                 sprites.draw(

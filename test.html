@@ -44,6 +44,28 @@
                 }
             },
             {
+                map: '.......\n' +
+                        'R..#.#.\n' +
+                        '.......\n' +
+                        '.......\n'+
+                        '..====.\n',
+                data: [],
+                test: function(){
+
+                }
+            },
+            {
+                map: '.......\n' +
+                        'R..#.#.\n' +
+                        'Z==.=.Z\n' +
+                        'Z==.=.Z\n'+
+                        '.==....\n',
+                data: [],
+                test: function(){
+
+                }
+            },
+            {
                 map: '...\nR#.\n...',
                 data: [],
                 test: function(){
@@ -279,7 +301,7 @@
 
             this.maps[this._currentLevel].test && this.maps[this._currentLevel].test();
         },
-        load: 3
+        load: 7
     });
 
 </script>
