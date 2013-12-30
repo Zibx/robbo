@@ -55,7 +55,7 @@
     <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388065322291" ignored="false" />
     <file path="/test.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383911460887" ignored="false" />
     <file path="/keyboard.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383128684238" ignored="false" />
-    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388055707325" ignored="false" />
+    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388271290242" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387197985101" ignored="false" />
     <file path="/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384520145562" ignored="false" />
     <file path="/Bomb.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388079628679" ignored="false" />
@@ -67,11 +67,11 @@
     <file path="/Robbo.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387990394011" ignored="false" />
     <file path="/ascii.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383214797451" ignored="false" />
     <file path="/view.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388080529030" ignored="false" />
-    <file path="/sprites.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388080658676" ignored="false" />
+    <file path="/sprites.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388272892430" ignored="false" />
     <file path="/Magnet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386779157658" ignored="false" />
-    <file path="/Bullet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388077336710" ignored="false" />
+    <file path="/Bullet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388271728927" ignored="false" />
     <file path="/objects.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388055139641" ignored="false" />
-    <file path="/Teleport.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386769433957" ignored="false" />
+    <file path="/Teleport.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388273126012" ignored="false" />
     <file path="/common.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387991853457" ignored="false" />
     <file path="/base.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383315132617" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/History.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383668833764" ignored="false" />
@@ -305,7 +305,7 @@
           <file leaf-file-name="view.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="93" column="28" selection-start="3496" selection-end="3496" vertical-scroll-proportion="0.4962162">
+                <state line="189" column="26" selection-start="6822" selection-end="6827" vertical-scroll-proportion="1.3278106">
                   <folding />
                 </state>
               </provider>
@@ -314,7 +314,7 @@
           <file leaf-file-name="game.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/game.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1834" column="7" selection-start="34362" selection-end="34362" vertical-scroll-proportion="-14.215686">
+                <state line="1834" column="7" selection-start="34362" selection-end="34362" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -323,7 +323,7 @@
           <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="156" column="75" selection-start="5344" selection-end="5344" vertical-scroll-proportion="-29.68">
+                <state line="59" column="57" selection-start="1810" selection-end="1810" vertical-scroll-proportion="-29.6">
                   <folding />
                 </state>
               </provider>
@@ -332,7 +332,7 @@
           <file leaf-file-name="Bomb.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="-11.52">
+                <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -359,7 +359,7 @@
           <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="303" column="14" selection-start="11783" selection-end="11783" vertical-scroll-proportion="-27.384615">
+                <state line="303" column="14" selection-start="11783" selection-end="11783" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -381,7 +381,7 @@
           <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="303" column="15" selection-start="11784" selection-end="11784" vertical-scroll-proportion="-27.384615">
+                <state line="303" column="15" selection-start="11784" selection-end="11784" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -405,10 +405,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sprites.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="sprites.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/sprites.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="102" column="24" selection-start="3558" selection-end="3558" vertical-scroll-proportion="0.44324324">
+                <state line="182" column="18" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Teleport.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/objects/Teleport.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="62" column="42" selection-start="2198" selection-end="2198" vertical-scroll-proportion="0.65959954">
                   <folding />
                 </state>
               </provider>
@@ -453,7 +462,7 @@
           <file leaf-file-name="Bullet.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="96" column="0" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.0">
+                <state line="37" column="27" selection-start="1473" selection-end="1473" vertical-scroll-proportion="-16.68">
                   <folding />
                 </state>
               </provider>
@@ -480,40 +489,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="F:/var/www/dizaina.net/z/work_sp.js" />
-        <option value="$PROJECT_DIR$/js/objects/Teleport.js" />
-        <option value="$PROJECT_DIR$/js/objects/Magnet.js" />
-        <option value="$PROJECT_DIR$/js/objects/Bird.js" />
-        <option value="$PROJECT_DIR$/js/ascii.js" />
-        <option value="$PROJECT_DIR$/js/asciiRender.js" />
-        <option value="$PROJECT_DIR$/js/objects/Explosion.js" />
-        <option value="$PROJECT_DIR$/../../palette/zPalette.js" />
-        <option value="$PROJECT_DIR$/../../palette/index.html" />
-        <option value="$PROJECT_DIR$/js/shim.js" />
-        <option value="$PROJECT_DIR$/js/objects/PushableStone.js" />
         <option value="$PROJECT_DIR$/js/objects/Robbo.js" />
         <option value="$PROJECT_DIR$/js/objects/Bear.js" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/js/objects.js" />
-        <option value="$PROJECT_DIR$/js/controller.js" />
         <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/js/objects/Turrel.js" />
         <option value="$PROJECT_DIR$/js/objects/Mustache.js" />
         <option value="$PROJECT_DIR$/js/objects/Key.js" />
-        <option value="$PROJECT_DIR$/js/objects/Bullet.js" />
         <option value="$PROJECT_DIR$/js/objects/Lava.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/js/objects/Bomb.js" />
-        <option value="$PROJECT_DIR$/js/sprites.js" />
         <option value="$PROJECT_DIR$/js/view.js" />
+        <option value="$PROJECT_DIR$/js/controller.js" />
+        <option value="$PROJECT_DIR$/js/objects/Bullet.js" />
+        <option value="$PROJECT_DIR$/js/sprites.js" />
+        <option value="$PROJECT_DIR$/js/objects/Teleport.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1928" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -541,6 +540,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -593,7 +593,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -603,10 +602,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tpls2" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="dir.diff.last.used.directory" value="$USER_HOME$/r" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dir.diff.last.used.directory" value="$USER_HOME$/r" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -662,14 +661,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883817" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.090625" sideWeight="0.67116183" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09014233" sideWeight="0.67116183" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -679,6 +677,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883817" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -747,132 +746,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/objects/Mustache.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="22" selection-start="48" selection-end="56" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="16" selection-start="1504" selection-end="1504" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/sprites.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="10198" selection-start="6875" selection-end="17078" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/PushableStone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="818" selection-end="818" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="25" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Magnet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="20" selection-start="48" selection-end="54" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/shim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="57" selection-start="5848" selection-end="5848" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Teleport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="63" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Stone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/asciiRender.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="16" selection-start="1516" selection-end="1516" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Spaceship.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/PushableStone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="25" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="66" selection-end="66" vertical-scroll-proportion="0.05561614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="75" selection-start="5344" selection-end="5344" vertical-scroll-proportion="-29.68">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="196" selection-end="208" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Turrel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="12" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Mustache.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/Walls.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -901,23 +774,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="0" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1834" column="7" selection-start="34362" selection-end="34362" vertical-scroll-proportion="-14.215686">
+        <state line="1834" column="7" selection-start="34362" selection-end="34362" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="303" column="14" selection-start="11783" selection-end="11783" vertical-scroll-proportion="-27.384615">
+        <state line="303" column="14" selection-start="11783" selection-end="11783" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -938,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="-11.52">
+        <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -950,16 +816,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="27" selection-start="1473" selection-end="1473" vertical-scroll-proportion="-16.68">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="57" selection-start="1810" selection-end="1810" vertical-scroll-proportion="-29.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/shim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="57" selection-start="5848" selection-end="5848" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/sprites.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="24" selection-start="3558" selection-end="3558" vertical-scroll-proportion="0.44324324">
+        <state line="182" column="18" selection-start="5243" selection-end="5243" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Teleport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="42" selection-start="2198" selection-end="2198" vertical-scroll-proportion="0.65959954">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="28" selection-start="3496" selection-end="3496" vertical-scroll-proportion="0.4962162">
+        <state line="189" column="26" selection-start="6822" selection-end="6827" vertical-scroll-proportion="1.3278106">
           <folding />
         </state>
       </provider>

@@ -60,6 +60,7 @@
                 game = this.game,
 
                 integrate = game.setCell.bind( game, to, 'Explosion', { after: { type: obj }, single: true, build: true, callback: function(  ){
+					game.view.redraw(obj);
                     obj.noMove = false;
                 } }),
                 desintegrateCfg = { after: { type: 'Empty' }, single: true, fromBullet: true};

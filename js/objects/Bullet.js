@@ -10,15 +10,21 @@
         logics: {
             laser: function(  ){
                 var cell;
-                if( this.wait )
+                if( this.wait === true )
                     return;
+
                 if( this.return ){
 
                     this.previous && (cell = this.game.getCell(this.previous.x, this.previous.y));
                     this.game.setCell( this, 'Empty' );
                     if( cell && cell.wait ){
-                        cell.wait = false;
-                        cell.return = true;
+
+						// bullets can be traversed in any order, and we need previous cell to be processed exactly in next world step
+						this.game.delayedFn(function(){
+							cell.wait = false;
+							cell.return = true;
+						});
+
                     }else{
                         this.game.setCell( this, 'Explosion', { after: { type: 'Empty' }, single: true, fromBullet: true } );
                     }
@@ -36,11 +42,10 @@
                             this.game.setCell( nextCell, 'Bullet', { direction: tmp.direction, previous: this, bulletType: this.bulletType, skipStep: true } );
                             this.wait = true;
                         }
-                    }*/else if( cell.demolishable ){
-                        R.behaviors.demolish( cell );
-                        this.return = true;
-                        return true;
-                    }else{
+                    }*/else{
+						if( cell.demolishable )
+                        	R.behaviors.demolish( cell );
+
                         this.return = true;
                         return true;
                     }

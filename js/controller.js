@@ -272,7 +272,11 @@
                     deadList.push( i );
                 }
             }
-
+			for( i = 0, _i = objectList.length; i < _i; i++ ){
+				obj = objectList[i];
+				if( obj && obj.skipStep )
+					obj.skipStep--;
+			}
             for( i = deadList.length - 1; i > -1; i-- ){
                 actionObjects.splice( deadList[i], 1 );
             }

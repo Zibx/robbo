@@ -8,7 +8,7 @@
         draw: function( ctx, sprite, rect, blink ){
             var c = ((80+Math.random()*20)|0);
 
-            ctx.fillStyle = blink;
+            ctx.fillStyle = blink?'#ffffff': this.bgColor;
             ctx.globalAlpha = 1;
             ctx.fillRect.apply( ctx, rect );
             //rect[0]+=8;
@@ -16,7 +16,8 @@
             //rect[2]/=4;
             //rect[3]/=4;
             ctx.globalAlpha = 1;
-            !blink && ctx.drawImage.apply(
+            //!blink &&
+			ctx.drawImage.apply(
                 ctx,
                 [this.scheme]
                     .concat( this.getRect( sprite, rect.slice(4) ) )
@@ -30,10 +31,10 @@
                 w = canvas.width = this.img.width,
                 h = canvas.height = this.img.height,
                 i, _i;
-            ctx.fillStyle = '#000000';
-            ctx.fillRect(0,0,w,h);
+            //ctx.fillStyle = '#000000';
+            //ctx.fillRect(0,0,w,h);
             ctx.drawImage( this.img, 0, 0 );
-
+			this.bgColor = data[0];
             imageData = ctx.getImageData(0, 0, w, h);
 
             var hash = {
@@ -53,11 +54,11 @@
                         }
                     },
 
-                    '0': {
-                        '0': {
-                            '0': R.colorToArray(data[0])
-                        }
-                    },
+//                    '0': {
+//                        '0': {
+//                            '0': R.colorToArray(data[0])
+//                        }
+//                    },
                     '28': {
                         '39': {
                             '131': R.colorToArray(data[3])
@@ -178,14 +179,12 @@
         },
 
         Explosion: function(  ){
-            //console.log(this.animation)
-            return [3-Math.abs(3-Math.min(this.animation,5)),7];
-            /*var animation = this.animation;
-            //console.log(this.animation)
-            return this.fromBullet ?
-                [  Math.abs( 2 - animation ) + 1, 2 ] :
 
-                [ 3 - this.animation, 7 ];//(this.build ? 2-this.animation :*/
+            return this.build ?
+				[2-this.animation,7]
+				:
+				[3-Math.abs(3-Math.min(this.animation,5)),7];
+
         },
 
         Bullet: ( function(){
