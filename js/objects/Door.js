@@ -1,17 +1,25 @@
 (function( R ){
     'use strict';
     R.objects.Door = {
+        // дверь можно взорвать
         explodable: true,
+        // если ткнуться в дверь, то случится поведение поедания двери
         eatable: true,
         eat: function( eater ){
+            // если у того кто хочет съесть дверь есть хотя бы один ключ
             if( eater.keys > 0 ){
+                // отнимем у него один ключ
                 eater.set( 'keys', eater.keys - 1 );
+                // уничтожим дверь
                 this.game.setCell( this, 'Empty' );
+                // и сыграем звук отворяющейся дверь
                 this.game.playSound('door_default')
-                return false;
-            }else{
-                return false;
             }
+            // функция eat вызывается извне, и если она возвращает false, то это значит
+            // что объект на самом деле есть нельзя. В случае двери она сама уничтожает себя,
+            // потому что в оригинальном роббо мы не едим дверь как болт, а только отворяем её.
+
+            return false;
         }
     };
 } )(window.R);

@@ -15,7 +15,7 @@
             game.delayedFn(function(){
                 this.game.set('screw', this.game.screw);
             }.bind(this),6);
-            this.ammo = 9;
+            //this.ammo = 9;
             /*game.once('scrolled',function(){
                 this.inited = true;
                 debugger;

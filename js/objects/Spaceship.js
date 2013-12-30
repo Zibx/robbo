@@ -7,7 +7,7 @@
         movable: true,
         eatable: true,
         eat: function( eater ){
-            if( this.game.screw === 0 ){
+            if( this.game.screw === 0 || this.fromQuestion ){
                 this.movable = false;
                 eater.noMove = true;
                 this.game.setCell( eater, 'Empty');

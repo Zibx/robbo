@@ -3,7 +3,7 @@
     R.objects.Question = {
         randomCfg: [
             { type: 'Question' },
-            { type: 'Spaceship' },
+            { type: 'Spaceship', data: {fromQuestion: true} },
             { type: 'Stone' },
             { type: 'Ground' },
             { type: 'Screw' },

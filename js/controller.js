@@ -46,7 +46,7 @@
 
             if( typeof cfg === 'number' ){
                 this._currentLevel = cfg;
-                this.loadLevel( this.maps[ cfg ] );
+                this.loadLevel( this.maps[ cfg - 1 ] );
                 return;
             }
 
