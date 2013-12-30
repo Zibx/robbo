@@ -5,10 +5,8 @@
         gridSize: 34,
         cellSize: 32,
         offset: 2,
-        draw: function( ctx, sprite, rect, blink ){
+        draw: function( ctx, sprite, rect ){
             var c = ((80+Math.random()*20)|0);
-
-            ctx.fillStyle = blink?'#ffffff': this.bgColor;
             ctx.globalAlpha = 1;
             ctx.fillRect.apply( ctx, rect );
             //rect[0]+=8;
@@ -34,7 +32,6 @@
             //ctx.fillStyle = '#000000';
             //ctx.fillRect(0,0,w,h);
             ctx.drawImage( this.img, 0, 0 );
-			this.bgColor = data[0];
             imageData = ctx.getImageData(0, 0, w, h);
 
             var hash = {

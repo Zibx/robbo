@@ -64,6 +64,7 @@
         },
         mapColorsSet: function( data ){
             R.sprites.modifyColors( data );
+			this.canvasCtx.fillStyle = this.bgColor = data[0];
             this.lastColors = data;
             this.legendCtx.fillStyle = this.lastColors[4];
             this.legendCtx.fillRect(0,0,512,64);
@@ -229,8 +230,7 @@
                     obj.y * cellSize,
                     cellSize,
                     cellSize
-                ],
-                this.blink === 2 ? '#fff' : void 0
+                ]
             );
 
         },
@@ -274,7 +274,10 @@
                 changeCounter = 0;
             if( this.blink ){
                 this.blink--;
+
+				this.canvasCtx.fillStyle = '#ffffff';
                 this.fullRedraw();
+				this.canvasCtx.fillStyle = this.bgColor;
             }else{
                 this.controller.actionObjects.forEach( drawObject );
 
