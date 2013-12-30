@@ -87,28 +87,29 @@
 
             this.setCell( robbo, 'Explosion', {
                 single: true,
-                after: { type: 'Empty' },
-
-
-                callback: function(){
-                    this.actionObjects = [];
-                    game.setCell( robbo, 'Empty' );
-                    this.map.forEach(function(row,j){
-                        row.forEach(function(obj,i){
-                            if( !( obj.is('Empty') || obj.is( 'Walls' ) ) ){
-                                game.setCell(i,j,'Explosion', {
-                                    animation: R.rand(1,2),
-                                    single: true,
-                                    after:{ type: 'Empty' }
-                                });
-                            }
-                        });
-                    });
-                    this.delayedFn(function(  ){
-                        this.loadLevel( this._currentLevel );
-                    }, 6)
-                }.bind(this)
+                after: { type: 'Empty' }
             });
+            this.delayedFn(function(  ){
+                this.actionObjects.forEach(function( obj ){
+                    obj && (obj.dead = true);
+                });
+                this.actionObjects = [];
+                game.setCell( robbo, 'Empty' );
+                this.map.forEach(function(row,j){
+                    row.forEach(function(obj,i){
+                        if( !( obj.is('Empty') || obj.is( 'Walls' ) ) ){
+                            game.setCell(i,j,'Explosion', {
+                                animation: R.rand(1,2),
+                                single: true,
+                                after:{ type: 'Empty' }
+                            });
+                        }
+                    });
+                });
+                this.delayedFn(function(  ){
+                    this.loadLevel( this._currentLevel );
+                }, 6)
+            }.bind(this), 6);
         },
         finishLevel: function(  ){
             var col = this.map[0].length - 1,
@@ -188,7 +189,8 @@
 
             var index = this.actionObjects.indexOf( obj );
             // if we call remove from step => we should skip some objects in cycle
-            index !== -1 && (this.actionObjects[ index ] = false);
+            if( index !== -1 )
+                this.actionObjects[ index ].dead = true;
         },
         addActionObject: function( obj ){
             //if( this.actionObjects.indexOf(obj) === -1 )

@@ -85,7 +85,8 @@
         rightHandMove: function( clockwise ){
             var cell,
                 add = clockwise ? 1 : -1, testDirection, i,
-                out = [];
+                out = [],
+                originalDirection = this.direction;
 
             for( i = 2; i; ){
                 --i;
@@ -95,11 +96,18 @@
                 if( cell.is( 'Empty' ) ){
                     this.game.swap( this, cell );
                     break;
+                }else if( cell.is( this.type ) && i === 0 && !this.lastSkipped ){ // if there is a same object in front of me
+                    // restore state and skip step
+                    this.lastSkipped = true;
+                    this.direction = originalDirection;
+                    this.skipStep = true;
+                    return out;
                 }else{
                     this.direction = ( this.direction + 4 + add * 2 ) % 4;
                     out.push(cell);
                 }
             }
+            this.lastSkipped = false;
             return out;
         }
     }
