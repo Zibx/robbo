@@ -52,7 +52,7 @@
     <file path="G:/zibx/projects.yml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384450677973" ignored="false" />
     <file path="G:/zibx/js/widgets.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383069602674" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Observable.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383121616346" ignored="false" />
-    <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388435876537" ignored="false" />
+    <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388451718386" ignored="false" />
     <file path="/test.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383911460887" ignored="false" />
     <file path="/keyboard.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383128684238" ignored="false" />
     <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388271290242" ignored="false" />
@@ -66,7 +66,7 @@
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/JS.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384772047274" ignored="false" />
     <file path="/Robbo.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387990394011" ignored="false" />
     <file path="/ascii.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383214797451" ignored="false" />
-    <file path="/view.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388436243360" ignored="false" />
+    <file path="/view.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388451889706" ignored="false" />
     <file path="/sprites.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388437264333" ignored="false" />
     <file path="/Magnet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386779157658" ignored="false" />
     <file path="/Bullet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388271728927" ignored="false" />
@@ -302,10 +302,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.4552175">
       <split-first>
         <leaf>
-          <file leaf-file-name="view.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="view.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="277" column="40" selection-start="9630" selection-end="9639" vertical-scroll-proportion="0.3325444">
+                <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="1.3633136">
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -316,7 +316,7 @@
           <file leaf-file-name="game.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/game.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="504" column="7" selection-start="10200" selection-end="10200" vertical-scroll-proportion="-7.745098">
+                <state line="3213" column="47" selection-start="58900" selection-end="58900" vertical-scroll-proportion="-1.3921568">
                   <folding />
                 </state>
               </provider>
@@ -407,7 +407,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sprites.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="sprites.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/sprites.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="7" column="42" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.9405339">
@@ -504,9 +504,9 @@
         <option value="$PROJECT_DIR$/js/controller.js" />
         <option value="$PROJECT_DIR$/js/objects/Bullet.js" />
         <option value="$PROJECT_DIR$/js/objects/Teleport.js" />
+        <option value="$PROJECT_DIR$/js/sprites.js" />
         <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/js/view.js" />
-        <option value="$PROJECT_DIR$/js/sprites.js" />
       </list>
     </option>
   </component>
@@ -771,7 +771,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="303" column="15" selection-start="11784" selection-end="11784" vertical-scroll-proportion="0.0">
+        <state line="303" column="14" selection-start="11783" selection-end="11783" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -839,26 +839,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/sprites.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="42" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.9405339">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="504" column="7" selection-start="10200" selection-end="10200" vertical-scroll-proportion="-7.745098">
+        <state line="3213" column="47" selection-start="58900" selection-end="58900" vertical-scroll-proportion="-1.3921568">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="277" column="40" selection-start="9630" selection-end="9639" vertical-scroll-proportion="0.3325444">
+        <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="1.3633136">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/sprites.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.9405339">
-          <folding />
         </state>
       </provider>
     </entry>

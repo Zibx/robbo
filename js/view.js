@@ -274,8 +274,8 @@
                 changeCounter = 0;
             if( this.blink ){
                 this.blink--;
-
-				this.canvasCtx.fillStyle = '#ffffff';
+				if( this.blink > 1 )
+					this.canvasCtx.fillStyle = '#ffffff';
                 this.fullRedraw();
 				this.canvasCtx.fillStyle = this.bgColor;
             }else{
