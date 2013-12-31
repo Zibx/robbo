@@ -55,7 +55,7 @@
     <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388451718386" ignored="false" />
     <file path="/test.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383911460887" ignored="false" />
     <file path="/keyboard.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383128684238" ignored="false" />
-    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388271290242" ignored="false" />
+    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388452488275" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387197985101" ignored="false" />
     <file path="/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384520145562" ignored="false" />
     <file path="/Bomb.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388079628679" ignored="false" />
@@ -302,10 +302,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.4552175">
       <split-first>
         <leaf>
-          <file leaf-file-name="view.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="view.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="1.3633136">
+                <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="-15.48">
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -322,10 +322,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="controller.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="59" column="57" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0">
+                <state line="43" column="54" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.6643678">
                   <folding />
                 </state>
               </provider>
@@ -334,7 +334,7 @@
           <file leaf-file-name="Bomb.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
+                <state line="25" column="14" selection-start="670" selection-end="670" vertical-scroll-proportion="-3.08">
                   <folding />
                 </state>
               </provider>
@@ -500,13 +500,13 @@
         <option value="$PROJECT_DIR$/js/objects/Key.js" />
         <option value="$PROJECT_DIR$/js/objects/Lava.js" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/js/objects/Bomb.js" />
-        <option value="$PROJECT_DIR$/js/controller.js" />
         <option value="$PROJECT_DIR$/js/objects/Bullet.js" />
         <option value="$PROJECT_DIR$/js/objects/Teleport.js" />
         <option value="$PROJECT_DIR$/js/sprites.js" />
         <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/js/view.js" />
+        <option value="$PROJECT_DIR$/js/objects/Bomb.js" />
+        <option value="$PROJECT_DIR$/js/controller.js" />
       </list>
     </option>
   </component>
@@ -790,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ascii.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="29" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
@@ -807,13 +800,6 @@
     <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="27" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="57" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -846,6 +832,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="-15.48">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="14" selection-start="670" selection-end="670" vertical-scroll-proportion="-3.08">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3213" column="47" selection-start="58900" selection-end="58900" vertical-scroll-proportion="-1.3921568">
@@ -853,12 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/view.js">
+    <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="1.3633136">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="43" column="54" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.6643678">
+          <folding />
         </state>
       </provider>
     </entry>

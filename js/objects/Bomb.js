@@ -23,8 +23,8 @@
         },
         step: function(  ){
             this.animation--;
-            console.log('bomb')
-            console.log(Ro.getAsciiMap());
+            //console.log('bomb')
+            //console.log(Ro.getAsciiMap());
             if( this.animation === 0 ){
                 this.game.removeActiveObject( this );
                 this.game.playSound('bomb');
@@ -42,7 +42,7 @@
 					5, 4, 5
 				]);
             }
-            console.log(Ro.getAsciiMap());
+            //console.log(Ro.getAsciiMap());
             //this.dead = true;
 
         },

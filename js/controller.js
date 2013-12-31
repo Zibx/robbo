@@ -1,5 +1,13 @@
 (function( R ){
     'use strict';
+	var requestAnimationFrame = (function(){
+		return  window.requestAnimationFrame       ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame    ||
+			function( callback ){
+				window.setTimeout(callback, 1000 / 60);
+			};
+	})();
     var Controller = function( cfg ){
             R.apply( this, cfg );
             this._events = {};
@@ -28,6 +36,13 @@
                 renderTo: this.renderTo,
                 controller: this
             });
+
+			var _drawChanges = function(){
+				this.view.drawChanges( this.animateStep )
+			}.bind(this);
+			this.drawChanges = function(){
+				requestAnimationFrame( _drawChanges );
+			};
         },
         clear: function(  ){
             this.map = [];
@@ -193,14 +208,11 @@
                 this.actionObjects[ index ].dead = true;
         },
         addActionObject: function( obj ){
-            //if( this.actionObjects.indexOf(obj) === -1 )
             this.actionObjects.push( obj );
         },
         moveMe: function(  ){
 
-            var move = false,
-                fire = false,
-                robbo = this.robbo,
+            var robbo = this.robbo,
                 view = this.view;
             !robbo.noMove &&
                 ['right','down','left','up'].forEach( function( which, i ){
@@ -224,9 +236,6 @@
 
         moveWorld: function( type, check ){
             var actionObjects = this.actionObjects, i, _i, obj, dead;
-/*            actionObjects.sort(function(a,b){
-                return (b.y+(256-b.x)*256)-(a.y+(256-a.x)*256);
-            });*/
             if( !this.scrolled )
                 return;
 
@@ -264,7 +273,7 @@
                     dead = obj.dead || false;
                     if( !obj.skipStep ){
                         dead = dead || (obj.step && obj.step() === false);
-                        //_i = actionObjects.length; // it can change in this fn
+
                     }else
                         obj.skipStep--;
                 }
@@ -280,7 +289,6 @@
             for( i = deadList.length - 1; i > -1; i-- ){
                 actionObjects.splice( deadList[i], 1 );
             }
-            //console.log('action objects count', _i);
 
         },
         getAsciiMap: function(){
@@ -337,12 +345,12 @@
                 }else{
                     this.moveWorld('Explosion', true);
                 }
-				window.ha && console.log(Ro.getAsciiMap());
             }
 
             this.callDelays();
 
-            this.view.drawChanges( this.animateStep );
+			this.drawChanges();
+
             nextCall -= +new Date(); // calculate next frame time
 
             
