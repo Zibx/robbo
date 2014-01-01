@@ -4,15 +4,24 @@
         offset: 2,
         cellSize: 8,
         draw: function( ctx, sprite, rect, blink ){
-            ctx.fillStyle = blink === '#fff' ? blink : sprite;
-            ctx.globalAlpha = 1;
-            /*var zoom = 4;
+
+
+            var zoom = 1;
             rect[0]/=zoom;
             rect[1]/=zoom;
             rect[2]/=zoom;
-            rect[3]/=zoom;*/
-            ctx.fillRect.apply( ctx, rect );
+            rect[3]/=zoom;
 
+			if( typeof sprite === 'number' ){
+				ctx.fillStyle = '#000';
+				ctx.fillRect.apply( ctx, rect );
+				ctx.fillStyle = '#fff';
+				ctx.fillText(sprite.toString(10),rect[0], rect[1]+10);
+			}else{
+				ctx.fillStyle = blink === '#fff' ? blink : sprite;
+				ctx.globalAlpha = 1;
+				ctx.fillRect.apply( ctx, rect );
+			}
 
         },
         modifyColors: function(  ){
@@ -65,7 +74,8 @@
 
 
     };
-
+	for( var i = 0; i < 10; i++)
+		R.sprites['hud.digit.'+i] = i;
     R.loaded('sprites');
 
 })(window.R);

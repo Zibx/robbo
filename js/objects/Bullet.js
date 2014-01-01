@@ -82,7 +82,7 @@
                     var cell = this.game.getCell( R.addDirection( this, this.direction ) );
                     if( cell.is( 'Empty' ) || cell.demolishable ){
 
-                        if( cell.demolishable && false){
+                        if( cell.demolishable ){
                             R.behaviors.demolish( cell );
                             cell = this.game.getCell( R.addDirection( this, this.direction ) );
                             this.game.removeActiveObject( cell );

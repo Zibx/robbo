@@ -215,9 +215,10 @@
             var robbo = this.robbo,
                 view = this.view;
             !robbo.noMove &&
-                ['right','down','left','up'].forEach( function( which, i ){
+                [ 'right','down','left','up', 'D', 'S', 'A', 'W' ].forEach( function( which, i ){
+					which.length === 1 && (which = which.charCodeAt(0));
                     if( R.keyboard.get( which ) ){
-                        robbo.direction = i;
+                        robbo.direction = i % 4;
                         view.redraw( robbo );
                         if( R.keyboard.get( 'shift' ) )
                             robbo.fire = true;

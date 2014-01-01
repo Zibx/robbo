@@ -52,17 +52,17 @@
     <file path="G:/zibx/projects.yml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384450677973" ignored="false" />
     <file path="G:/zibx/js/widgets.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383069602674" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Observable.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383121616346" ignored="false" />
-    <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388451718386" ignored="false" />
+    <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388483161901" ignored="false" />
     <file path="/test.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383911460887" ignored="false" />
     <file path="/keyboard.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383128684238" ignored="false" />
-    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388452488275" ignored="false" />
+    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388618321573" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387197985101" ignored="false" />
     <file path="/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384520145562" ignored="false" />
     <file path="/Bomb.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388079628679" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/LogicTemplate.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
     <file path="/LogicTemplate.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383139164289" ignored="false" />
     <file path="/Explosion.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387302717623" ignored="false" />
-    <file path="/asciiRender.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384168669857" ignored="false" />
+    <file path="/asciiRender.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388455678107" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/JS.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384772047274" ignored="false" />
     <file path="/Robbo.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387990394011" ignored="false" />
     <file path="/ascii.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383214797451" ignored="false" />
@@ -316,7 +316,7 @@
           <file leaf-file-name="game.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/game.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="3213" column="47" selection-start="58900" selection-end="58900" vertical-scroll-proportion="-1.3921568">
+                <state line="49" column="18" selection-start="1635" selection-end="1635" vertical-scroll-proportion="-9.333333">
                   <folding />
                 </state>
               </provider>
@@ -325,7 +325,16 @@
           <file leaf-file-name="controller.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="43" column="54" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.6643678">
+                <state line="220" column="47" selection-start="7496" selection-end="7496" vertical-scroll-proportion="0.50058895">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="asciiRender.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/asciiRender.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="20" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -407,10 +416,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sprites.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="sprites.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/sprites.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="42" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.9405339">
+                <state line="222" column="84" selection-start="6317" selection-end="6317" vertical-scroll-proportion="-14.28">
                   <folding />
                 </state>
               </provider>
@@ -461,10 +470,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Bullet.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Bullet.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="27" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.0">
+                <state line="84" column="46" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.6607774">
                   <folding />
                 </state>
               </provider>
@@ -491,7 +500,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/objects/Robbo.js" />
         <option value="$PROJECT_DIR$/js/objects/Bear.js" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/js/objects.js" />
@@ -500,12 +508,13 @@
         <option value="$PROJECT_DIR$/js/objects/Key.js" />
         <option value="$PROJECT_DIR$/js/objects/Lava.js" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/js/objects/Bullet.js" />
         <option value="$PROJECT_DIR$/js/objects/Teleport.js" />
         <option value="$PROJECT_DIR$/js/sprites.js" />
-        <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/js/view.js" />
         <option value="$PROJECT_DIR$/js/objects/Bomb.js" />
+        <option value="$PROJECT_DIR$/js/asciiRender.js" />
+        <option value="$PROJECT_DIR$/game.html" />
+        <option value="$PROJECT_DIR$/js/objects/Bullet.js" />
         <option value="$PROJECT_DIR$/js/controller.js" />
       </list>
     </option>
@@ -748,13 +757,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/objects/Robbo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="12" selection-start="1605" selection-end="1651" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/Bear.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="8" selection-start="65" selection-end="134" vertical-scroll-proportion="0.0">
@@ -790,20 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ascii.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="29" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="27" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/shim.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="57" selection-start="5848" selection-end="5848" vertical-scroll-proportion="0.0">
@@ -825,13 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/sprites.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.9405339">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="-15.48">
@@ -848,16 +829,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/ascii.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="29" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/sprites.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="222" column="84" selection-start="6317" selection-end="6317" vertical-scroll-proportion="-14.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/asciiRender.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="20" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3213" column="47" selection-start="58900" selection-end="58900" vertical-scroll-proportion="-1.3921568">
+        <state line="49" column="18" selection-start="1635" selection-end="1635" vertical-scroll-proportion="-9.333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="46" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.6607774">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="54" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.6643678">
+        <state line="220" column="47" selection-start="7496" selection-end="7496" vertical-scroll-proportion="0.50058895">
           <folding />
         </state>
       </provider>
