@@ -195,10 +195,30 @@
             obj.drawOnCreate !== false && this.view.redraw( obj );
             return obj;
         },
+        soundCache: {},
         playSound: function( name ){
-            if(!this.sound)return;
-            var snd = new Audio('sound/'+name+'.ogg');
-            snd.play();
+            // Audio element download sound each time when we create it.
+            // So I made a solution that hang out only sounds objects
+            // that can be played simultaneously
+            if( !this.sound )
+                return;
+
+            var sounds, sound, paused, i, _i;
+            if( !(sounds = this.soundCache[ name ]) ){
+                sounds = this.soundCache[ name ] = [new Audio('sound/'+name+'.ogg')];
+            }
+            paused = false;
+            for( i = 0, _i = sounds.length; i < _i; i++ ){
+                sound = sounds[i];
+                if( sound.paused ){
+                    paused = sound;
+                    break;
+                }
+            }
+            if( !paused )
+                sounds.push( paused = sounds[0].cloneNode() );
+
+            paused.play();
         },
         removeActiveObject: function( obj ){
 
