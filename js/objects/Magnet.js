@@ -5,7 +5,7 @@
             game.addActionObject(this);
             this.direction = this.direction || 0;
         },
-        step: function( ){
+        dieCheck: function(  ){
             var direction = this.direction,
                 delta = R.addDirection( 0, 0, direction ),
                 robbo = this.game.robbo,
@@ -39,7 +39,6 @@
                     this.game.restart();
                 }
             }
-
         }
     };
 } )(window.R);
