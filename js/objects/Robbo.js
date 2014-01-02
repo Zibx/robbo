@@ -43,8 +43,10 @@
         },
         fireAction: function( ){
             this.fire = false;
+            this.animateStep = true;
             if( this.fireDelay || this.noMove || !this.ammo )
                 return;
+
 
             this.set( 'ammo', this.ammo - 1 );
             if( R.behaviors.fire.call( this ) !== false ){
@@ -73,24 +75,21 @@
             if( nextCell.is( 'Empty' ) ){
                 this.game.swap( nextCell, this );
             }else{
+                noStep = true;
                 if( nextCell.eatable )
                     if( !(nextCell.eat && nextCell.eat( this ) === false )){
                         nextCell = this.game.setCell( newPos, 'Empty' );
                         this.game.swap( nextCell, this );
-                    }else
-                        noStep = true;
+                    }
 
                 if( nextCell.movable )
                     if( !(nextCell.move && nextCell.move( this.direction ) === false) ){
                         nextCell = this.game.setCell( newPos, 'Empty' );
                         this.game.swap( nextCell, this );
-                    }else
-                        noStep = true;
+                    }
 
                 if( nextCell.getNextCell ){ // duck typing. teleport have such method. portal would also have it
                     this.teleport( nextCell );
-                    noStep = true;
-                    return;
                 }
             }
             if( !noStep ){
