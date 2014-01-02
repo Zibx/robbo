@@ -33,6 +33,7 @@
             return toString.call( obj );
         },
         R = window.R = {
+            version: '2014.01.02.1',
             getLocationHash: function(  ){
                 var hash = {};
                 document.location.search.replace(/^\?/, '').split('&').forEach(function (el) {
@@ -117,7 +118,7 @@
                     script.onload = function () {
                         finish(name);
                     };
-                    script.src = name;// + '?rnd=' + Math.random();
+                    script.src = name + '?version='+ R.version;
                     head.appendChild(script);
                 } );
 
