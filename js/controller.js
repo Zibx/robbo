@@ -195,6 +195,7 @@
             obj.drawOnCreate !== false && this.view.redraw( obj );
             return obj;
         },
+        editMode: true,
         soundCache: {},
         playSound: function( name ){
             // Audio element download sound each time when we create it.
@@ -349,7 +350,48 @@
                     item.delay--;
             }
         },
+        saveMap: function(  ){
+            var notIn = {game:1, ascii:1, lastSprite:1,x:1,y:1,BG:1,oldX:1,oldY:1, animationFrame:1,lastSkipped:1,skipStep:1,stepAnimation:1,animation:1}
+            var hash = {'"type"':'-1'}, list = ['"type"'], last = 1, resolve = function(name){
+                if( typeof name === 'string' ) name='"'+name+'"';
+                if(!(name in hash)){
+                    hash[name] = (last++).toString(36);
+                    list.push(name);
+                }
+                return hash[name]
+            };
 
+            var out = this.map.map(function(row){
+                var rowData = row.map(function( cell ){
+                        var obj = [resolve(cell.type)];
+                        for( var i in cell )
+                            if( cell.hasOwnProperty(i) && !notIn[i] )
+                                obj.push( resolve(i)+':'+ resolve(cell[i]));
+
+                        return obj.join(',');
+                    }),
+                    item, i, _i, lastItem, count = 0;
+                for( i = 0, _i = rowData.length + 1; i < _i; i++ ){
+                    item = rowData[i]
+                    if( lastItem !== item ){
+                        if( count > 1 ){
+                            rowData[i - count] = count + ';' + lastItem;
+                            rowData.splice(i-count+1,count-1);
+                            _i-=count-1;
+                            i-=count+1;
+                        }
+
+                        lastItem = item;
+                        count = 0;
+                    }
+                    count++;
+
+                }
+
+                return rowData.join('|')
+            }).join('\n');
+            return list.join('|')+'\n' + out;
+        },
 
         mainLoop: function(  ){
             var startTime = +new Date(),
@@ -360,7 +402,7 @@
                 this.animate();
             }else{
                 this.moveMe();
-                if( !this.editMode ){
+                if( !this.editMode || true){
                     this.moveWorld();
                     this.dieCheck();
                 }else{

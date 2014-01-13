@@ -65,6 +65,7 @@
         mapColorsSet: function( data ){
             R.sprites.modifyColors( data );
 			this.canvasCtx.fillStyle = this.bgColor = data[0];
+            this.mapCanvasCtx.fillStyle = this.bgColor = data[0];
             this.lastColors = data;
             this.legendCtx.fillStyle = this.lastColors[4];
             this.legendCtx.fillRect(0,0,512,64);
@@ -174,8 +175,6 @@
         initLayout: function(  ){
 
             this.canvas = document.createElement('canvas');
-
-
             this.canvas.setAttribute('width', 32*16+'');
             this.canvas.setAttribute('height', 32*31+'');
             this.canvas.style.background = '#eee';
@@ -194,13 +193,32 @@
             R.apply( this.canvasHolder.style, {
                 height: 32*10 + 4 + 'px',
                 width: 32*16 + 'px',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                position: 'relative'
             });
             this.renderTo.innerHTML = '';
             this.renderTo.style.padding = '48px 96px';
             this.renderTo.style.display = 'inline-block';
             this.renderTo.appendChild( this.canvasHolder );
             this.renderTo.appendChild( this.legend );
+
+            if( this.controller.editMode ){
+                this.mapCanvas = document.createElement('canvas');
+                this.mapCanvas.setAttribute('width', 16*16+'');
+                this.mapCanvas.setAttribute('height', 16*31+'');
+                this.mapCanvas.style.background = '#eee';
+                this.mapCanvasCtx = this.mapCanvas.getContext('2d');
+                R.apply( this.renderTo.style, {
+                    width: (32*16+32*8+4+96) + 'px',
+                    position: 'relative'
+                });
+                R.apply( this.mapCanvas.style, {
+                    left: 32*16 + 48+96 + 'px',
+                    top: 0,
+                    position: 'absolute'
+                });
+                this.renderTo.appendChild( this.mapCanvas );
+            }
         },
         redraw: function( obj ){
             var x = obj.x,
@@ -232,6 +250,18 @@
                     cellSize
                 ]
             );
+            if( this.controller.editMode ){
+                sprites.draw(
+                    this.mapCanvasCtx,
+                    sprite,
+                    [
+                        obj.x * cellSize/2,
+                        obj.y * cellSize/2,
+                        cellSize/2,
+                        cellSize/2
+                    ]
+                );
+            }
 
         },
         drawObject: function( obj ){
@@ -274,10 +304,15 @@
                 changeCounter = 0;
             if( this.blink ){
                 this.blink--;
-				if( this.blink > 1 )
+				if( this.blink > 1 ){
 					this.canvasCtx.fillStyle = '#ffffff';
+                    if( this.controller.editMode )
+                        this.mapCanvasCtx.fillStyle = '#ffffff';
+                }
                 this.fullRedraw();
 				this.canvasCtx.fillStyle = this.bgColor;
+                if( this.controller.editMode )
+                    this.mapCanvasCtx.fillStyle = this.bgColor;
             }else{
                 this.controller.actionObjects.forEach( drawObject );
 
