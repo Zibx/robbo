@@ -350,6 +350,59 @@
                     item.delay--;
             }
         },
+        loadMap: function( data ){
+            var rows = data.split('\n'),
+                hashArray = rows.shift().split('|'),
+                hash = {}, i, _i;
+
+            for( i = 0, _i = hashArray.length; i < _i; i++ )
+                hash[ i.toString(36) ] = hashArray[i];
+
+
+            for( i = 0, _i = rows.length; i < _i; i++ ){
+                var row = rows[i], j, _j, newRow = [],
+                    cells = row.split('|');
+                for( j = 0, _j = cells.length; j < _j; j++ ){
+                    var cell = cells[j],
+                        tokens = cell.split(';'),
+                        count,
+                        data,
+                        k, _k,
+                        prop;
+                    if( tokens.length === 1 ){
+                        count = 1;
+                        data = tokens[0];
+                    }else{
+                        count = tokens[0];
+                        data = tokens[1];
+                    }
+                    tokens = data.split(',');
+                    data = [];
+                    for( k = 0, _k = tokens.length; k < _k; k++ ){
+                        prop = tokens[ k ].split(':');
+                        data.push( prop.length === 1 ? hash[0] +':'+ hash[ prop[0] ] : hash[ prop[0] ] +':'+ hash[ prop[1] ] );
+                    }
+                    data = data.join(',');
+
+                    data = '{'+ data +'}';
+                    for( k = 0; k < count; k++ )
+                        newRow.push(data)
+                }
+                rows[i] = '['+ newRow.join(',') +']';
+            }
+            var map = JSON.parse( '['+ rows.join(',') +']' );
+            this.clear();
+            for( i = 0, _i = map.length; i < _i; i++ ){
+                this.map[i] = [];
+                row = map[i];
+                for( j = 0, _j = row.length; j < _j; j++ ){
+
+                    cell = row[j];
+
+                    this.setCell(j, i, cell.type, cell);
+                }
+            }
+        },
         saveMap: function(  ){
             var notIn = {game:1, ascii:1, lastSprite:1,x:1,y:1,BG:1,oldX:1,oldY:1, animationFrame:1,lastSkipped:1,skipStep:1,stepAnimation:1,animation:1}
             var hash = {'"type"':'-1'}, list = ['"type"'], last = 1, resolve = function(name){

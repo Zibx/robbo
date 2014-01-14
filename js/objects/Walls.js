@@ -1,4 +1,6 @@
 (function( R ){
     'use strict';
-    R.objects.Walls = {};
+    R.objects.Walls = {
+        ascii: 'q'
+    };
 } )(window.R);
