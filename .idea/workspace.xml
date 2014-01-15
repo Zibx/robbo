@@ -7,21 +7,21 @@
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/demo.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384766183375" ignored="false" />
     <file path="/demo.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384766181354" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/switch/Switch.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384537596894" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/BaseField.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387885737582" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/BaseField.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389268046518" ignored="false" />
     <file path="/BaseField.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387885737582" ignored="false" />
     <file path="/Switch.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384536083752" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/textarea/Textarea.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384537613400" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/textarea/Textarea.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389707929075" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/text/Text.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384765122380" ignored="false" />
     <file path="/Text.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384765116724" ignored="false" />
-    <file path="/Dummy.txt" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388076273348" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388058122245" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387976502378" ignored="false" />
-    <file path="/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388057956018" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/TaskSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386938676189" ignored="false" />
-    <file path="/TaskSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386938574344" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/js/module.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
-    <file path="/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388056227016" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/controller/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388056331653" ignored="false" />
+    <file path="/Dummy.txt" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389800888004" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389724270046" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389724270046" ignored="false" />
+    <file path="/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389723651418" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/TaskSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389724270046" ignored="false" />
+    <file path="/TaskSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388683823620" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/js/module.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389715150065" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/controller/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/suggest/suggestInAwards.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1382968027724" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Math.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1382971985116" ignored="false" />
     <file path="/Math.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1382971066712" ignored="false" />
@@ -52,32 +52,32 @@
     <file path="G:/zibx/projects.yml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384450677973" ignored="false" />
     <file path="G:/zibx/js/widgets.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383069602674" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Observable.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383121616346" ignored="false" />
-    <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388483161901" ignored="false" />
+    <file path="/game.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388678585132" ignored="false" />
     <file path="/test.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383911460887" ignored="false" />
     <file path="/keyboard.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383128684238" ignored="false" />
-    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388618321573" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/util/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387197985101" ignored="false" />
+    <file path="/controller.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389808427203" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/util/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389270369086" ignored="false" />
     <file path="/Dom.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384520145562" ignored="false" />
     <file path="/Bomb.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388079628679" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/LogicTemplate.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
     <file path="/LogicTemplate.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383139164289" ignored="false" />
     <file path="/Explosion.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387302717623" ignored="false" />
     <file path="/asciiRender.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388455678107" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/util/JS.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384772047274" ignored="false" />
-    <file path="/Robbo.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387990394011" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/util/JS.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="/Robbo.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388675203291" ignored="false" />
     <file path="/ascii.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383214797451" ignored="false" />
-    <file path="/view.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388451889706" ignored="false" />
+    <file path="/view.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389807995547" ignored="false" />
     <file path="/sprites.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388437264333" ignored="false" />
-    <file path="/Magnet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386779157658" ignored="false" />
+    <file path="/Magnet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388665564404" ignored="false" />
     <file path="/Bullet.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388271728927" ignored="false" />
-    <file path="/objects.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388055139641" ignored="false" />
+    <file path="/objects.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389787865094" ignored="false" />
     <file path="/Teleport.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388273126012" ignored="false" />
     <file path="/common.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387991853457" ignored="false" />
-    <file path="/base.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383315132617" ignored="false" />
+    <file path="/base.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388678665430" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/History.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383668833764" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/utils/Utils.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/utils/OperationManager.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383322669648" ignored="false" />
-    <file path="/OperationManager.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383322221501" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/utils/Utils.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389800884784" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/utils/OperationManager.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389724270046" ignored="false" />
+    <file path="/OperationManager.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389722210395" ignored="false" />
     <file path="/Bird.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386779461792" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/grid/GridEditorsPlugin.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383668833764" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/select/Select.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384451227881" ignored="false" />
@@ -86,7 +86,7 @@
     <file path="/GridEditorsPlugin.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383668631536" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/gantt/CProject.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383733237204" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/pm/resources/tpl/calendarHeader.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383826365207" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/gantt.css" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387986155029" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/gantt.css" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="G:/home/zibx/zibx/projects.yml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383743914287" ignored="false" />
     <file path="G:/home/zibx/zibx/widgets.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383745223820" ignored="false" />
     <file path="G:/home/zibx/zibx/tpl/filterList.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383744861877" ignored="false" />
@@ -94,56 +94,56 @@
     <file path="C:/rep/components/Project/Project.Site/js/app/module/people/workload/controller/WorkloadController.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383826365207" ignored="false" />
     <file path="C:/rep/components/Project/Project.Site/js/app/module/people/workload/model/ResourcePoolWorkload.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383826365207" ignored="false" />
     <file path="C:/rep/components/Project/Project.Site/js/app/module/people/workload/view/WorkloadView.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384451318568" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/bin/Comindware.Project.Web.Text.xml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049750592" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/bin/Comindware.Project.Web.Text.xml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/data/StoragePluginQuery.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383833419911" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/gantt/VCalendarHeader.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387209032830" ignored="false" />
     <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/ImportFromMSProject.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386941798156" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/ResourceToUserItemView.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383926283058" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/Project.Site.csproj" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387210361863" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/ResourceToUserItemView.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/Project.Site.csproj" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Project/js/app/module/project/gantt/controller/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383904426870" ignored="false" />
     <file path="/Textarea.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384535188843" ignored="false" />
     <file path="/gantt.css" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387979463310" ignored="false" />
     <file path="G:/zibx/nohup.out" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383925962383" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/ui/View.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384765696471" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/GanttAllocations.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1383926283058" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/controller/Grid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/model/GeneralModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
-    <file path="/GeneralModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387209540326" ignored="false" />
-    <file path="/Utils.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387207793014" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/GanttAllocations.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389715193867" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/controller/Grid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389778314047" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/model/GeneralModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389722128692" ignored="false" />
+    <file path="/GeneralModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389722075398" ignored="false" />
+    <file path="/Utils.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389800583143" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Views/Shared/TaskForm.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387271114724" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/grid/GridDragNDropPlugin.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384180285711" ignored="false" />
-    <file path="/GridDragNDropPlugin.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384166669081" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/grid/GridDragNDropPlugin.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389723403222" ignored="false" />
+    <file path="/GridDragNDropPlugin.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389722874582" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Drag.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384176300396" ignored="false" />
     <file path="/Drag.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384080766578" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/module.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387271114724" ignored="false" />
-    <file path="/Grid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384178303947" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/module.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="/Grid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389721911015" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Localizer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
     <file path="/Localizer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387468097531" ignored="false" />
-    <file path="/a.dummy" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388057915984" ignored="false" />
+    <file path="/a.dummy" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389777179514" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/tasks/controller/Grid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/ppm/tasks/controller/ProjectTasksGrid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/duration/Duration.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925064043" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/viewport/TopNavigation.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/gantt/Gantt.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925069837" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/documents/controller/Grid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/app/module/viewport/FullViewport.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388050467602" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/app/module/viewport/FullViewport.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/activity/controller/Grid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/suggest/suggestFollowers.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/globalSearch/controller/StreamGrid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/people/users/Users.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384251378021" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/util/Calendar.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384773101507" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/util/Calendar.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="/JS.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384446332711" ignored="false" />
     <file path="/TaskForm.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384272236964" ignored="false" />
-    <file path="/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388052976438" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/tasks/controller/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
+    <file path="/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389778015955" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/tasks/controller/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Views/People/Skills/SkillDetails.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384345668998" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/pm/resources/tpl/DropDownTaskElement.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384353039269" ignored="false" />
     <file path="/DropDownTaskElement.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384353022615" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/suggest/Suggest.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384355778681" ignored="false" />
     <file path="/Suggest.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384355779172" ignored="false" />
     <file path="/work_sp.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384427677852" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/util/Renderers.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384451227881" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/Platform.Site.csproj" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386841658296" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/util/Renderers.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388669456499" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/Platform.Site.csproj" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
     <file path="/ViewPluginHold.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384517260179" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/ui/ViewPluginHold.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384517260179" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/Template.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384522171880" ignored="false" />
@@ -156,7 +156,7 @@
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/switch/switch.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384535825197" ignored="false" />
     <file path="/switch.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384535824136" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/number/Number.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384765887046" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/select/BSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387453438413" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/select/BSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/password/Password.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384765316751" ignored="false" />
     <file path="/Duration.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384537746168" ignored="false" />
     <file path="/Number.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1384765883025" ignored="false" />
@@ -177,7 +177,7 @@
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/duration/timespentEdit.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386783911483" ignored="false" />
     <file path="C:/rep/components/Project/Project.Site/js/app/module/project/documents/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386783911483" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/select/demo/BMultiSelectDemo.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386783911483" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/model/FormModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386950042103" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/model/FormModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389778314047" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/form/cmwForm.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388053076597" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/select/BMultiSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386841658296" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/compiled/localizationMap.en.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386841658296" ignored="false" />
@@ -203,7 +203,7 @@
     <file path="/taskMultiSelectListItem.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386867466189" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Views/Shared/Documents/DocumentDetails.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386867554862" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Views/People/Users/UserProfile.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386867554862" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/lib/completeCircle/CompleteCircle.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386867582789" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/lib/completeCircle/CompleteCircle.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388681778973" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/js/util/ClassLoader.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388076259264" ignored="false" />
     <file path="/ClassLoader.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388072873062" ignored="false" />
     <file path="/*.regexp" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386949859997" ignored="false" />
@@ -214,7 +214,7 @@
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/integration/twilioDataProvider.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386924883113" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/activity/view/NewAwardStreamItemView.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386924888944" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/approvals/ManagerFiltersAndSorters.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386924955892" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/documents/controller/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388052979340" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/documents/controller/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/reports/timesheetreports/view/TimesheetReportGridSettingsView.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925041312" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/settings/license/controller/LicenseActivationController.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925046511" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/settings/license/controller/Router.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925049317" ignored="false" />
@@ -230,19 +230,19 @@
     <file path="C:/rep/components/Platform/Server/Site/Views/PpmAdministration/Skills/Index.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925131779" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Views/PpmAdministration/Timesheet/Index.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925135919" ignored="false" />
     <file path="/module.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386925598152" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/ActionsController.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386941798156" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/ActionsController.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/compiled/localizationMap.ru.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386943239570" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/bin/Comindware.Platform.Web.Text.xml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386943239570" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/compiled/localizationMap.ja.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386943239570" ignored="false" />
-    <file path="/AddList.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386948644790" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/addList/AddList.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386949036724" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/controller/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388068937971" ignored="false" />
+    <file path="/AddList.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389799310279" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/addList/AddList.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389799321620" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/controller/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389778314047" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Project/js/app/module/project/gantt/model/FormModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386951433289" ignored="false" />
     <file path="/FormModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1386950042103" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/lib/ProjectBurnGraphic/js/view/VChart.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387204420019" ignored="false" />
     <file path="/VChart.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387204356315" ignored="false" />
-    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/overview/Overview.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388049139706" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/activity/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387271114724" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/overview/Overview.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708307691" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/activity/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
     <file path="/cmwForm.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387271364955" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/lib/ProjectBurnGraphic/js/view/VLegend.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387278835125" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/js/app/module/mywork/activity/view/tpl/Comment.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1387280925138" ignored="false" />
@@ -277,10 +277,44 @@
     <file path="C:/rep/components/Platform/Server/Site/compiled/awards.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388070885703" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/compiled/organizationchart.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388070885703" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/compiled/base.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388070885703" ignored="false" />
-    <file path="C:/rep/components/Platform/Server/Site/Views/Shared/SinglePage.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388070926766" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/Views/Shared/SinglePage.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389713760458" ignored="false" />
     <file path="/SinglePage.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388070924890" ignored="false" />
     <file path="C:/rep/components/Platform/Server/Site/Project/compiled/url__Projects_Tasks.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388075644596" ignored="false" />
     <file path="/Key.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388076720581" ignored="false" />
+    <file path="$USER_HOME$/Downloads/test_worker/test/test_worker.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388666276998" ignored="false" />
+    <file path="/test_worker.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388666274890" ignored="false" />
+    <file path="$USER_HOME$/Downloads/test_worker/test/crypting2.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388670157148" ignored="false" />
+    <file path="/crypting2.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388670130302" ignored="false" />
+    <file path="/CompleteCircle.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388681379333" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/view/tpl/GanttListItem.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
+    <file path="/GanttListItem.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388684178370" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/addList/addListTaskItem.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389719451874" ignored="false" />
+    <file path="/addListTaskItem.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389719451874" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/floatAssignee/FloatAssignee.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388687959271" ignored="false" />
+    <file path="/FloatAssignee.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1388687956951" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/Project/js/app/module/project/gantt/controller/Form.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389268046518" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/grid/SimpleGridList.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/gantt/entity/GanttTask.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/util/Text.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389793657897" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/FieldModel.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389263397952" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/field/select/tpl/bselectViewParentTask.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389278397800" ignored="false" />
+    <file path="/bselectViewParentTask.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389278397800" ignored="false" />
+    <file path="/BSelect.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389278488951" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/Views/ProjectSite/ProjectForm.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389636635815" ignored="false" />
+    <file path="/ProjectForm.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389636632442" ignored="false" />
+    <file path="/Walls.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389806861418" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/reports/projectoverview/views/ProjectOverviewView.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/lib/jquery.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/js/js/widget/grid/CGrid.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/activity/view/tpl/ProjectAction.html" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/lib/ProjectBurnGraphic/js/StockChartController.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/Project/js/app/module/project/gantt/utils/Utils.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389779636402" ignored="false" />
+    <file path="C:/rep/components/Platform/Server/Site/lib/jquery.min.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/js/app/module/project/wbs/Initializer.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389708305059" ignored="false" />
+    <file path="/GanttAllocations.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389715193533" ignored="false" />
+    <file path="C:/rep/components/Project/Project.Site/Views/ProjectTasks/ProjectTasks.cshtml" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389778314047" ignored="false" />
+    <file path="/Base.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389787583315" ignored="false" />
+    <file path="/Question.js" changelist="adca3d18-d43b-4344-aa69-a2013c64a01a" time="1389794659279" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,27 +339,52 @@
           <file leaf-file-name="view.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/view.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="-15.48">
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="game.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="18" selection-start="1635" selection-end="1635" vertical-scroll-proportion="-9.333333">
+                <state line="271" column="34" selection-start="9559" selection-end="9559" vertical-scroll-proportion="-23.76">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="controller.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="game.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/game.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3224" column="13" selection-start="59284" selection-end="59284" vertical-scroll-proportion="0.69015795">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="base.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/base.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="95" column="11" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="220" column="47" selection-start="7496" selection-end="7496" vertical-scroll-proportion="0.50058895">
+                <state line="79" column="0" selection-start="2506" selection-end="2506" vertical-scroll-proportion="-21.52">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Question.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/objects/Question.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="24" column="64" selection-start="891" selection-end="891" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="objects.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/objects.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="43" column="53" selection-start="1138" selection-end="1153" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -340,10 +399,19 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="sprites.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/sprites.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="131" column="27" selection-start="4351" selection-end="4351" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="Bomb.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="25" column="14" selection-start="670" selection-end="670" vertical-scroll-proportion="-3.08">
+                <state line="25" column="14" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -352,34 +420,7 @@
           <file leaf-file-name="common.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/common.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="20" selection-start="196" selection-end="208" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Lava.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/objects/Lava.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="49" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="303" column="14" selection-start="11783" selection-end="11783" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="shim.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/shim.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="174" column="57" selection-start="5848" selection-end="5848" vertical-scroll-proportion="0.0">
+                <state line="98" column="101" selection-start="3495" selection-end="3497" vertical-scroll-proportion="-30.36">
                   <folding />
                 </state>
               </provider>
@@ -389,19 +430,37 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.html">
+          <file leaf-file-name="Base.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/objects/Base.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="303" column="15" selection-start="11784" selection-end="11784" vertical-scroll-proportion="0.0">
+                <state line="10" column="110" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Explosion.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/objects/Explosion.js">
+          <file leaf-file-name="Butterfly.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/objects/Butterfly.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
+                <state line="25" column="94" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Magnet.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/objects/Magnet.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="32" column="25" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Walls.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/objects/Walls.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="11" column="68" selection-start="326" selection-end="326" vertical-scroll-proportion="0.210823">
                   <folding />
                 </state>
               </provider>
@@ -410,52 +469,7 @@
           <file leaf-file-name="ascii.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/ascii.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="29" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sprites.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/sprites.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="222" column="84" selection-start="6317" selection-end="6317" vertical-scroll-proportion="-14.28">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Teleport.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/objects/Teleport.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="62" column="42" selection-start="2198" selection-end="2198" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Bear.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/objects/Bear.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="8" selection-start="65" selection-end="134" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Walls.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/objects/Walls.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Key.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/objects/Key.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="0" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+                <state line="7" column="19" selection-start="162" selection-end="181" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -464,16 +478,25 @@
           <file leaf-file-name="Robbo.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/objects/Robbo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="12" selection-start="1605" selection-end="1651" vertical-scroll-proportion="0.0">
+                <state line="48" column="68" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Bullet.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="PushableStone.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/objects/PushableStone.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="19" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Bullet.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="84" column="46" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.6607774">
+                <state line="84" column="46" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -483,6 +506,15 @@
             <entry file="file://$PROJECT_DIR$/js/objects/Turrel.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="34" column="12" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Explosion.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/objects/Explosion.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="6" column="17" selection-start="159" selection-end="168" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -502,26 +534,32 @@
       <list>
         <option value="$PROJECT_DIR$/js/objects/Bear.js" />
         <option value="$PROJECT_DIR$/js/common.js" />
-        <option value="$PROJECT_DIR$/js/objects.js" />
         <option value="$PROJECT_DIR$/js/objects/Turrel.js" />
         <option value="$PROJECT_DIR$/js/objects/Mustache.js" />
         <option value="$PROJECT_DIR$/js/objects/Key.js" />
         <option value="$PROJECT_DIR$/js/objects/Lava.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/js/objects/Teleport.js" />
-        <option value="$PROJECT_DIR$/js/sprites.js" />
-        <option value="$PROJECT_DIR$/js/view.js" />
         <option value="$PROJECT_DIR$/js/objects/Bomb.js" />
         <option value="$PROJECT_DIR$/js/asciiRender.js" />
-        <option value="$PROJECT_DIR$/game.html" />
         <option value="$PROJECT_DIR$/js/objects/Bullet.js" />
+        <option value="$PROJECT_DIR$/js/objects/Magnet.js" />
+        <option value="$PROJECT_DIR$/js/objects/Robbo.js" />
+        <option value="$PROJECT_DIR$/js/base.js" />
+        <option value="$PROJECT_DIR$/js/objects/Base.js" />
+        <option value="$PROJECT_DIR$/js/objects.js" />
+        <option value="$PROJECT_DIR$/js/objects/Butterfly.js" />
+        <option value="$PROJECT_DIR$/js/objects/Question.js" />
+        <option value="$PROJECT_DIR$/js/sprites.js" />
+        <option value="$PROJECT_DIR$/js/objects/Walls.js" />
+        <option value="$PROJECT_DIR$/js/view.js" />
         <option value="$PROJECT_DIR$/js/controller.js" />
+        <option value="$PROJECT_DIR$/game.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-1922" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -551,6 +589,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -603,7 +642,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -672,13 +710,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-1922" y="0" width="1936" height="1066" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09014233" sideWeight="0.67116183" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09010417" sideWeight="0.67116183" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -757,9 +795,37 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/objects/Teleport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="42" selection-start="2198" selection-end="2198" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/Bear.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="8" selection-start="65" selection-end="134" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Key.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="46" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Turrel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="12" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -778,13 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Explosion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/Lava.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="49" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
@@ -799,46 +858,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Turrel.js">
+    <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="12" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
+        <state line="25" column="14" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="46" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Magnet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="25" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Robbo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="68" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="11" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/PushableStone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="19" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="101" selection-start="3495" selection-end="3497" vertical-scroll-proportion="-30.36">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/Teleport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="42" selection-start="2198" selection-end="2198" vertical-scroll-proportion="0.0">
+        <state line="5" column="26" selection-start="156" selection-end="165" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/view.js">
+    <entry file="file://$PROJECT_DIR$/js/objects/Bear.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="276" column="34" selection-start="9632" selection-end="9632" vertical-scroll-proportion="-15.48">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Bomb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="14" selection-start="670" selection-end="670" vertical-scroll-proportion="-3.08">
+        <state line="0" column="0" selection-start="0" selection-end="741" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ascii.js">
+    <entry file="file://$PROJECT_DIR$/js/objects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="29" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
+        <state line="43" column="53" selection-start="1138" selection-end="1153" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/sprites.js">
+    <entry file="file://$PROJECT_DIR$/js/objects/Base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="222" column="84" selection-start="6317" selection-end="6317" vertical-scroll-proportion="-14.28">
+        <state line="10" column="110" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Butterfly.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="94" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Question.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="64" selection-start="891" selection-end="891" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -850,23 +956,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.html">
+    <entry file="file://$PROJECT_DIR$/js/ascii.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="18" selection-start="1635" selection-end="1635" vertical-scroll-proportion="-9.333333">
+        <state line="7" column="19" selection-start="162" selection-end="181" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/Bullet.js">
+    <entry file="file://$PROJECT_DIR$/js/objects/Turrel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="46" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.6607774">
+        <state line="34" column="12" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Explosion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="159" selection-end="168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/sprites.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="27" selection-start="4351" selection-end="4351" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/Walls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="68" selection-start="326" selection-end="326" vertical-scroll-proportion="0.210823">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="271" column="34" selection-start="9559" selection-end="9559" vertical-scroll-proportion="-23.76">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="47" selection-start="7496" selection-end="7496" vertical-scroll-proportion="0.50058895">
+        <state line="79" column="0" selection-start="2506" selection-end="2506" vertical-scroll-proportion="-21.52">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3224" column="13" selection-start="59284" selection-end="59284" vertical-scroll-proportion="0.69015795">
           <folding />
         </state>
       </provider>

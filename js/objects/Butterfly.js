@@ -22,7 +22,7 @@
             robbo.y < this.y && directions.push( 3 );
             robbo.y > this.y && directions.push( 1 );
 
-            if( Math.random() < 1/4 && lastMove !== false && directions.indexOf( lastMove ) > -1 ){
+            if( Math.random() < 1/2 && lastMove !== false && directions.indexOf( lastMove ) > -1 ){
                 direction = lastMove;
             }else{
                 if( Math.random() < 1/6 ){

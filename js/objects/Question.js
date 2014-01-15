@@ -15,13 +15,13 @@
             { type: 'Butterfly' }
         ],
         init: function( ){
-            this.randomObject = this.randomCfg[ (Math.random()*this.randomCfg.length)|0 ];
-
+            this.randomObject = (Math.random()*this.randomCfg.length)|0;
         },
         explodable: true,
         movable: true,
         demolishable: true,
         demolish: function(){
+            this.randomObject = this.randomCfg[ this.randomObject ];
             this.game.setCell(this, 'Explosion', { after: this.randomObject, single: true, fromBullet: true, data: this.randomObject.data });
             return false;
         },

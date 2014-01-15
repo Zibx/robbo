@@ -4,6 +4,7 @@
         Out: {}
     };
     R.include([
+            'Base',
             'Robbo',
             'Empty',
             'Walls',
@@ -30,14 +31,13 @@
             return 'js/objects/' + el + '.js';
         } ),
         function(){
-            var typeCheck = function( type ){
-                return this.type === type;
-            };
+
             R.each( R.objects, function( name, obj ){
-                var constructor = R.objects[ name ] = obj.init || function(){ };
-                constructor.prototype = obj;
-                obj.type = name;
-                obj.is = typeCheck;
+                if( name !== 'Base' ){
+                    var constructor = R.objects[ name ] = obj.init || function(){ };
+                    obj.type = name;
+                    constructor.prototype = new R.objects.Base( obj );
+                }
             } );
 
             R.objects.factory = function( constructor, x, y, data ){

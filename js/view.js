@@ -261,6 +261,15 @@
                         cellSize/2
                     ]
                 );
+                if( obj.is('Teleport') ){
+                    var ctx = this.mapCanvasCtx;
+                    ctx.strokeStyle = '#ff0';
+                    ctx.strokeWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo((obj.x+0.5) * cellSize/2,(obj.y+0.5) * cellSize/2);
+                    ctx.lineTo((obj.teleportX+0.5) * cellSize/2,(obj.teleportY+0.5) * cellSize/2);
+                    ctx.stroke();
+                }
             }
 
         },

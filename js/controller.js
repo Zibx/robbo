@@ -77,7 +77,6 @@
                             el === '*' && cfg.data.push({x:x,y:y,data: {clockwise: false}})
                         } );
                 } );
-
             cfg.data
                 .forEach(function( row ){
                     R.apply( controller.getCell( row ), row.data );
@@ -87,6 +86,7 @@
             this.view.screw = this.screw;
             this.view.planet = this._currentLevel;
             var colors = cfg.colour || ['cccccc,A5F4CA,66B58B,484848,101010'];
+            this.currentColors = colors[0];
             this.view.set('mapColors',
                 (colors[0]+',A5F4CA,66B58B,484848,101010').split(',').map(function(el){return '#'+el;}));
             //this.view.bgColor = cfg.colour || 'ccc';
@@ -351,7 +351,10 @@
             }
         },
         loadMap: function( data ){
+            if( data === void 0 )
+                data = this._lastMapData;
             var rows = data.split('\n'),
+                colors = rows.shift(),
                 hashArray = rows.shift().split('|'),
                 hash = {}, i, _i;
 
@@ -402,10 +405,17 @@
                     this.setCell(j, i, cell.type, cell);
                 }
             }
+            this.levelLoaded = true;
+            this.view.screw = this.screw;
+
+            this.view.set('mapColors',colors.split(',').map(function(el){return '#'+el;}));
+            //this.view.bgColor = cfg.colour || 'ccc';
+            this.view.updateHud();
+            this.afterLoad && this.afterLoad();
         },
         saveMap: function(  ){
             var notIn = {game:1, ascii:1, lastSprite:1,x:1,y:1,BG:1,oldX:1,oldY:1, animationFrame:1,lastSkipped:1,skipStep:1,stepAnimation:1,animation:1}
-            var hash = {'"type"':'-1'}, list = ['"type"'], last = 1, resolve = function(name){
+            var hash = {'type':'-1'}, list = ['"type"'], last = 1, resolve = function(name){
                 if( typeof name === 'string' ) name='"'+name+'"';
                 if(!(name in hash)){
                     hash[name] = (last++).toString(36);
@@ -416,6 +426,8 @@
 
             var out = this.map.map(function(row){
                 var rowData = row.map(function( cell ){
+                        if( cell.is('Bullet') || cell.is('Explosion') )
+                            cell = new R.objects.Empty();
                         var obj = [resolve(cell.type)];
                         for( var i in cell )
                             if( cell.hasOwnProperty(i) && !notIn[i] )
@@ -425,7 +437,7 @@
                     }),
                     item, i, _i, lastItem, count = 0;
                 for( i = 0, _i = rowData.length + 1; i < _i; i++ ){
-                    item = rowData[i]
+                    item = rowData[i];
                     if( lastItem !== item ){
                         if( count > 1 ){
                             rowData[i - count] = count + ';' + lastItem;
@@ -443,7 +455,9 @@
 
                 return rowData.join('|')
             }).join('\n');
-            return list.join('|')+'\n' + out;
+            out = this.currentColors + '\n'+list.join('|') + '\n' + out;
+            this._lastMapData = out;
+            return out;
         },
 
         mainLoop: function(  ){
