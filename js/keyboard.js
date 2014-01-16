@@ -49,33 +49,56 @@
             this.releaseAfterGet[ key[0] ] = fn;
         }
     },
-        mapping = {};
-    R.each({
-        backspace: 8,
-        comma: 188,
-        'delete': 46,
-        down: 40,
-        end: 35,
-        enter: 13,
-        escape: 27,
-        home: 36,
-        left: 37,
-        numpad_add: 107,
-        numpad_decimal: 110,
-        numpad_divide: 111,
-        numpad_enter: 108,
-        numpad_multiply: 106,
-        numpad_subtract: 109,
-        page_down: 34,
-        page_up: 33,
-        period: 190,
-        right: 39,
-        space: 32,
-        tab: 9,
-        up: 38
-    }, function( k, v ){
-        mapping[ v ] = k;
-    } );
+
+    mapping = {
+        8   : 'backspace',
+        188 : 'comma',
+        46  : 'delete',
+        40  : 'down',
+        35  : 'end',
+        13  : 'enter',
+        27  : 'escape',
+        36  : 'home',
+        37  : 'left',
+        107 : 'numpad_add',
+        110 : 'numpad_decimal',
+        111 : 'numpad_divide',
+        108 : 'numpad_enter',
+        106 : 'numpad_multiply',
+        109 : 'numpad_subtract',
+        34  : 'page_down',
+        33  : 'page_up',
+        190 : 'period',
+        39  : 'right',
+        32  : 'space',
+        9   : 'tab',
+        38  : 'up'
+    },
+
+    isItGameKey = (function(){ 
+    
+        var gameKeys = {
+            'up'    : true,
+            'down'  : true,
+            'left'  : true,
+            'right' : true,
+            '65'    : true, // a
+            '87'    : true, // w
+            '83'    : true, // s
+            '68'    : true, // d
+            '75'    : true  // k
+        };
+    
+        /**
+         * @param {String} keyCode "mapped" or not
+         * @returns {Boolean} is it key of the game or not
+         */
+        function isItGameKey ( keyCode ) {
+            return gameKeys.hasOwnProperty(keyCode);
+        }
+
+        return isItGameKey;
+    })();
 
 var isTouched = false, center = [], radius = 32, circle, fire = false;
 
@@ -180,7 +203,7 @@ DOM.addListener( window, 'touchmove', function( e ){
         key.shift = e.shiftKey ? 2 : 0;
         !key[ mapped ] && ( key[ mapped ] = 2 );
 
-        if(e.which > 8 && e.which < 80){
+        if ( isItGameKey(mapped) ) {
             e.preventDefault();
             e.stopPropagation();
         }
