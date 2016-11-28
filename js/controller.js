@@ -162,6 +162,30 @@
             this.view.redraw( obj1 );
             this.view.redraw( obj2 );
         },
+        cloneCell: function(fromX, fromY, toX, toY){ //fromX, fromY, toX, toY or from, to
+            var from, args = [], i, _i, to, cloneData = {}, proto;
+            for(i = 0, _i = arguments.length; i < _i; i++)args[i] = arguments[i];
+
+            if(typeof args[0] === 'object'){
+                i = 1;
+                from = this.getCell(fromX);
+            }else{
+                i = 2;
+                from = this.getCell(fromX, fromY);
+            }
+
+            if(typeof args[i] === 'object'){
+                to = this.getCell(args[i]);
+            }else{
+                to = this.getCell(args[i], args[i+1]);
+            }
+            proto = R.objects[from.type].prototype;
+            for( i in from )
+                if( i !=='x' && i !== 'y' && proto[i] !== from[i])
+                    cloneData[i] = from[i];
+            to.dead = true;
+            this.setCell(to, from.type, cloneData);
+        },
         getCell: function( x ){
             var y = arguments[1],
                 out;
