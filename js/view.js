@@ -64,8 +64,10 @@
         },
         mapColorsSet: function( data ){
             R.sprites.modifyColors( data );
-			this.canvasCtx.fillStyle = this.bgColor = data[0];
-            this.mapCanvasCtx.fillStyle = this.bgColor = data[0];
+			      this.canvasCtx.fillStyle = this.bgColor = data[0];
+            if(this.controller.editMode) {
+              this.mapCanvasCtx.fillStyle = this.bgColor = data[ 0 ];
+            }
             this.lastColors = data;
             this.legendCtx.fillStyle = this.lastColors[4];
             this.legendCtx.fillRect(0,0,512,64);

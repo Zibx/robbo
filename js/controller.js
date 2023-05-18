@@ -219,7 +219,7 @@
             obj.drawOnCreate !== false && this.view.redraw( obj );
             return obj;
         },
-        editMode: true,
+        editMode: false,
         soundCache: {},
         playSound: function( name ){
             // Audio element download sound each time when we create it.
