@@ -51,7 +51,20 @@
                         '..====.\n',
                 data: [],
                 test: function(){
+                  R.keyboard.emulateStack('right')('up')('right')('right')
+                  ('down')('down')('x')('x')('x')('down')
 
+                  ('up')('up')('up')('right')('right')
+                  ('down')('down')('x')('x')('x')('down')
+                  ('down', function(){
+                    var result = Ro.getAsciiMap();
+
+                    if( result.match(/#/g) === null ){
+                      Ro.finishLevel();
+                    }else{
+                      throw 'stone exist';
+                    }
+                  });
                 }
             },
             {
@@ -299,9 +312,9 @@
         ],
         afterLoad: function(){
 
-            this.maps[this._currentLevel].test && this.maps[this._currentLevel].test();
+            this.maps[this._currentLevel-1].test && this.maps[this._currentLevel-1].test();
         },
-        load: 7
+        load: 4
     });
 
 </script>

@@ -1,6 +1,6 @@
 (function( R ){
     'use strict';
-    R.objects = {
+    R.objects = R.objects || {
         Out: {}
     };
     R.include([
@@ -27,7 +27,9 @@
             'Bear',
             'Lava',
             'Magnet'
-        ].map(function( el ){
+        ].filter(function(el){
+          return !(el in R.objects);
+        }).map(function( el ){
             return 'js/objects/' + el + '.js';
         } ),
         function(){

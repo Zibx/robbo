@@ -9,11 +9,21 @@
 			};
 	})();
     var Controller = function( cfg ){
-            R.apply( this, cfg );
-            this._events = {};
-            R.afterLoad( ['sprites'], function( ){ R.include(['js/view.js']); });
-            R.afterLoad( ['objects', 'sprites', 'view'], this.init.bind(this) );
+          this.keyboard = new R.Keyboard(this);
+          if(cfg.standalone){
 
+          }else{
+            this.keyboard.subscribe();
+          }
+
+          var _self = this;
+          R.apply( this, cfg );
+          this._events = {};
+          R.afterLoad( ['sprites'], function( ){ !R.View && R.include(['js/view.js']); });
+          R.afterLoad( ['objects', 'sprites', 'view'], function(){
+            _self.init()
+            _self.sound = false;
+          } );
         },
         objects = R.objects,
         ascii = R.ascii;
@@ -34,9 +44,10 @@
         initView: function(  ){
             this.view = new R.View({
                 renderTo: this.renderTo,
-                controller: this
+                controller: this,
+                standalone: this.standalone
             });
-
+            this.fire('viewLoaded');
             var _drawChanges = function(){
               this.view.drawChanges( this.animateStep )
             }.bind(this);
@@ -94,7 +105,11 @@
                 (colors[0]+',A5F4CA,66B58B,484848,101010').split(',').map(function(el){return '#'+el;}));
             //this.view.bgColor = cfg.colour || 'ccc';
             this.view.updateHud();
+            // this.levelLoading = true; // TODO: animation of level loading
             this.afterLoad && this.afterLoad();
+        },
+        replay: function(){
+          this.keyboard.replay();
         },
         restart: function(  ){
             this.fire('kill');
@@ -126,6 +141,7 @@
                 });
                 this.delayedFn(function(  ){
                     this.loadLevel( this._currentLevel );
+                    this.fire('resurrect');
                 }, 6)
             }.bind(this), 6);
         },
@@ -259,29 +275,32 @@
         addActionObject: function( obj ){
             this.actionObjects.push( obj );
         },
-        moveMe: function(  ){
+        moveMe: function() {
 
-            var robbo = this.robbo,
-                view = this.view;
-            !robbo.noMove &&
-                [ 'right','down','left','up', 'D', 'S', 'A', 'W' ].forEach( function( which, i ){
-					which.length === 1 && (which = which.charCodeAt(0));
-                    if( R.keyboard.get( which ) ){
-                        robbo.direction = i % 4;
-                        view.redraw( robbo );
-                        if( R.keyboard.get( 'shift' ) )
-                            robbo.fire = true;
-                        else
-                            robbo.move = true;
-                    }
-                } );
+          var _self = this,
+            robbo = this.robbo,
+            view = this.view;
+          !robbo.noMove &&
+          [ 'right', 'down', 'left', 'up', 'D', 'S', 'A', 'W' ].forEach( function( which, i ) {
+            which.length === 1 && ( which = which.charCodeAt( 0 ) );
+            if( _self.keyboard.get( which ) ) {
+              robbo.direction = i % 4;
+              view.redraw( robbo );
 
-            R.keyboard.get( 'R'.charCodeAt(0) ) && this.restart();
-            R.keyboard.get( 'K'.charCodeAt(0) ) && this.finishLevel();
+              if( _self.keyboard.get( 'shift' ) )
+                robbo.fire = true;
+              else
+                robbo.move = true;
+            }
+          } );
+          this.keyboard.get( 'x' ); // empty action in tests
+
+          this.keyboard.get( 'R'.charCodeAt( 0 ) ) && this.restart();
+          this.keyboard.get( 'K'.charCodeAt( 0 ) ) && this.finishLevel();
 
 
-            R.keyboard.get( '8'.charCodeAt(0) ) && this.restart();
-            R.keyboard.get( '9'.charCodeAt(0) ) && this.finishLevel();
+          this.keyboard.get( '8'.charCodeAt( 0 ) ) && this.restart();
+          this.keyboard.get( '9'.charCodeAt( 0 ) ) && this.finishLevel();
         },
 
         moveWorld: function( type, check ){
@@ -331,11 +350,11 @@
                     deadList.push( i );
                 }
             }
-			for( i = 0, _i = objectList.length; i < _i; i++ ){
-				obj = objectList[i];
-				if( obj && obj.skipStep )
-					obj.skipStep--;
-			}
+            for( i = 0, _i = objectList.length; i < _i; i++ ){
+              obj = objectList[i];
+              if( obj && obj.skipStep )
+                obj.skipStep--;
+            }
             for( i = deadList.length - 1; i > -1; i-- ){
                 actionObjects.splice( deadList[i], 1 );
             }
@@ -491,6 +510,7 @@
         win: function(){
             this.cartoonStep = true;
         },
+        levelLoading: false,
         mainLoop: function(  ){
             var startTime = +new Date(),
                 nextCall = 64 + startTime;// 64 syncronized on level 3 by right owl.
@@ -502,12 +522,14 @@
             if( this.animateStep ){
                 this.animate();
             }else{
-                this.moveMe();
-                if( !this.editMode || true){
+                if(this.levelLoading === false) {
+                  this.moveMe();
+                  if( !this.editMode || true ) {
                     this.moveWorld();
                     this.dieCheck();
-                }else{
-                    this.moveWorld('Explosion', true);
+                  } else {
+                    this.moveWorld( 'Explosion', true );
+                  }
                 }
             }
 
@@ -546,7 +568,7 @@
                 fn.apply(scope || this, [].slice.call( arguments ) );
                 this.un( event, wrap, scope );
             }.bind( this );
-            this.on( event, fn, scope );
+            this.on( event, wrap, scope );
         },
         fire: function( event ){
             var args = [].slice.call( arguments, 1),

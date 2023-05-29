@@ -46,14 +46,17 @@
     var View = function( cfg ){
             R.apply( this, cfg );
             this.initLayout();
-            this.attachEvents();
+
+            if(!this.standalone) {
+              this.attachEvents();
+            }
             this.step = 0;
             this.gap = [ 0, 9 ];
             this.scrollTop = 0;
             this.blink = 0;
             //this.cellSize = R.sprites.cellSize;
-        },
-        sprites = R.sprites;
+            this.sprites = new R.Sprites();
+          };
 
     View.prototype = {
         cellSize: 32,
@@ -63,15 +66,17 @@
             this.redrawHud( key, value );
         },
         mapColorsSet: function( data ){
-            R.sprites.modifyColors( data );
-			      this.canvasCtx.fillStyle = this.bgColor = data[0];
-            if(this.controller.editMode) {
-              this.mapCanvasCtx.fillStyle = this.bgColor = data[ 0 ];
+            this.sprites.modifyColors( data );
+            if(!this.standalone) {
+              this.canvasCtx.fillStyle = this.bgColor = data[ 0 ];
+              if( this.controller.editMode ) {
+                this.mapCanvasCtx.fillStyle = this.bgColor = data[ 0 ];
+              }
+              this.lastColors = data;
+              this.legendCtx.fillStyle = this.lastColors[ 4 ];
+              this.legendCtx.fillRect( 0, 0, 512, 64 );
+              this.renderTo.style.background = this.lastColors[ 4 ];
             }
-            this.lastColors = data;
-            this.legendCtx.fillStyle = this.lastColors[4];
-            this.legendCtx.fillRect(0,0,512,64);
-            this.renderTo.style.background = this.lastColors[4];
         },
         cartoon: function(){
           this.animation = false;
@@ -89,12 +94,12 @@
               _self = this;
 
           for(var x = 0; x < w; x += cellSize){
-            R.sprites.drawFinal(this.canvasCtx, 'floor', [x,drawAreaTop + 7*cellSize,cellSize,cellSize]);
+            this.sprites.drawFinal(this.canvasCtx, 'floor', [x,drawAreaTop + 7*cellSize,cellSize,cellSize]);
           }
           var drawStarDust = function(){
             var dusts = [[1,0], [5, 1], [27,1], [31,2], [20,3],[9, 4], [29,6], [6,8], [19,8], [26,9], [1,10]]
             dusts.forEach(function(dust){
-              R.sprites.drawFinal(_self.canvasCtx, 'stardust', [dust[0]*cellSize/2,drawAreaTop + dust[1]*cellSize/2,cellSize/2,cellSize/2], void 0, 16);
+              _self.sprites.drawFinal(_self.canvasCtx, 'stardust', [dust[0]*cellSize/2,drawAreaTop + dust[1]*cellSize/2,cellSize/2,cellSize/2], void 0, 16);
             });
           }
           drawStarDust();
@@ -104,7 +109,7 @@
           var draw = function(obj){
             var rect = [obj.x*cellSize/2,drawAreaTop + obj.y*cellSize/2,cellSize,cellSize];
             undraw.push(rect);
-            R.sprites.drawFinal(_self.canvasCtx, obj.sprite, rect, obj.variant, 32);
+            _self.sprites.drawFinal(_self.canvasCtx, obj.sprite, rect, obj.variant, 32);
           };
           var spaceshipLeft = {x: 12, y: -1, sprite: 'spaceship', variant: 0};
           var spaceshipRight = {x: 14, y: -1, sprite: 'spaceship', variant: 1};
@@ -184,7 +189,8 @@
                  _self.controller.cartoonStep = false;
                 _self.controller.loadLevel( 1 );
                 _self.canvasHolder.removeChild(playAgain);
-                _self.controller.mainLoop()
+                _self.controller.mainLoop();
+                _self.legend.style.visibility = 'visible';
               });
               _self.canvasHolder.appendChild(playAgain);
               setTimeout(function(){
@@ -203,6 +209,12 @@
 
         },
         scroll: function(  ){
+            if(this.standalone){
+              this.controller.scrolled = true;
+              this.controller.robbo.scrolled = true;
+              this.controller.fire('scrolled');
+              return;
+            }
             var y = this.controller.robbo.y,
                 gap = this.gap,
                 originalGap = [gap[0],gap[1]];//,
@@ -236,6 +248,9 @@
 
         },
         animateScroll: function(  ){
+            if(this.standalone)
+              return;
+
             this.animation = true;
             var delta = this.gap[0]*this.cellSize - this.scrollTop;
             if( Math.abs( delta ) < 10  ){
@@ -248,6 +263,11 @@
 
         },
         redrawHud: function( name, value ){
+            if(this.standalone)
+              return;
+
+            var sprites = this.sprites;
+
             var x = {screw: 1, ammo: 4, keys: 7, lives: 10, planet: 13}[name],
                 cellSize = this.cellSize;
             if(!x)return;
@@ -277,6 +297,11 @@
             );*/
         },
         updateHud: function(  ){
+            if(this.standalone)
+              return;
+
+            var sprites = this.sprites;
+
             var c = 1, cellSize = this.cellSize;
 
             'screw,ammo,keys,lives,planet'.split(',').forEach(function( key ){
@@ -290,6 +315,9 @@
             }.bind(this) )
         },
         attachEvents: function(  ){
+            if(this.standalone)
+              return;
+
             this.controller.on( 'gameSet', this.set, this );
             this.controller.on( 'robboSet', this.set, this );
             this.controller.on( 'kill', function(){
@@ -304,7 +332,11 @@
             }, this );
         },
         initLayout: function(  ){
-
+            if(this.standalone) {
+              this.canvas = this.controller.renderTo;
+              this.canvasCtx = this.canvas.getContext('2d');
+              return;
+            }
             this.canvas = document.createElement('canvas');
             this.canvas.setAttribute('width', 32*16+'');
             this.canvas.setAttribute('height', 32*31+'');
@@ -371,7 +403,7 @@
         _drawObject: function( obj, sprite ){
             var cellSize = this.cellSize;
 
-            sprites.draw(
+            this.sprites.draw(
                 this.canvasCtx,
                 sprite,
                 [
@@ -382,7 +414,7 @@
                 ]
             );
             if( this.controller.editMode ){
-                sprites.draw(
+                this.sprites.draw(
                     this.mapCanvasCtx,
                     sprite,
                     [
@@ -406,9 +438,9 @@
         },
         drawObject: function( obj ){
             if( obj === false )return;
-            var sprite = sprites.resolveSprite( obj, this.step % 8 > 3 ? 1 : 0, this.step ),
-                hash = sprites.getHash( sprite );
-            if( !obj.lastSprite || obj.lastSprite !== sprites.getHash( sprite ) || this.blink ){
+            var sprite = this.sprites.resolveSprite( obj, this.step % 8 > 3 ? 1 : 0, this.step ),
+                hash = this.sprites.getHash( sprite );
+            if( !obj.lastSprite || obj.lastSprite !== this.sprites.getHash( sprite ) || this.blink ){
                 !obj.dead && this._drawObject( obj, sprite );
                 obj.lastSprite = hash;
             }
@@ -431,42 +463,42 @@
                             this.drawObject( mapRow[ j ] );
                         }
         },
-        drawChanges: function( animateStep ){
-            if( !animateStep ){
-                this.step++;
-                //120 % 2, 3, 4, 5, 6, 8, 12, 15, 20, 24, 30, 40, 60 === 0, so it would cover all animations that we need
-                this.step === 120 && (this.step = 0);
+        drawChanges: function( animateStep ) {
+          if( !animateStep ) {
+            this.step++;
+            //120 % 2, 3, 4, 5, 6, 8, 12, 15, 20, 24, 30, 40, 60 === 0, so it would cover all animations that we need
+            this.step === 120 && ( this.step = 0 );
+          }
+
+          var drawObject = this.drawObject.bind( this ),
+            i, j, changeRow,
+            changes = this.changes,
+            changeCounter = 0;
+          if( this.blink ) {
+            this.blink--;
+            if( this.blink > 1 ) {
+              this.canvasCtx.fillStyle = '#ffffff';
+              if( this.controller.editMode )
+                this.mapCanvasCtx.fillStyle = '#ffffff';
             }
+            this.fullRedraw();
+            this.canvasCtx.fillStyle = this.bgColor;
+            if( this.controller.editMode )
+              this.mapCanvasCtx.fillStyle = this.bgColor;
+          } else {
+            this.controller.actionObjects.forEach( drawObject );
 
-            var drawObject = this.drawObject.bind(this),
-                i, j, changeRow,
-                changes = this.changes,
-                changeCounter = 0;
-            if( this.blink ){
-                this.blink--;
-				if( this.blink > 1 ){
-					this.canvasCtx.fillStyle = '#ffffff';
-                    if( this.controller.editMode )
-                        this.mapCanvasCtx.fillStyle = '#ffffff';
-                }
-                this.fullRedraw();
-				this.canvasCtx.fillStyle = this.bgColor;
-                if( this.controller.editMode )
-                    this.mapCanvasCtx.fillStyle = this.bgColor;
-            }else{
-                this.controller.actionObjects.forEach( drawObject );
+            for( i in changes )
+              if( changes.hasOwnProperty( i ) )
+                for( j in ( changeRow = changes[ i ] ) )
+                  if( changeRow.hasOwnProperty( j ) ) {
+                    this.drawObject( changeRow[ j ] );
+                    changeCounter++;
+                  }
+          }
+          this.changes = {};
 
-                for( i in changes )
-                    if( changes.hasOwnProperty( i ) )
-                        for( j in ( changeRow = changes[ i ] ) )
-                            if( changeRow.hasOwnProperty( j ) ){
-                                this.drawObject( changeRow[ j ] );
-                                changeCounter++;
-                            }
-            }
-            this.changes = {};
-
-            this.scroll();
+          this.scroll();
 
         }
     };

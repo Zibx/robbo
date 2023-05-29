@@ -105,6 +105,10 @@
                         }
                     };
 
+                if(list.length === 0) {
+                  fn();
+                }
+
                 R.each( list, function( name ){
                     hash[ name ] = true;
                     var script = document.createElement('script');

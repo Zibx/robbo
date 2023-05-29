@@ -1,5 +1,8 @@
 (function( R ){
     'use strict';
+    R.objects = R.objects || {
+      Out: {}
+    };
     R.objects.Base = function( proto ){
         R.apply( this, proto );
     };
