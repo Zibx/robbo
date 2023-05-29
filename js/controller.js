@@ -37,12 +37,12 @@
                 controller: this
             });
 
-			var _drawChanges = function(){
-				this.view.drawChanges( this.animateStep )
-			}.bind(this);
-			this.drawChanges = function(){
-				requestAnimationFrame( _drawChanges );
-			};
+            var _drawChanges = function(){
+              this.view.drawChanges( this.animateStep )
+            }.bind(this);
+            this.drawChanges = function(){
+              requestAnimationFrame( _drawChanges );
+            };
         },
         clear: function(  ){
             this.map = [];
@@ -64,6 +64,9 @@
                 this.loadLevel( this.maps[ cfg - 1 ] );
                 return;
             }
+
+            if(cfg === void 0)
+              return this.win();
 
             cfg.map
                 .split('\n')
@@ -242,8 +245,9 @@
             }
             if( !paused )
                 sounds.push( paused = sounds[0].cloneNode() );
-
-            paused.play();
+            try {
+              paused.play();
+            }catch( e ){};
         },
         removeActiveObject: function( obj ){
 
@@ -483,12 +487,18 @@
             this._lastMapData = out;
             return out;
         },
-
+        cartoonStep: false,
+        win: function(){
+            this.cartoonStep = true;
+        },
         mainLoop: function(  ){
             var startTime = +new Date(),
                 nextCall = 64 + startTime;// 64 syncronized on level 3 by right owl.
             this.animateStep = !this.animateStep;
 
+            if(this.cartoonStep){
+              return this.view.cartoon();
+            }
             if( this.animateStep ){
                 this.animate();
             }else{
@@ -503,7 +513,7 @@
 
             this.callDelays();
 
-			this.drawChanges();
+			      this.drawChanges();
 
             nextCall -= +new Date(); // calculate next frame time
 

@@ -73,6 +73,135 @@
             this.legendCtx.fillRect(0,0,512,64);
             this.renderTo.style.background = this.lastColors[4];
         },
+        cartoon: function(){
+          this.animation = false;
+          this.controller.scrolled = true;
+          this.gap = [0, 9];
+          this.canvasHolder.scrollTop = 0;
+          this.canvasCtx.fillStyle = '#000000';
+          var w = 512, h = 324, cellSize = this.cellSize;
+
+          this.canvasCtx.fillRect(0,0,w, h);
+          this.legend.style.visibility = 'hidden';
+          var animationFrames = [];
+          var animationH = 8;
+          var drawAreaTop = h/2 - animationH * cellSize/2,
+              _self = this;
+
+          for(var x = 0; x < w; x += cellSize){
+            R.sprites.drawFinal(this.canvasCtx, 'floor', [x,drawAreaTop + 7*cellSize,cellSize,cellSize]);
+          }
+          var drawStarDust = function(){
+            var dusts = [[1,0], [5, 1], [27,1], [31,2], [20,3],[9, 4], [29,6], [6,8], [19,8], [26,9], [1,10]]
+            dusts.forEach(function(dust){
+              R.sprites.drawFinal(_self.canvasCtx, 'stardust', [dust[0]*cellSize/2,drawAreaTop + dust[1]*cellSize/2,cellSize/2,cellSize/2], void 0, 16);
+            });
+          }
+          drawStarDust();
+          var pointer = 0;
+          var lastFrame = [];
+          var undraw = [];
+          var draw = function(obj){
+            var rect = [obj.x*cellSize/2,drawAreaTop + obj.y*cellSize/2,cellSize,cellSize];
+            undraw.push(rect);
+            R.sprites.drawFinal(_self.canvasCtx, obj.sprite, rect, obj.variant, 32);
+          };
+          var spaceshipLeft = {x: 12, y: -1, sprite: 'spaceship', variant: 0};
+          var spaceshipRight = {x: 14, y: -1, sprite: 'spaceship', variant: 1};
+
+          var robbo = {x: 31, y: 12, sprite: 'robbo.left', variant: 0, hidden: false};
+
+          this.finalFrameCounter = 0;
+          var _animate = function(){
+            _self.canvasHolder.scrollTop = 0;
+            undraw.forEach(function(rect){
+              _self.canvasCtx.fillRect.apply(_self.canvasCtx, rect);
+            });
+            undraw.length = 0;
+
+
+            var frame = _self.finalFrameCounter;
+            var handWaving = 20;
+            var goingToTheShip = 12;
+
+            if(frame < 9){
+              robbo.x = 30 - frame;
+              robbo.variant = 1 - (frame % 2);
+            }else if(frame === 9){
+              robbo.x--;
+              robbo.sprite = 'robbo.front';
+              robbo.variant = 1;
+            }else if(frame < 12){
+              robbo.sprite = 'robbo.front';
+            }else if(frame < 23){
+              robbo.sprite = 'robbo.front';
+              robbo.variant = (frame % 2);
+            }else if(frame < 23+handWaving){
+              robbo.sprite = 'robbo.hand';
+              robbo.variant = 1 - (frame % 2);
+            }else if(frame === 23 + handWaving){
+              robbo.sprite = 'robbo.left';
+              robbo.variant = (frame % 2);
+            }else if(frame < 19 + handWaving + goingToTheShip){
+              robbo.sprite = 'robbo.left';
+              robbo.x = 21 + 23 + handWaving - frame;
+              robbo.variant = (frame % 2);
+            }else{
+              robbo.hidden = true;
+            }
+
+            if(frame >= 9 && frame <= 23 + handWaving){
+              robbo.x = 21;
+            }
+
+            var spaceshipEnter = 11;
+            if(frame >= spaceshipEnter && frame < 24){
+              spaceshipLeft.y = spaceshipRight.y = frame - spaceshipEnter;
+            }else if(frame >= spaceshipEnter && frame < 21+goingToTheShip+handWaving){
+              spaceshipLeft.y = spaceshipRight.y = 12;
+            }else{
+              spaceshipLeft.y = spaceshipRight.y = 11+ 21+goingToTheShip+handWaving-frame;
+            }
+            spaceshipLeft.variant = ((frame/2-.5)|0) % 2 ? 2 : 0;
+            spaceshipRight.variant = ((frame/2-.5)|0) % 2 ? 3 : 1;
+
+
+            !robbo.hidden && draw(robbo);
+
+            if(frame >= spaceshipEnter){
+              draw(spaceshipLeft);
+              draw(spaceshipRight)
+            }
+
+            _self.finalFrameCounter++;
+            if(_self.finalFrameCounter < 75) {
+              setTimeout( animate, 1000 / 6 );
+            }else{
+              var playAgain = document.createElement('div');
+              playAgain.className = 'playAgain playAgain-invisible';
+              playAgain.innerText = 'Play again?'
+              playAgain.addEventListener('click', function(){
+                 _self.controller.cartoonStep = false;
+                _self.controller.loadLevel( 1 );
+                _self.canvasHolder.removeChild(playAgain);
+                _self.controller.mainLoop()
+              });
+              _self.canvasHolder.appendChild(playAgain);
+              setTimeout(function(){
+                playAgain.className = 'playAgain playAgain-visible';
+              }, 50);
+            }
+          };
+
+          var animate = function(){
+            requestAnimationFrame(_animate);
+            //_animate();
+          };
+
+
+          setTimeout(animate, 1200);
+
+        },
         scroll: function(  ){
             var y = this.controller.robbo.y,
                 gap = this.gap,

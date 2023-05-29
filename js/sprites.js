@@ -6,21 +6,36 @@
         cellSize: 32,
         offset: 2,
         draw: function( ctx, sprite, rect ){
-            var c = ((80+Math.random()*20)|0);
             ctx.globalAlpha = 1;
             ctx.fillRect.apply( ctx, rect );
-            //rect[0]+=8;
-            //rect[1]+=8;
-            //rect[2]/=4;
-            //rect[3]/=4;
             ctx.globalAlpha = 1;
-            //!blink &&
-			ctx.drawImage.apply(
+			      ctx.drawImage.apply(
                 ctx,
                 [this.scheme]
                     .concat( this.getRect( sprite, rect.slice(4) ) )
                     .concat( rect.slice(0,4) )
             );
+        },
+        drawFinal: function( ctx, spriteName, rect, sub, size ){
+          size = size || 32;
+
+          var sprite = this.win[spriteName];
+
+          if(sub !== void 0) {
+            sprite = sprite[ sub ];
+          }
+
+          ctx.drawImage.apply(
+            ctx,
+            [R.sprites.finalImg]
+              .concat( [
+                sprite[0] * 32,
+                sprite[1] * 32,
+                size,
+                size
+              ] )
+              .concat( rect.slice(0,4) )
+          );
         },
         modifyColors: function( data ){
             var canvas = this.scheme = document.createElement('canvas'),
@@ -226,10 +241,23 @@
         'hud.ammo': [ 7, 3 ],
         'hud.keys': [ 6, 3 ],
         'hud.planet': [ 8, 3 ],
-        'hud.lives': [ 5, 3 ]
+        'hud.lives': [ 5, 3 ],
+
+      win: {
+          spaceship: [[0,0], [1,0], [2,0], [3,0]],
+          floor: [5, 0],
+          'robbo.front': [[0, 1], [2, 1]],
+          'robbo.hand': [[1, 1], [3, 1]],
+          'robbo.left': [[4, 1], [5, 1]],
+          stardust: [4, 0]
+      }
     };
     for( var i = 0; i < 10; i++)
         R.sprites['hud.digit.'+i] = [1+i*0.5,6];
+
+    R.sprites.finalImg = new Image();
+    R.sprites.finalImg.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAABACAYAAABMbHjfAAAAAXNSR0IArs4c6QAAA3NJREFUeJztncGN8kAMhcOvrQMJ0QYX2uAIZaCcEG1wpA0utIGQaIS9EucXT17bM5P4fbcoEI/R5r14PJlddF337gLp+970/dPp5DSSOmTPH7Fer4vGezweg+N/RaMT0hg/1gtYFQ6BFELe0aXJnv/UoQOQ1Cw6UANEK5yV6/X69bxVIbPnHw1rAEIqMnKAqSnebrf7el6CFDF7/rXxdgSZ73a7HRzTAUhqFn3fh/YBorEqovz81Ji6I0hFvt1uodeX0AFIasx9gNJYFW/qROd/uVwGx/v93nQ9LUixpUOgmu1+v389TwcgqfmRd8hms6k0lP+jVTx0frlcDo5Xq9Xg+Pl8/mmcUXjnfzweB8dS4UsrvjdI8SV0AJKa0SwQuoOiHcKqeGj8r9fr6/elI0iiHcKaPxr/+XweHNeeBZJoZ4VQzYCgA5DUqPsA2mes0kiFR2j7AEhhayMVHlHbAZDia88j5PfpACQ17muBvGctvOe5o9cCTT3/bNABSGrg+wBydV5rioawKl72/KOxdnK1sAYg5ANYA6BdCUq/0SNBCifHp60BsuVfGvl7R88y0gEI+QCuBkUK0rqiWJ+xs+cfTe2+Eh2ApGbUCZaK0ZrCaUGKiGZl5p5/7fysa3m0sAYg5IPJvRFGyCfatUMSOgBJDewEExKJdTWndTUpHYCkZvYOYN3lQNsZbi2+Fe345ecPh0P3frf7J0YHIKkx7w4tFUkqgMSqgNr43rscIEVuLb7EOh6UX7QDaOOjfOkAJDXmGqD2MyrjM74lPh2ApMZcA2h3SfCuARif8S3x6QAkNeq1QGivSbkvjTxvhfHbju9NdL50AJIatQOgO8yqCHIeV+7FGR0fwfix15egnfus46EDkNSo+wDaqlxb9aNOXnR8hHd8bedyavl7d4K986cDkNQ01wdANUB0fEl0/mjtztzzrx2fDkBSM5oFQgps3R/funYjOn7p/LWO0Nrv7/37aONLtOOhA5DUNLcrhHbWZ25kz780dACSGt4AJDW8AUhqitcApd8Y0sJn8FzQAUhqRg5gVUDvtSfeaB0IfR7N21vje+Mdv7X/m6wdDx2ApMZ9ZzjpGNGrE6OZWz5kCB2ApAbOAtVWQG38qY3X+3ql80fxSu8Mp82fDkBS494HqD3L4c3c8rFSui+C4lnHQwcgqfkFxhh7me2F860AAAAASUVORK5CYII=';
+
     R.sprites.img = new Image();
     R.sprites.img.onload = function(){
         R.loaded('sprites');
